@@ -24,8 +24,11 @@ import {
   Award,
   TrendingUp,
 } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const Index = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const featuredProducts = [
     {
       name: "Weighspring Pro",
@@ -70,6 +73,7 @@ const Index = () => {
       image: "/src/assets/images/hardware/PDA.webp",
     },
   ];
+
   const services = [
     {
       title: "Cybersecurity & Penetration Testing",
@@ -98,14 +102,14 @@ const Index = () => {
 
   const sliderImages = [
     {
-      url: "/src/assets/images/hardware/CCTV.jpg",
+      url: "/images/hardware/L36 printer.png",
       title: "Modern Technology Solutions",
       description: "Cutting-edge software and hardware for your business needs",
       link: "/consultation",
       pageName: "Consultation",
     },
     {
-      url: "images/Manufacturing.jpg",
+      url: "/src/assets/images/hardware/SS indicators with Bluetooth.png",
       title: "Industrial Equipment",
       description: "Precision weighing and measurement solutions",
       link: "/services",
@@ -120,84 +124,159 @@ const Index = () => {
     },
   ];
 
+  // Auto-slide functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [sliderImages.length]);
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(
+      (prev) => (prev - 1 + sliderImages.length) % sliderImages.length
+    );
+  };
+
   return (
     <Layout>
-      {/* Hero Section with Slider */}
-      <section className="bg-gradient-to-r from-[#236434] to-green-700 text-white py-20">
-        <div className="max-w-100% mx-auto px-4 sm:px-8 max-h-100% lg:px-8">
-          <Carousel className="mb-8 ">
-            <CarouselContent>
-              {/* modules={[Autoplay, Pagination]}
-              autoplay={{ delay: 5000, disableOnInteraction: false }}
-              pagination={{ clickable: true }} */}
-              {sliderImages.map((slide, index) => (
-                <CarouselItem key={index}>
-                  <div className="relative">
-                    <div
-                      className="h-64 md:h-100 bg-cover bg-center rounded-lg"
-                      style={{ backgroundImage: `url(${slide.url})` }}>
-                      <div className="absolute inset-0 bg-opacity-40 rounded-lg flex items-center justify-center">
-                        <div className="text-center text-green-800">
-                          <h3 className="text-2xl md:text-4xl font-bold mb-4">
-                            {slide.title}
-                          </h3>
-                          <p className="text-lg md:text-xl">
-                            {slide.description}
-                          </p>
-                          <Link
-                            to={slide.link}
-                            className="block mx-auto bg-[#236837] hover:bg-[#1a5129] text-black px-4 py-2 w-24 rounded-md text-sm transition">
-                            {slide.pageName}
-                          </Link>
+      {/* Hero Section with Auto-Moving Carousel */}
+      <section className="bg-gradient-to-r from-[#236434] to-green-700 text-white py-8 sm:py-12 md:py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+          <div className="relative mb-4 sm:mb-6 md:mb-8">
+            {/* Carousel Container */}
+            <div className="relative overflow-hidden rounded-lg">
+              <div
+                className="flex transition-transform duration-700 ease-in-out"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+                {sliderImages.map((slide, index) => (
+                  <div key={index} className="w-full flex-shrink-0">
+                    <div className="relative">
+                      <div
+                        className="h-64 sm:h-80 md:h-96 lg:h-[500px] xl:h-[600px] bg-cover bg-center"
+                        style={{ backgroundImage: `url(${slide.url})` }}>
+                        <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                          <div className="text-center text-white max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl px-3 sm:px-4 md:px-6">
+                            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
+                              {slide.title}
+                            </h3>
+                            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-4 sm:mb-6 md:mb-8 leading-relaxed">
+                              {slide.description}
+                            </p>
+                            <Link
+                              to={slide.link}
+                              className="inline-block bg-[#236837] hover:bg-[#1a5129] text-white px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-3 lg:px-8 lg:py-3 rounded-md sm:rounded-lg text-xs sm:text-sm md:text-base lg:text-lg font-semibold transition-all duration-300 hover:scale-105 transform">
+                              {slide.pageName}
+                            </Link>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="left-2" />
-            <CarouselNext className="right-2" />
-          </Carousel>
+                ))}
+              </div>
+            </div>
 
-          <div className="text-center ">
-            <h1 className="text-4xl md:text-6xl font-bold mb-">
-              Innovative Solutions for{" "}
-              <span className="text-green-200">Modern Business</span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-              Leading provider of software solutions, weighing equipment, and
-              technology services that drive business success
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                className="bg-green-900 hover:bg-white hover:text-[#236434]"
-                size="lg"
-                variant="secondary"
-                asChild>
-                <Link to="/products">Explore Products</Link>
-              </Button>
-              <Button
-                size="lg"
-                className="text-white bg-green-900  hover:bg-white hover:text-[#236434]"
-                asChild>
-                <Link to="/quote">Get Quote</Link>
-              </Button>
+            {/* Navigation Arrows */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-1 sm:left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-1.5 sm:p-2 md:p-3 rounded-full transition-all duration-300">
+              <svg
+                className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-1 sm:right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-1.5 sm:p-2 md:p-3 rounded-full transition-all duration-300">
+              <svg
+                className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+
+            {/* Slide Indicators */}
+            <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-1 sm:space-x-2">
+              {sliderImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+                    index === currentSlide
+                      ? "bg-white scale-125"
+                      : "bg-white bg-opacity-50 hover:bg-opacity-75"
+                  }`}
+                />
+              ))}
             </div>
           </div>
         </div>
       </section>
 
+      {/* Main Headline and CTA Buttons */}
+      <div className="text-center px-2 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
+          Innovative Solutions for{" "}
+          <span className="text-green-200">Modern Business</span>
+        </h1>
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-6 sm:mb-8 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed">
+          Leading provider of software solutions, weighing equipment, and
+          technology services that drive business success
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+          <Button
+            className="bg-green-900 hover:bg-white hover:text-[#236434] w-34 sm:w-auto px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base"
+            size="lg"
+            variant="secondary"
+            asChild>
+            <Link to="/products">Explore Products</Link>
+          </Button>
+          <Button
+            size="lg"
+            className="text-white bg-green-900 hover:bg-white hover:text-[#236434] w- sm:w-auto px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base"
+            asChild>
+            <Link to="/quote">Get Quote</Link>
+          </Button>
+        </div>
+      </div>
+
       {/* Stats Section */}
-      <section className="py-10 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <section className="py-6 sm:py-8 md:py-10 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-[#236434] mb-2">
+                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#236434] mb-1 sm:mb-2">
                   {stat.value}
                 </div>
-                <div className="text-gray-600">{stat.label}</div>
+                <div className="text-xs sm:text-sm md:text-base text-gray-600">
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>
@@ -205,52 +284,60 @@ const Index = () => {
       </section>
 
       {/* Featured Products */}
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      <section className="py-8 sm:py-10 md:py-12">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-6 sm:mb-8 md:mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4">
               Featured Products
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600">
               Our most popular and innovative solutions
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {featuredProducts.map((product, index) => (
               <Card
                 key={index}
                 className="hover:shadow-lg transition-shadow overflow-hidden">
                 <div
-                  className="h-48 bg-cover bg-center"
+                  className="h-32 sm:h-40 md:h-48 bg-cover bg-center"
                   style={{ backgroundImage: `url(${product.image})` }}></div>
-                <CardHeader>
-                  <div className="flex justify-between items-start mb-2">
-                    <CardTitle className="text-xl">{product.name}</CardTitle>
-                    <span className="bg-green-100 text-[#236434] text-xs px-2 py-1 rounded">
+                <CardHeader className="p-3 sm:p-4 md:p-6">
+                  <div className="flex flex-col sm:flex-row justify-between items-start mb-2 gap-2">
+                    <CardTitle className="text-sm sm:text-base md:text-lg lg:text-xl">
+                      {product.name}
+                    </CardTitle>
+                    <span className="bg-green-100 text-[#236434] text-xs px-2 py-1 rounded whitespace-nowrap">
                       {product.category}
                     </span>
                   </div>
-                  <CardDescription>{product.description}</CardDescription>
+                  <CardDescription className="text-xs sm:text-sm md:text-base">
+                    {product.description}
+                  </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <div className="mb-4 text-start">
-                    <div className="text-2xl font-bold text-[#236434] mb-2">
+                <CardContent className="p-3 sm:p-4 md:p-6 pt-0">
+                  <div className="mb-4 sm:mb-5 md:mb-6 text-start">
+                    <div className="text-lg sm:text-xl md:text-2xl font-bold text-[#236434] mb-2">
                       {product.price}
                     </div>
-                    <ul className="text-sm text-gray-600 space-y-1">
+                    <ul className="text-xs sm:text-sm md:text-base text-gray-600 space-y-1">
                       {product.features.map((feature, idx) => (
                         <li key={idx}>✓ {feature}</li>
                       ))}
                     </ul>
                   </div>
-                  <div className="space-y-2">
-                    <Button className="w-full bg-green-800" asChild>
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5 items-center">
+                    <Button
+                      className="text-white bg-green-900 hover:bg-white hover:text-[#236434] flex-1c w-24 sm:flex-initial sm:min-w-[120px] text-xs sm:text-sm px-4 py-2 "
+                      size="sm"
+                      variant="secondary"
+                      asChild>
                       <Link to={`/product/${product.slug}`}>View Details</Link>
                     </Button>
                     <Button
-                      variant="outline"
-                      className="w-full bg-green-800"
+                      size="sm"
+                      className="text-white bg-green-900 hover:bg-white hover:text-[#236434] flex-1 w-24 sm:flex-initial sm:min-w-[120px] text-xs sm:text-sm px-4 py-2"
                       asChild>
                       <Link to="/quote">Get Quote</Link>
                     </Button>
@@ -263,31 +350,38 @@ const Index = () => {
       </section>
 
       {/* Services Highlights */}
-      <section className="py-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      <section className="py-6 sm:py-8 md:py-10 lg:py-12">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-6 sm:mb-8 md:mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4">
               Our Services
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600">
               Expert solutions tailored to your business needs
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {services.map((service, index) => (
               <Card
                 key={index}
                 className="text-center hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="mx-auto mb-4 p-3 bg-green-100 rounded-full w-fit">
-                    <service.icon className="h-8 w-8 text-[#236434]" />
+                <CardHeader className="p-3 sm:p-4 md:p-6">
+                  <div className="mx-auto mb-3 sm:mb-4 p-2 sm:p-3 bg-green-100 rounded-full w-fit">
+                    <service.icon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-[#236434]" />
                   </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                  <CardDescription>{service.description}</CardDescription>
+                  <CardTitle className="text-sm sm:text-base md:text-lg lg:text-xl mb-2">
+                    {service.title}
+                  </CardTitle>
+                  <CardDescription className="text-xs sm:text-sm md:text-base">
+                    {service.description}
+                  </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <Button className="bg-green-800" variant="outline" asChild>
+                <CardContent className="p-3 sm:p-4 md:p-6 pt-0">
+                  <Button
+                    className="bg-green-800 hover:bg-green-900 text-white w-24 sm:w-auto px-4 py-2 text-xs sm:text-sm"
+                    variant="outline"
+                    asChild>
                     <Link to="/services">Learn More</Link>
                   </Button>
                 </CardContent>
@@ -298,29 +392,33 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      <section className="py-8 sm:py-10 md:py-12 lg:py-16">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-6 sm:mb-8 md:mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4">
               What Our Clients Say
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {[1, 2, 3].map((item) => (
               <Card key={item} className="bg-green-50">
-                <CardContent className="pt-6">
-                  <div className="mb-4">
-                    <div className="flex text-yellow-400 mb-2">★★★★★</div>
-                    <p className="text-gray-700 italic">
+                <CardContent className="p-3 sm:p-4 md:p-6">
+                  <div className="mb-3 sm:mb-4">
+                    <div className="flex text-yellow-400 mb-2 text-sm sm:text-base">
+                      ★★★★★
+                    </div>
+                    <p className="text-xs sm:text-sm md:text-base text-gray-700 italic leading-relaxed">
                       "Brickspring's solutions have transformed our operations.
                       The weighing equipment is precise and reliable, and their
                       software integration is seamless."
                     </p>
                   </div>
-                  <div className="border-t pt-4">
-                    <div className="font-semibold">Browns</div>
-                    <div className="text-sm text-gray-600">
+                  <div className="border-t pt-3 sm:pt-4">
+                    <div className="font-semibold text-sm sm:text-base">
+                      Browns
+                    </div>
+                    <div className="text-xs sm:text-sm text-gray-600">
                       Operations Manager, ABC Logistics
                     </div>
                   </div>
@@ -332,35 +430,35 @@ const Index = () => {
       </section>
 
       {/* Trust Indicators */}
-      <section className="py-6 bg-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-2">
-            <h2 className="text-2xl font-bold mb-8">
+      <section className="py-4 sm:py-6 bg-gray-100">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 md:mb-8">
               Trusted by Industry Leaders
             </h2>
-            <div className="flex justify-center items-center space-x-12 opacity-60">
-              <Award className="h-12 w-12" />
-              <TrendingUp className="h-12 w-12" />
-              <Shield className="h-12 w-12" />
-              <Users className="h-12 w-12" />
+            <div className="flex justify-center items-center space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-12 opacity-60">
+              <Award className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12" />
+              <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12" />
+              <Shield className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12" />
+              <Users className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12" />
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-6 bg-[#236434] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      <section className="py-6 sm:py-8 md:py-10 lg:py-12 bg-[#236434] text-white">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 text-center">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 leading-tight">
             Ready to Get Started?
           </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl mx-auto leading-relaxed">
             Contact us today to discuss your requirements and discover how our
             solutions can benefit your business
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
             <Button
-              className="text-white bg-green-900 border-white hover:bg-white hover:text-[#236434]"
+              className="text-white bg-green-900 border-white hover:bg-white hover:text-[#236434] w- sm:w-auto px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base"
               size="lg"
               variant="secondary"
               asChild>
@@ -368,7 +466,7 @@ const Index = () => {
             </Button>
             <Button
               size="lg"
-              className="text-white bg-green-900 border-white hover:bg-white hover:text-[#236434]"
+              className="text-white bg-green-900 border-white hover:bg-white hover:text-[#236434] w-full sm:w-auto px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base"
               asChild>
               <Link to="/quote">Request Quote</Link>
             </Button>

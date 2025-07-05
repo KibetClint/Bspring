@@ -194,21 +194,22 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Positioned on the right */}
         {isOpen && (
-          <div className="md:hidden text-start">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-green-500 w-34 right-0 border-t">
+          <div className="md:hidden absolute text-start right-0 top-16 w-38 bg-white shadow-lg border-l  border-gray-200 h-screen overflow-y-auto z-40">
+            <div className="px-4 pt-4 pb-3 space-y-1 bg-green-800">
               <Link
                 to="/"
-                className="block px-3 py-2 text-gray-700 hover:text-[#236434]">
+                className="block px-3 py-2 text-gray-700 hover:text-[#236434]"
+                onClick={() => setIsOpen(false)}>
                 Home
               </Link>
 
               {/* Products dropdown */}
               <div>
                 <button
-                  onClick={() => toggleMobileSubMenu("/products")}
-                  className="flex items-start justify-between w-full px-3 py-2 text-gray-700 hover:text-[#236434]">
+                  onClick={() => toggleMobileSubMenu("products")}
+                  className="flex items-center justify-between w-full px-3 py-2 text-gray-700 hover:text-[#236434]">
                   Products
                   <ChevronDown
                     className={`transform transition-transform ${
@@ -223,7 +224,8 @@ const Navbar = () => {
                       <Link
                         key={category.name}
                         to={category.href}
-                        className="block px-3 py-2 text-sm text-gray-600 hover:text-[#236434]">
+                        className="block px-3 py-2 text-sm text-gray-600 hover:text-[#236434]"
+                        onClick={() => setIsOpen(false)}>
                         {category.name}
                       </Link>
                     ))}
@@ -235,7 +237,7 @@ const Navbar = () => {
               <div>
                 <button
                   onClick={() => toggleMobileSubMenu("services")}
-                  className="flex items-start justify-between w-full px-3 py-2 text-gray-700 hover:text-[#236434]">
+                  className="flex items-center justify-between w-full px-3 py-2 text-gray-700 hover:text-[#236434]">
                   Services
                   <ChevronDown
                     className={`transform transition-transform ${
@@ -250,7 +252,8 @@ const Navbar = () => {
                       <Link
                         key={service.name}
                         to={service.href}
-                        className="block px-3 py-2 text-sm text-gray-600 hover:text-[#236434]">
+                        className="block px-3 py-2 text-sm text-gray-600 hover:text-[#236434]"
+                        onClick={() => setIsOpen(false)}>
                         {service.name}
                       </Link>
                     ))}
@@ -277,7 +280,8 @@ const Navbar = () => {
                       <Link
                         key={resource.name}
                         to={resource.href}
-                        className="block px-3 py-2 text-sm text-gray-600 hover:text-[#236434]">
+                        className="block px-3 py-2 text-sm text-gray-600 hover:text-[#236434]"
+                        onClick={() => setIsOpen(false)}>
                         {resource.name}
                       </Link>
                     ))}
@@ -287,22 +291,26 @@ const Navbar = () => {
 
               <Link
                 to="/about"
-                className="block px-3 py-2 text-gray-700 hover:text-[#236434]">
+                className="block px-3 py-2 text-gray-700 hover:text-[#236434]"
+                onClick={() => setIsOpen(false)}>
                 About
               </Link>
               <Link
                 to="/support"
-                className="block px-3 py-2 text-gray-700 hover:text-[#236434]">
+                className="block px-3 py-2 text-gray-700 hover:text-[#236434]"
+                onClick={() => setIsOpen(false)}>
                 Support
               </Link>
               <Link
                 to="/contact"
-                className="block px-3 py-2 text-gray-700 hover:text-[#236434]">
+                className="block px-3 py-2 text-gray-700 hover:text-[#236434]"
+                onClick={() => setIsOpen(false)}>
                 Contact
               </Link>
               <Link
                 to="/quote"
-                className="block px-3 py-2 bg-[#236434] text-white rounded-md">
+                className="block px-3 py-2 bg-[#236434] text-white rounded-md"
+                onClick={() => setIsOpen(false)}>
                 Get Quote
               </Link>
             </div>
