@@ -120,7 +120,11 @@ const ProductDetail = () => {
         Connectivity: "Wi-Fi, Ethernet, USB 2.0",
         Dimensions: "380 x 320 x 180mm",
       },
-      images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
+      images: [
+        "/images/hardware/POS.jpeg",
+        "/src/assets/images/hardware/POS.jpeg",
+        "/src/assets/images/hardware/POS.jpeg",
+      ],
       benefits: [
         "All-in-one design saves counter space",
         "Android OS allows custom app installation",

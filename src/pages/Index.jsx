@@ -7,14 +7,8 @@ import {
   CardHeader,
   CardTitle,
 } from "../components/ui/card";
-import { Badge } from "../components/ui/badge";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "../components/ui/carousel";
+// import { Badge } from "../components/ui/badge";
+
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
@@ -45,7 +39,7 @@ const Index = () => {
       image: "/images/software/cctv-weighspring.png",
     },
     {
-      name: "OCS SB1 Hanging Scale",
+      name: "OCS 10A Hanging Scale",
       category: "Hardware",
       description: "High-precision industrial hanging scale",
       // price: "$1,299",
@@ -56,7 +50,7 @@ const Index = () => {
         "Battery powered",
       ],
       slug: "ocs-sb1-hanging-scale",
-      image: "/images/hardware/OCS SB1.png",
+      image: "/src/assets/images/hardware/SB1.png",
     },
     {
       name: "CS30 Android POS",
@@ -70,7 +64,7 @@ const Index = () => {
         "Multiple connectivity",
       ],
       slug: "cs30-android-pos",
-      image: "/src/assets/images/hardware/PDA.webp",
+      image: "/src/assets/images/hardware/POS.jpeg",
     },
   ];
 
@@ -102,21 +96,21 @@ const Index = () => {
 
   const sliderImages = [
     {
-      url: "/images/hardware/L36 printer.png",
+      url: "/images/software/cctv-weighspring.png",
       title: "Modern Technology Solutions",
       description: "Cutting-edge software and hardware for your business needs",
       link: "/consultation",
       pageName: "Consultation",
     },
     {
-      url: "/src/assets/images/hardware/SS indicators with Bluetooth.png",
+      url: "/src/assets/images/hardware/pc-and-laptops.png",
       title: "Industrial Equipment",
       description: "Precision weighing and measurement solutions",
       link: "/services",
       pageName: "Services",
     },
     {
-      url: "images/cctv.jpg",
+      url: "/images/hero-section/consultation.jpg",
       title: "Expert Consultation",
       description: "Professional guidance for your technology investments",
       link: "/products",
@@ -164,7 +158,7 @@ const Index = () => {
                       <div
                         className="h-64 sm:h-80 md:h-96 lg:h-[500px] xl:h-[600px] bg-cover bg-center"
                         style={{ backgroundImage: `url(${slide.url})` }}>
-                        <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                        <div className="absolute inset-0 bg-opacity-30 flex items-center justify-center">
                           <div className="text-center text-white max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl px-3 sm:px-4 md:px-6">
                             <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
                               {slide.title}
