@@ -96,14 +96,14 @@ const Index = () => {
 
   const sliderImages = [
     {
-      url: "/src/assets/images/solutions/Manufacturing.jpg",
+      url: "/images/solutions/Manufacturing.jpg",
       title: "Modern Technology Solutions",
       description: "Cutting-edge software and hardware for your business needs",
       link: "/consultation",
       pageName: "Consultation",
     },
     {
-      url: "/src/assets/images/hero-section/integration.jpeg",
+      url: "/images/hero-section/integration.jpeg",
       title: "Industrial Equipment",
       description: "Precision weighing and measurement solutions",
       link: "/services",
