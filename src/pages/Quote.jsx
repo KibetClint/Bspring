@@ -100,7 +100,7 @@ const Quote = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+      <section className="bg-gradient-to-r from-green-800 to-green-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Request a Quote
@@ -113,7 +113,7 @@ const Quote = () => {
       </section>
 
       {/* Progress Indicator */}
-      <section className="py-8 bg-gray-50">
+      <section className="py-6 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center">
             {[1, 2, 3, 4].map((stepNumber) => (
@@ -121,7 +121,7 @@ const Quote = () => {
                 <div
                   className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold ${
                     step >= stepNumber
-                      ? "bg-blue-600 text-white"
+                      ? "bg-green-800 text-white"
                       : "bg-gray-300 text-gray-600"
                   }`}>
                   {stepNumber}
@@ -129,7 +129,7 @@ const Quote = () => {
                 {stepNumber < 4 && (
                   <div
                     className={`w-16 h-1 ${
-                      step > stepNumber ? "bg-blue-600" : "bg-gray-300"
+                      step > stepNumber ? "bg-green-800" : "bg-gray-300"
                     }`}
                   />
                 )}
@@ -177,10 +177,11 @@ const Quote = () => {
                       <div>
                         <label
                           htmlFor="name"
-                          className="block text-sm font-medium text-gray-700 mb-1">
+                          className="block text-sm font-medium text-gray-700 mb-1 text-start">
                           Full Name *
                         </label>
                         <Input
+                          className="bg-white"
                           id="name"
                           name="name"
                           type="text"
@@ -193,17 +194,18 @@ const Quote = () => {
                       <div>
                         <label
                           htmlFor="email"
-                          className="block text-sm font-medium text-gray-700 mb-1">
+                          className="block text-sm font-medium text-gray-700 mb-1 text-start">
                           Email Address *
                         </label>
                         <Input
+                          className="bg-white"
                           id="email"
                           name="email"
                           type="email"
                           required
                           value={formData.email}
                           onChange={handleInputChange}
-                          placeholder="your.email@company.com"
+                          placeholder="your.email@company.com "
                         />
                       </div>
                     </div>
@@ -212,10 +214,11 @@ const Quote = () => {
                       <div>
                         <label
                           htmlFor="company"
-                          className="block text-sm font-medium text-gray-700 mb-1">
+                          className="block text-sm font-medium text-gray-700 mb-1 text-start">
                           Company Name *
                         </label>
                         <Input
+                          className="bg-white"
                           id="company"
                           name="company"
                           type="text"
@@ -228,10 +231,11 @@ const Quote = () => {
                       <div>
                         <label
                           htmlFor="phone"
-                          className="block text-sm font-medium text-gray-700 mb-1">
+                          className="block text-sm font-medium text-gray-700 mb-1 text-start">
                           Phone Number *
                         </label>
                         <Input
+                          className="bg-white"
                           id="phone"
                           name="phone"
                           type="tel"
@@ -246,10 +250,10 @@ const Quote = () => {
                     <div>
                       <label
                         htmlFor="industry"
-                        className="block text-sm font-medium text-gray-700 mb-1">
+                        className="block text-sm font-medium text-gray-700 mb-1 text-start">
                         Industry *
                       </label>
-                      <Select name="industry" required>
+                      <Select className="bg-white" name="industry" required>
                         <SelectTrigger>
                           <SelectValue placeholder="Select your industry" />
                         </SelectTrigger>
@@ -532,15 +536,18 @@ const Quote = () => {
                 {/* Navigation Buttons */}
                 <div className="flex justify-between mt-8">
                   <Button
+                    className="bg-green-800"
                     type="button"
-                    variant="outline"
                     onClick={prevStep}
                     disabled={step === 1}>
                     Previous
                   </Button>
 
                   {step < 4 ? (
-                    <Button type="button" onClick={nextStep}>
+                    <Button
+                      className="bg-green-800"
+                      type="button"
+                      onClick={nextStep}>
                       Next
                     </Button>
                   ) : (

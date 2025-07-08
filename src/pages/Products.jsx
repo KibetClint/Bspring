@@ -31,7 +31,7 @@ const Products = () => {
         "Parkspring",
       ],
       // icon: "💻",
-      image: "images/Software-solutions.jpg",
+      image: "/src/assets/images/software/cctv-weighspring.png",
     },
     {
       title: "Weighing Equipment",

@@ -28,7 +28,7 @@ const Index = () => {
       name: "Weighspring Pro",
       category: "Software",
       description: "Advanced weighbridge management with real-time monitoring",
-      // price: "Contact for pricing",
+      price: "Contact for pricing",
       features: [
         "Real-time monitoring",
         "Report generation",
@@ -49,7 +49,7 @@ const Index = () => {
         "Bluetooth connectivity",
         "Battery powered",
       ],
-      slug: "ocs-sb1-hanging-scale",
+      slug: "ocs-10a-hanging-scale",
       image: "/src/assets/images/hardware/SB1.png",
     },
     {
@@ -96,14 +96,14 @@ const Index = () => {
 
   const sliderImages = [
     {
-      url: "/images/software/cctv-weighspring.png",
+      url: "/src/assets/images/solutions/Manufacturing.jpg",
       title: "Modern Technology Solutions",
       description: "Cutting-edge software and hardware for your business needs",
       link: "/consultation",
       pageName: "Consultation",
     },
     {
-      url: "/src/assets/images/hardware/pc-and-laptops.png",
+      url: "/src/assets/images/hero-section/integration.jpeg",
       title: "Industrial Equipment",
       description: "Precision weighing and measurement solutions",
       link: "/services",
@@ -144,13 +144,13 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section with Auto-Moving Carousel */}
-      <section className="bg-gradient-to-r from-[#236434] to-green-700 text-white py-8 sm:py-12 md:py-16 lg:py-20">
+      <section className="bg-gradient-to-r from-[#236434] to-green-700 text-white py-2 sm:py-12 md:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
-          <div className="relative mb-4 sm:mb-6 md:mb-8">
+          <div className="relative mb-2 sm:mb-6 md:mb-8">
             {/* Carousel Container */}
-            <div className="relative overflow-hidden rounded-lg">
+            <div className="relative overflow-hidden rounded-lg w-full h-54 sm:h-80 md:h-96 lg:h-[500px] xl:h-[600px] ">
               <div
-                className="flex transition-transform duration-700 ease-in-out"
+                className="flex transition-transform duration-700 ease-in-out "
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
                 {sliderImages.map((slide, index) => (
                   <div key={index} className="w-full flex-shrink-0">
@@ -159,7 +159,7 @@ const Index = () => {
                         className="h-64 sm:h-80 md:h-96 lg:h-[500px] xl:h-[600px] bg-cover bg-center"
                         style={{ backgroundImage: `url(${slide.url})` }}>
                         <div className="absolute inset-0 bg-opacity-30 flex items-center justify-center">
-                          <div className="text-center text-white max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl px-3 sm:px-4 md:px-6">
+                          <div className="text-center text-sky-50 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl px-3 sm:px-4 md:px-6">
                             <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
                               {slide.title}
                             </h3>

@@ -16,18 +16,20 @@ const ProductCategory = ({ category }) => {
       title: "Software Solutions",
       description:
         "Comprehensive software applications designed to streamline business operations",
+      heroImage: "/src/assets/images/hero-section/products.jpg",
       products: [
         {
           name: "Weighspring",
           description:
             "Advanced weighbridge management system with real-time monitoring",
+          image: "/images/software/cctv-weighspring.png",
           features: [
             "Real-time data monitoring",
             "Report generation",
             "Multi-user access",
             "Cloud synchronization",
           ],
-          price: "Starting at $2,999",
+          // price: "Starting at $2,999",
           status: "Available",
           slug: "weighspring",
         },
@@ -35,65 +37,70 @@ const ProductCategory = ({ category }) => {
           name: "Timespring",
           description:
             "Time-released messaging platform for automated communications",
+          image: "/src/assets/images/software/TimeSpringMockup.jpg",
           features: [
             "Scheduled messaging",
             "Multi-channel delivery",
             "Analytics dashboard",
             "API integration",
           ],
-          price: "Starting at $1,499",
+          // price: "Starting at $1,499",
           status: "Available",
           slug: "timespring",
         },
         {
           name: "Payrollspring",
           description: "Complete payroll processing solution for businesses",
+          image: "/src/assets/images/software/payrollspring.png",
           features: [
             "Automated calculations",
             "Tax compliance",
             "Employee self-service",
             "Reporting tools",
           ],
-          price: "Starting at $899",
+          // price: "Starting at $899",
           status: "Available",
           slug: "payrollspring",
         },
         {
           name: "Secuspring",
           description: "Comprehensive security management module",
+          image: "/src/assets/images/software/secuspring.jpg",
           features: [
             "Access control",
             "Surveillance integration",
             "Incident reporting",
             "Real-time alerts",
           ],
-          price: "Starting at $1,999",
+          // price: "Starting at $1,999",
           status: "Available",
           slug: "secuspring",
         },
         {
           name: "Safetyspring",
           description: "Safety management system for workplace compliance",
+          image: "/src/assets/images/software/safestyspring.png",
           features: [
             "Incident tracking",
             "Safety protocols",
             "Training management",
             "Compliance reporting",
           ],
-          price: "Starting at $1,299",
+          // price: "Starting at $1,299",
           status: "Available",
           slug: "safetyspring",
         },
         {
           name: "Parkspring",
           description: "Park management system for recreational facilities",
+          image: "/src/assets/images/software/parking-system.jpeg",
           features: [
             "Booking management",
             "Facility scheduling",
             "Payment processing",
             "Visitor tracking",
           ],
-          price: "Starting at $1,799",
+          // price: "Starting at $1,799",
           status: "Available",
           slug: "parkspring",
         },
@@ -103,70 +110,77 @@ const ProductCategory = ({ category }) => {
       title: "Weighing Equipment",
       description:
         "Precision weighing solutions for industrial and commercial applications",
+      heroImage: "/images/categories/weighing-hero.jpg",
       products: [
         {
           name: "OCS SB1 Hanging Scale",
           description:
             "High-precision industrial hanging scale with LED display",
+          image: "/src/assets/images/hardware/OCS SB1.png",
           features: [
             "1000kg capacity",
             "LED display",
             "Bluetooth connectivity",
             "Rechargeable battery",
           ],
-          price: "$1,299",
+          // price: "$1,299",
           status: "In Stock",
           slug: "ocs-sb1-hanging-scale",
         },
         {
           name: "SS Indicator with Bluetooth",
           description: "Smart weighing indicator with wireless connectivity",
+          image: "/src/assets/images/hardware/SS indicators with Bluetooth.png",
           features: [
             "Bluetooth connectivity",
             "Multiple unit display",
             "Data logging",
             "Printer compatible",
           ],
-          price: "$599",
+          // price: "$599",
           status: "In Stock",
           slug: "ss-indicator-bluetooth",
         },
         {
           name: "SCS Pallet Truck Scale",
           description: "Mobile weighing solution for warehouse operations",
+          image: "/src/assets/images/hardware/SCS Pallet Truck Scale .webp",
           features: [
             "2000kg capacity",
             "Built-in printer",
             "Rechargeable battery",
             "Stainless steel construction",
           ],
-          price: "$3,499",
+          // price: "$3,499",
           status: "In Stock",
           slug: "scs-pallet-truck-scale",
         },
         {
           name: "Checkered Plate Platform Scale",
           description: "Durable platform scale for heavy-duty applications",
+          image:
+            "/src/assets/images/hardware/Checker-Plate-Platform-Floor-Weight-Scale.png",
           features: [
             "5000kg capacity",
             "Anti-slip surface",
             "Weatherproof housing",
             "Digital indicator",
           ],
-          price: "$2,199",
+          // price: "$2,199",
           status: "In Stock",
           slug: "checkered-plate-platform-scale",
         },
         {
           name: "Bench Scale",
           description: "Compact precision scale for laboratory and retail use",
+          image: "/src/assets/images/hardware/bench-scale.webp",
           features: [
             "0.1g precision",
             "Stainless steel pan",
             "AC/DC operation",
             "RS232 interface",
           ],
-          price: "$399",
+          // price: "$399",
           status: "In Stock",
           slug: "bench-scale",
         },
@@ -174,26 +188,28 @@ const ProductCategory = ({ category }) => {
           name: "Electronic Platform Scale",
           description:
             "Versatile platform scale for general weighing applications",
+          image: "/src/assets/images/hardware/Electronic Platform Scale.webp",
           features: [
             "500kg capacity",
             "Large LCD display",
             "Tare function",
             "Overload protection",
           ],
-          price: "$899",
+          // price: "$899",
           status: "In Stock",
           slug: "electronic-platform-scale",
         },
         {
           name: "Pallet Weighing Scale",
           description: "Specialized scale designed for pallet weighing",
+          image: "/src/assets/images/hardware/Pallet scale.png",
           features: [
             "3000kg capacity",
             "Low profile design",
             "Portable design",
             "Digital readout",
           ],
-          price: "$1,799",
+          // price: "$1,799",
           status: "In Stock",
           slug: "pallet-weighing-scale",
         },
@@ -203,63 +219,69 @@ const ProductCategory = ({ category }) => {
       title: "Hardware & Accessories",
       description:
         "Computing hardware and peripheral devices for business operations",
+      heroImage: "/src/assets/images/hardware/smartphones.jpg",
       products: [
         {
           name: "Mini Bluetooth Thermal Printers",
           description:
             "Compact wireless thermal printers for mobile applications",
+          image: "/src/assets/images/hardware/Bt Printer.jpg",
           features: [
             "Bluetooth connectivity",
             "Portable design",
             "Long battery life",
             "Multiple paper sizes",
           ],
-          price: "$299",
+          // price: "$299",
           status: "In Stock",
           slug: "mini-bluetooth-thermal-printers",
         },
         {
           name: "CS30 Multipurpose Android POS",
           description: "Versatile Android-based point-of-sale terminal",
+          image: "/src/assets/images/hardware/POS.jpeg",
           features: [
             "Android OS",
             '15" touch screen',
             "Built-in thermal printer",
             "Multiple payment methods",
           ],
-          price: "$899",
+          // price: "$899",
           status: "In Stock",
           slug: "cs30-android-pos",
         },
         {
           name: "Laptops and Desktops",
           description: "Business-grade computers for professional use",
+          image: "/src/assets/images/hardware/laptops.webp",
           features: [
             "Intel processors",
             "SSD storage",
             "Business warranty",
             "Pre-installed software",
           ],
-          price: "Starting at $699",
+          // price: "Starting at $699",
           status: "In Stock",
           slug: "laptops-desktops",
         },
         {
           name: "Smartphones",
           description: "Business smartphones with enterprise features",
+          image: "/src/assets/images/hardware/smartphones.jpg",
           features: [
             "Enterprise security",
             "Long battery life",
             "Rugged design",
             "MDM compatible",
           ],
-          price: "Starting at $399",
+          // price: "Starting at $399",
           status: "In Stock",
           slug: "smartphones",
         },
         {
           name: "Accessories",
           description: "Various accessories and peripheral devices",
+          image: "/src/assets/images/hardware/Accessories.jpg",
           features: [
             "Cables and adapters",
             "Protective cases",
@@ -278,9 +300,20 @@ const ProductCategory = ({ category }) => {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-gray-800 to-gray-900 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Section with Background Image */}
+      <section className="relative bg-gradient-to-r from-green-800 to-green-900 text-white py-20 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={currentCategory.heroImage}
+            alt={currentCategory.title}
+            className="w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-green-800/80 to-green-900/80"></div>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               {currentCategory.title}
@@ -314,7 +347,18 @@ const ProductCategory = ({ category }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {currentCategory.products.map((product, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+              <Card
+                key={index}
+                className="hover:shadow-lg transition-shadow overflow-hidden">
+                {/* Product Image */}
+                <div className="aspect-video w-full overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+
                 <CardHeader>
                   <div className="flex justify-between items-start mb-2">
                     <CardTitle className="text-xl">{product.name}</CardTitle>
@@ -331,10 +375,10 @@ const ProductCategory = ({ category }) => {
                   <CardDescription>{product.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="mb-4">
-                    <div className="text-2xl font-bold text-blue-600 mb-3">
+                  <div className="mb-4 text-start">
+                    {/* <div className="text-2xl font-bold text-blue-600 mb-3">
                       {product.price}
-                    </div>
+                    </div> */}
                     <h4 className="font-semibold mb-2">Key Features:</h4>
                     <ul className="text-sm text-gray-600 space-y-1">
                       {product.features.map((feature, idx) => (
@@ -343,10 +387,13 @@ const ProductCategory = ({ category }) => {
                     </ul>
                   </div>
                   <div className="space-y-2">
-                    <Button className="w-full" asChild>
+                    <Button className="w-full bg-green-800" asChild>
                       <Link to={`/product/${product.slug}`}>View Details</Link>
                     </Button>
-                    <Button variant="outline" className="w-full" asChild>
+                    <Button
+                      variant="outline"
+                      className="w-full bg-green-800"
+                      asChild>
                       <Link to="/quote">Request Quote</Link>
                     </Button>
                   </div>

@@ -284,7 +284,7 @@ const CCTVInstallation = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-3 md:grid-cols-4 gap-8 text-center">
             {industries.map((industry, index) => (
               <div key={index} className="p-4">
                 <div className="text-4xl mb-2">{industry.icon}</div>

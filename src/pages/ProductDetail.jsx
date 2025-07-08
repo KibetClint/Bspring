@@ -1,17 +1,20 @@
-import Layout from "../components/Layout";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
 } from "../components/ui/card";
-import { Button } from "../components/ui/button";
-import { Badge } from "../components/ui/badge";
 import { Link, useParams, Navigate } from "react-router-dom";
-import { ArrowLeft, Star, Shield, Truck, Phone } from "lucide-react";
+import { ArrowLeft, Star, Shield, Truck, Phone, ZoomIn } from "lucide-react";
+import { Button } from "../components/ui/button";
+import Layout from "../components/Layout";
+import { Badge } from "../components/ui/badge";
+import { useState } from "react";
 
 const ProductDetail = () => {
   const { productSlug } = useParams();
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
 
   // Product data (in a real app, this would come from an API)
   const productData = {
@@ -43,9 +46,21 @@ const ProductDetail = () => {
         Support: "24/7 technical support included",
       },
       images: [
-        "/images/software/cctv-weighspring.png",
-        "/images/software/cctv-weighspring.png",
-        "/images/software/cctv-weighspring.png",
+        {
+          src: "/src/assets/images/software/cctv-weighspring.png",
+          alt: "Weighspring Pro Dashboard Interface",
+          title: "Main Dashboard",
+        },
+        {
+          src: "/src/assets/images/software/weighbridge.jpg",
+          alt: "Analytics and Reporting Interface",
+          title: "Analytics View",
+        },
+        {
+          src: "/src/assets/images/software/weighbridge-3.webp",
+          alt: "Mobile App Interface",
+          title: "Mobile App",
+        },
       ],
       benefits: [
         "Improve operational efficiency by up to 40%",
@@ -54,8 +69,8 @@ const ProductDetail = () => {
         "Real-time visibility into operations",
       ],
     },
-    "ocs-sb1-hanging-scale": {
-      name: "OCS SB1 Hanging Scale",
+    "ocs-10a-hanging-scale": {
+      name: "OCS 10A Hanging Scale",
       category: "Hardware",
       price: "$1,299",
       status: "In Stock",
@@ -83,7 +98,23 @@ const ProductDetail = () => {
         Dimensions: "250 x 150 x 60mm",
         Weight: "2.5kg",
       },
-      images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
+      images: [
+        {
+          src: "/src/assets/images/hardware/OCS SB1 Hanging Scale.jpg",
+          alt: "OCS SB1 Hanging Scale Front View",
+          title: "Front View",
+        },
+        {
+          src: "/src/assets/images/hardware/OCS SB1.png",
+          alt: "LED Display Close-up",
+          title: "LED Display",
+        },
+        {
+          src: "/images/ocs-sb1-in-use.jpg",
+          alt: "Scale in Industrial Use",
+          title: "In Use",
+        },
+      ],
       benefits: [
         "Portable and easy to use anywhere",
         "Long battery life reduces downtime",
@@ -121,9 +152,21 @@ const ProductDetail = () => {
         Dimensions: "380 x 320 x 180mm",
       },
       images: [
-        "/images/hardware/POS.jpeg",
-        "/src/assets/images/hardware/POS.jpeg",
-        "/src/assets/images/hardware/POS.jpeg",
+        {
+          src: "/src/assets/images/hardware/POS.jpeg",
+          alt: "CS30 Android POS Front View",
+          title: "Front View",
+        },
+        {
+          src: "/src/assets/images/hardware/Smart POS.jpg",
+          alt: "CS30 Side Profile",
+          title: "Side Profile",
+        },
+        {
+          src: "/src/assets/images/hardware/Mobile-Phones.png",
+          alt: "Android Interface Screenshot",
+          title: "Interface",
+        },
       ],
       benefits: [
         "All-in-one design saves counter space",
@@ -140,8 +183,46 @@ const ProductDetail = () => {
     return <Navigate to="/products" replace />;
   }
 
+  const handleImageError = (e) => {
+    // Fallback to placeholder if image fails to load
+    e.target.src =
+      "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0xMjAgMTIwSDI4MFYyODBIMTIwVjEyMFoiIGZpbGw9IiNEMUQ1REIiLz4KPHBhdGggZD0iTTE2MCAxNjBIMjQwVjI0MEgxNjBWMTYwWiIgZmlsbD0iIzlDQTNBRiIvPgo8L3N2Zz4K";
+  };
+
+  const ImageModal = ({ isOpen, onClose, image }) => {
+    if (!isOpen) return null;
+
+    return (
+      <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
+        <div className="relative max-w-4xl max-h-full">
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 text-white text-xl bg-black bg-opacity-50 rounded-full w-8 h-8 flex items-center justify-center hover:bg-opacity-75 z-10">
+            ×
+          </button>
+          <img
+            src={image?.src || "/placeholder.svg"}
+            alt={image?.alt || "Product image"}
+            className="max-w-full max-h-full object-contain"
+            onError={handleImageError}
+          />
+          <div className="absolute bottom-4 left-4 bg-black bg-opacity-50 text-white px-3 py-1 rounded">
+            {image?.title || "Product Image"}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <Layout>
+      {/* Image Modal */}
+      <ImageModal
+        isOpen={isImageModalOpen}
+        onClose={() => setIsImageModalOpen(false)}
+        image={product.images[selectedImageIndex]}
+      />
+
       {/* Breadcrumb */}
       <section className="py-4 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -172,13 +253,53 @@ const ProductDetail = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Product Images */}
             <div>
-              <div className="aspect-square bg-gray-200 rounded-lg mb-4"></div>
+              {/* Main Image */}
+              <div className="relative aspect-square bg-gray-200 rounded-lg mb-4 overflow-hidden group">
+                <img
+                  src={
+                    product.images[selectedImageIndex]?.src ||
+                    "/placeholder.svg"
+                  }
+                  alt={
+                    product.images[selectedImageIndex]?.alt ||
+                    `${product.name} main image`
+                  }
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  onError={handleImageError}
+                />
+                <button
+                  onClick={() => setIsImageModalOpen(true)}
+                  className="absolute top-4 right-4 bg-white bg-opacity-75 hover:bg-opacity-100 rounded-full p-2 transition-opacity opacity-0 group-hover:opacity-100">
+                  <ZoomIn className="h-4 w-4" />
+                </button>
+              </div>
+
+              {/* Thumbnail Images */}
               <div className="grid grid-cols-3 gap-2">
-                {product.images.map((_, index) => (
-                  <div
+                {product.images.map((image, index) => (
+                  <button
                     key={index}
-                    className="aspect-square bg-gray-100 rounded cursor-pointer hover:bg-gray-200"></div>
+                    onClick={() => setSelectedImageIndex(index)}
+                    className={`aspect-square rounded cursor-pointer transition-all ${
+                      selectedImageIndex === index
+                        ? "ring-2 ring-blue-500"
+                        : "hover:ring-2 hover:ring-gray-300"
+                    }`}>
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-full object-cover rounded"
+                      onError={handleImageError}
+                    />
+                  </button>
                 ))}
+              </div>
+
+              {/* Image Info */}
+              <div className="mt-2 text-center">
+                <span className="text-sm text-gray-500">
+                  {product.images[selectedImageIndex]?.title || "Product Image"}
+                </span>
               </div>
             </div>
 
@@ -313,20 +434,23 @@ const ProductDetail = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-blue-600 text-white">
+      <section className="py-16 bg-green-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
           <p className="text-xl mb-8">
             Contact our experts to learn more about {product.name}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" asChild>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button
+              className="bg-green-900 w-34"
+              size="lg"
+              variant="secondary"
+              asChild>
               <Link to="/quote">Request Quote</Link>
             </Button>
             <Button
               size="lg"
-              variant="outline"
-              className="text-white border-white hover:bg-white hover:text-blue-600"
+              className="text-white bg-green-900 w-34 hover:bg-white hover:text-blue-600"
               asChild>
               <Link to="/contact">Schedule Demo</Link>
             </Button>
