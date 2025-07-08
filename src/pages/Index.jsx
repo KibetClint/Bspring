@@ -144,7 +144,7 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section with Auto-Moving Carousel */}
-      <section className="bg-gradient-to-r from-[#236434] to-green-700 text-white py-2 sm:py-12 md:py-16 lg:py-20">
+      <section className="bg-gradient-to-r from-[#236434] to-green-700 py-2 sm:py-12 md:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div className="relative mb-2 sm:mb-6 md:mb-8">
             {/* Carousel Container */}
