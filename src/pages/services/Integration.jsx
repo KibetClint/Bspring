@@ -160,7 +160,7 @@ const Integration = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-green-600 to-teal-700 text-white py-20">
+      <section className="bg-gradient-to-r from-green-600 to-teal-700 text-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-6">
             <Link2 className="h-16 w-16" />
@@ -172,7 +172,11 @@ const Integration = () => {
             Connect your systems, streamline workflows, and unlock the full
             potential of your data
           </p>
-          <Button size="lg" variant="secondary" asChild>
+          <Button
+            className="bg-green-800"
+            size="lg"
+            variant="secondary"
+            asChild>
             <Link to="/contact">Start Integration Project</Link>
           </Button>
         </div>
@@ -191,11 +195,11 @@ const Integration = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-start">
             {services.map((service, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <service.icon className="h-12 w-12 text-green-600 mb-4" />
+                  <service.icon className="h-10 w-10 text-green-600 mb-4" />
                   <CardTitle>{service.title}</CardTitle>
                   <CardDescription>{service.description}</CardDescription>
                 </CardHeader>
@@ -216,7 +220,7 @@ const Integration = () => {
       </section>
 
       {/* Supported Platforms */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -231,7 +235,7 @@ const Integration = () => {
             {platforms.map((platform, index) => (
               <Card key={index}>
                 <CardHeader>
-                  <CardTitle className="text-lg text-green-600">
+                  <CardTitle className="text-lg text-green-900">
                     {platform.category}
                   </CardTitle>
                 </CardHeader>
@@ -264,7 +268,7 @@ const Integration = () => {
             </p>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 text-start">
             {process.map((step, index) => (
               <div key={index} className="flex items-start">
                 <div className="flex-shrink-0 w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-lg mr-6">
@@ -298,7 +302,7 @@ const Integration = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {[
               {
                 title: "Improved Efficiency",
@@ -321,8 +325,10 @@ const Integration = () => {
                   "Get real-time insights and better business intelligence",
               },
             ].map((benefit, index) => (
-              <div key={index} className="p-6">
-                <div className="w-16 h-16 bg-green-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+              <div
+                key={index}
+                className="p-4 rounded-lg shadow hover:shadow-lg transition-shadow">
+                <div className="w-10 h-10  bg-green-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                   {index + 1}
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
@@ -334,7 +340,7 @@ const Integration = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-green-600 text-white">
+      <section className="py-10 bg-green-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Connect Your Systems?
@@ -342,11 +348,15 @@ const Integration = () => {
           <p className="text-xl mb-8">
             Let's discuss your integration needs and create a seamless solution
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" asChild>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button
+              className="bg-green-800 w-40"
+              size="lg"
+              variant="secondary"
+              asChild>
               <Link to="/contact">Discuss Integration</Link>
             </Button>
-            <Button size="lg" variant="outline" asChild>
+            <Button className="bg-green-800 w-40" size="lg" asChild>
               <Link to="/quote">Get Integration Quote</Link>
             </Button>
           </div>

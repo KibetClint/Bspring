@@ -125,7 +125,7 @@ const WebDevelopment = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-green-900 to-green-700 text-white py-20">
+      <section className="bg-gradient-to-r from-green-900 to-green-700 text-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-6">
             <Code className="h-16 w-16" />
@@ -163,7 +163,7 @@ const WebDevelopment = () => {
             {services.map((service, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <service.icon className="h-12 w-12 text-blue-600 mb-4" />
+                  <service.icon className="h-8 w-8 text-green-900 mb-4" />
                   <CardTitle>{service.title}</CardTitle>
                   <CardDescription>{service.description}</CardDescription>
                 </CardHeader>
@@ -172,7 +172,7 @@ const WebDevelopment = () => {
                     {service.technologies.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">
+                        className="px-2 py-1  bg-green-700 text-green-950 text-xs rounded-full">
                         {tech}
                       </span>
                     ))}
@@ -213,7 +213,7 @@ const WebDevelopment = () => {
                     {project.technologies.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">
+                        className="px-2 py-1 bg-green-700 text-green-950 text-xs rounded-full">
                         {tech}
                       </span>
                     ))}
@@ -237,10 +237,10 @@ const WebDevelopment = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {process.map((step, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-700 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-600 to-green-900 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
                   {index + 1}
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{step.phase}</h3>
@@ -263,7 +263,7 @@ const WebDevelopment = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 text-center">
+          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 text-center">
             {[
               "React",
               "Vue.js",
@@ -280,7 +280,7 @@ const WebDevelopment = () => {
             ].map((tech, index) => (
               <div
                 key={index}
-                className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                className="p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
                 <div className="font-semibold text-gray-800">{tech}</div>
               </div>
             ))}
@@ -289,7 +289,7 @@ const WebDevelopment = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-700 text-white">
+      <section className="py-8 bg-gradient-to-r from-green-600 to-green-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Build Your Next Project?
@@ -298,11 +298,19 @@ const WebDevelopment = () => {
             Let's discuss your requirements and create something amazing
             together
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" asChild>
+          <div className="flex flex-col sm:flex-row gap-4 items-center">
+            <Button
+              className="bg-green-950 w-44 "
+              size="lg"
+              variant="secondary"
+              asChild>
               <Link to="/contact">Discuss Your Project</Link>
             </Button>
-            <Button size="lg" variant="outline" asChild>
+            <Button
+              className="bg-green-950 w-44 "
+              size="lg"
+              variant="outline"
+              asChild>
               <Link to="/quote">Get Development Quote</Link>
             </Button>
           </div>

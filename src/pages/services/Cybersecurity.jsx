@@ -148,7 +148,7 @@ const Cybersecurity = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {services.map((service, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
@@ -164,7 +164,7 @@ const Cybersecurity = () => {
                   <ul className="space-y-2">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center">
-                        <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
+                        <CheckCircle className="h-4 w-4 text-green-800 mr-2" />
                         <span className="text-sm">{feature}</span>
                       </li>
                     ))}
@@ -189,10 +189,10 @@ const Cybersecurity = () => {
             </p>
           </div>
 
-          <div className="space-y-8">
+          <div className="grid grid-cols-2 lg:grid-cols-2 space-y-8 ">
             {process.map((step, index) => (
               <div key={index} className="flex items-start">
-                <div className="flex-shrink-0 w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-lg mr-6">
+                <div className="flex-shrink-0 w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-base mr-2">
                   {step.step}
                 </div>
                 <div>
@@ -206,7 +206,7 @@ const Cybersecurity = () => {
       </section>
 
       {/* Compliance Section */}
-      <section className="py-16">
+      <section className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -217,7 +217,7 @@ const Cybersecurity = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
+          <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-3 text-center">
             {complianceStandards.map((standard, index) => (
               <div
                 key={index}
@@ -230,7 +230,7 @@ const Cybersecurity = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gray-400 text-white">
+      <section className="py-10 bg-gray-400 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Secure Your Business Today
@@ -239,19 +239,15 @@ const Cybersecurity = () => {
             Don't wait for a security breach. Get a comprehensive security
             assessment now.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
-              className="bg-green-800"
+              className="bg-green-900 w-40"
               size="lg"
               variant="secondary"
               asChild>
               <Link to="/contact">Schedule Assessment</Link>
             </Button>
-            <Button
-              className="bg-green-800"
-              size="lg"
-              variant="outline"
-              asChild>
+            <Button className="bg-green-900 w-40" size="lg" asChild>
               <Link to="/quote">Get Security Quote</Link>
             </Button>
           </div>

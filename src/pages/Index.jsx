@@ -74,16 +74,19 @@ const Index = () => {
       description:
         "Comprehensive security assessments and vulnerability testing",
       icon: Shield,
+      link: "/services/cybersecurity",
     },
     {
       title: "Web & App Development",
       description: "Custom software solutions for your business needs",
       icon: Zap,
+      link: "/services/web-development",
     },
     {
       title: "Integration Services",
       description: "Seamless system integration and automation",
       icon: Users,
+      link: "/services/integration",
     },
   ];
 
@@ -388,7 +391,7 @@ const Index = () => {
                     className="bg-green-800 hover:bg-green-900 text-white w-24 sm:w-auto px-4 py-2 text-xs sm:text-sm"
                     variant="outline"
                     asChild>
-                    <Link to="/services">Learn More</Link>
+                    <Link to={service.link}>Learn More</Link>
                   </Button>
                 </CardContent>
               </Card>

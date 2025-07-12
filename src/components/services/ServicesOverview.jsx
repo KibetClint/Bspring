@@ -88,7 +88,7 @@ const ServicesOverview = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-2 gap-8 text-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-start">
           {services.map((service, index) => (
             <ServiceCard
               key={index}
