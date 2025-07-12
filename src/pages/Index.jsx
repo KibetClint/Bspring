@@ -103,7 +103,7 @@ const Index = () => {
       pageName: "Consultation",
     },
     {
-      url: "/images/hero-section/integration.jpeg",
+      url: "/images/hardware/Checker-Plate-Platform-Floor-Weight-Scale.png",
       title: "Industrial Equipment",
       description: "Precision weighing and measurement solutions",
       link: "/services",
@@ -115,6 +115,13 @@ const Index = () => {
       description: "Professional guidance for your technology investments",
       link: "/products",
       pageName: "Solutions",
+    },
+    {
+      url: "/images/hero-section/integration.jpeg",
+      title: "Custom Integration, Maximum ROI",
+      description: "Tailored solutions for your unique business needs",
+      link: "/services/integration",
+      pageName: "Intergrations",
     },
   ];
 
@@ -143,90 +150,102 @@ const Index = () => {
 
   return (
     <Layout>
-      {/* Hero Section with Auto-Moving Carousel */}
-      <section className="bg-gradient-to-r from-[#236434] to-green-700 py-2 sm:py-12 md:py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
-          <div className="relative mb-2 sm:mb-6 md:mb-8">
-            {/* Carousel Container */}
-            <div className="relative overflow-hidden rounded-lg w-full h-54 sm:h-80 md:h-96 lg:h-[500px] xl:h-[600px] ">
-              <div
-                className="flex transition-transform duration-700 ease-in-out "
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-                {sliderImages.map((slide, index) => (
-                  <div key={index} className="w-full flex-shrink-0">
-                    <div className="relative">
-                      <div
-                        className="h-64 sm:h-80 md:h-96 lg:h-[500px] xl:h-[600px] bg-cover bg-center"
-                        style={{ backgroundImage: `url(${slide.url})` }}>
-                        <div className="absolute inset-0 bg-opacity-30 flex items-center justify-center">
-                          <div className="text-center text-sky-50 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl px-3 sm:px-4 md:px-6">
-                            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
-                              {slide.title}
-                            </h3>
-                            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-4 sm:mb-6 md:mb-8 leading-relaxed">
-                              {slide.description}
-                            </p>
-                            <Link
-                              to={slide.link}
-                              className="inline-block bg-[#236837] hover:bg-[#1a5129] text-white px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-3 lg:px-8 lg:py-3 rounded-md sm:rounded-lg text-xs sm:text-sm md:text-base lg:text-lg font-semibold transition-all duration-300 hover:scale-105 transform">
-                              {slide.pageName}
-                            </Link>
-                          </div>
-                        </div>
+      {/* Hero Section with Full-Width Auto-Moving Carousel */}
+      <section className="relative h-[30vh] sm:h-[40vh] md:h-[50vh] lg:h-[80vh] overflow-hidden">
+        {/* Carousel Container - Full Width and Height */}
+        <div className="relative w-full h-full">
+          <div
+            className="flex transition-transform duration-700 ease-in-out h-full"
+            style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+            {sliderImages.map((slide, index) => (
+              <div key={index} className="w-full flex-shrink-0 h-full">
+                <div className="relative w-full h-full">
+                  <div
+                    className="w-full h-full bg-cover bg-center bg-no-repeat"
+                    style={{ backgroundImage: `url(${slide.url})` }}>
+                    {/* Overlay for better text readability */}
+                    <div className="absolute inset-0 bg-blac bg-opacity-40"></div>
+
+                    {/* Content Container */}
+                    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-r from-[#236837]/100 to-transparent z-10">
+                      <div className="text-center text-white max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-5xl px-4 sm:px-6 md:px-8 lg:px-12">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-4 sm:mb-6 md:mb-8 leading-tight">
+                          {slide.title}
+                        </h1>
+                        <p className="text-sm text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl mb-6 sm:mb-8 md:mb-10 leading-relaxed opacity-90">
+                          {slide.description}
+                        </p>
+                        <Link
+                          to={slide.link}
+                          className="inline-block bg-[#236837] hover:bg-[#1a5129] text-white px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 lg:px-10 lg:py-5 rounded-md sm:rounded-lg text-sm sm:text-base md:text-lg lg:text-xl font-semibold transition-all duration-300 hover:scale-105 transform shadow-lg hover:shadow-xl">
+                          {slide.pageName}
+                        </Link>
                       </div>
                     </div>
                   </div>
-                ))}
+                </div>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
 
-            {/* Navigation Arrows */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-1 sm:left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-1.5 sm:p-2 md:p-3 rounded-full transition-all duration-300">
-              <svg
-                className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute right-1 sm:right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-1.5 sm:p-2 md:p-3 rounded-full transition-all duration-300">
-              <svg
-                className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </button>
+        {/* Navigation Arrows */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-2 sm:left-4 md:left-6 lg:left-8 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 sm:p-3 md:p-4 rounded-full transition-all duration-300 hover:scale-110 z-10">
+          <svg
+            className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-2 sm:right-4 md:right-6 lg:right-8 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 sm:p-3 md:p-4 rounded-full transition-all duration-300 hover:scale-110 z-10">
+          <svg
+            className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
 
-            {/* Slide Indicators */}
-            <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-1 sm:space-x-2">
-              {sliderImages.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
-                    index === currentSlide
-                      ? "bg-white scale-125"
-                      : "bg-white bg-opacity-50 hover:bg-opacity-75"
-                  }`}
-                />
-              ))}
+        {/* Slide Indicators */}
+        <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 sm:space-x-3 z-10">
+          {sliderImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 rounded-full transition-all duration-300 ${
+                index === currentSlide
+                  ? "bg-white scale-125 shadow-lg"
+                  : "bg-white bg-opacity-50 hover:bg-opacity-75 hover:scale-110"
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Scroll Down Indicator (Optional) */}
+        <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 right-4 sm:right-6 md:right-8 z-10">
+          <div className="flex flex-col items-center text-white opacity-75 hover:opacity-100 transition-opacity duration-300">
+            <span className="text-xs sm:text-sm mb-2 hidden sm:block">
+              Scroll Down
+            </span>
+            <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+              <div className="w-1 h-3 bg-white rounded-full mt-2 animate-bounce"></div>
             </div>
           </div>
         </div>
@@ -234,9 +253,8 @@ const Index = () => {
 
       {/* Main Headline and CTA Buttons */}
       <div className="text-center px-2 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
-          Innovative Solutions for{" "}
-          <span className="text-green-200">Modern Business</span>
+        <h1 className="text-green-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
+          Innovative Solutions for Modern Business
         </h1>
         <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-6 sm:mb-8 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed">
           Leading provider of software solutions, weighing equipment, and

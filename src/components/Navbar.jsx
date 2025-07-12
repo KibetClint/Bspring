@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-// import { Button } from "@/";
+import logo from "../assets/logo.png";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -59,9 +59,9 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-3 flex-shrink-0">
               <img
-                src="/src/assets/logo.png"
+                src={logo}
                 alt="Brickspring Logo"
-                className="h-8 w-8"
+                className="h-10 w-13 rounded-full"
               />
               <span className="text-1xl font-bold text-[#236434]">
                 Brickspring
