@@ -268,12 +268,6 @@ const Index = () => {
             asChild>
             <Link to="/products">Explore Products</Link>
           </Button>
-          <Button
-            size="lg"
-            className="text-white bg-green-900 hover:bg-white hover:text-[#236434] w- sm:w-auto px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base"
-            asChild>
-            <Link to="/quote">Get Quote</Link>
-          </Button>
         </div>
       </div>
 
@@ -470,7 +464,7 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
             <Button
-              className="text-white bg-green-900 border-white hover:bg-white hover:text-[#236434] w- sm:w-auto px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base"
+              className="text-white bg-green-900 border-white hover:bg-white hover:text-[#236434] w-34 sm:w-auto px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base"
               size="lg"
               variant="secondary"
               asChild>
@@ -478,7 +472,7 @@ const Index = () => {
             </Button>
             <Button
               size="lg"
-              className="text-white bg-green-900 border-white hover:bg-white hover:text-[#236434] w-full sm:w-auto px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base"
+              className="text-white bg-green-900 border-white hover:bg-white hover:text-[#236434] w-34 sm:w-auto px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base"
               asChild>
               <Link to="/quote">Request Quote</Link>
             </Button>
