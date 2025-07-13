@@ -19,6 +19,8 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -128,6 +130,16 @@ const Index = () => {
     },
   ];
 
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+      easing: "ease-in-out", // Easing function
+      once: true, // Animation happens only once
+      offset: 100, // Offset from the original trigger point
+    });
+  }, []);
+
   // Auto-slide functionality
   useEffect(() => {
     const interval = setInterval(() => {
@@ -167,22 +179,30 @@ const Index = () => {
                     className="w-full h-full bg-cover bg-center bg-no-repeat"
                     style={{ backgroundImage: `url(${slide.url})` }}>
                     {/* Overlay for better text readability */}
-                    <div className="absolute inset-0 bg-blac bg-opacity-40"></div>
+                    <div className="absolute inset-0  bg-opacity-40"></div>
 
                     {/* Content Container */}
                     <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-r from-[#236837]/100 to-transparent z-10">
                       <div className="text-center text-white max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-5xl px-4 sm:px-6 md:px-8 lg:px-12">
-                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-4 sm:mb-6 md:mb-8 leading-tight">
+                        <h1
+                          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-4 sm:mb-6 md:mb-8 leading-tight"
+                          data-aos="fade-up"
+                          data-aos-delay="200">
                           {slide.title}
                         </h1>
-                        <p className="text-sm text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl mb-6 sm:mb-8 md:mb-10 leading-relaxed opacity-90">
+                        <p
+                          className="text-sm text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl mb-6 sm:mb-8 md:mb-10 leading-relaxed opacity-90"
+                          data-aos="fade-up"
+                          data-aos-delay="400">
                           {slide.description}
                         </p>
-                        <Link
-                          to={slide.link}
-                          className="inline-block bg-[#236837] hover:bg-[#1a5129] text-white px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 lg:px-10 lg:py-5 rounded-md sm:rounded-lg text-sm sm:text-base md:text-lg lg:text-xl font-semibold transition-all duration-300 hover:scale-105 transform shadow-lg hover:shadow-xl">
-                          {slide.pageName}
-                        </Link>
+                        <div data-aos="fade-up" data-aos-delay="600">
+                          <Link
+                            to={slide.link}
+                            className="inline-block bg-[#236837] hover:bg-[#1a5129] text-white px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 lg:px-10 lg:py-5 rounded-md sm:rounded-lg text-sm sm:text-base md:text-lg lg:text-xl font-semibold transition-all duration-300 hover:scale-105 transform shadow-lg hover:shadow-xl">
+                            {slide.pageName}
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -256,14 +276,23 @@ const Index = () => {
 
       {/* Main Headline and CTA Buttons */}
       <div className="text-center px-2 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
-        <h1 className="text-green-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
+        <h1
+          className="text-green-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight"
+          data-aos="fade-up"
+          data-aos-delay="100">
           Innovative Solutions for Modern Business
         </h1>
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-6 sm:mb-8 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed">
+        <p
+          className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-6 sm:mb-8 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed text-black"
+          data-aos="fade-up"
+          data-aos-delay="200">
           Leading provider of software solutions, weighing equipment, and
           technology services that drive business success
         </p>
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+        <div
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center"
+          data-aos="fade-up"
+          data-aos-delay="300">
           <Button
             className="bg-green-900 hover:bg-white hover:text-[#236434] w-34 sm:w-auto px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base"
             size="lg"
@@ -279,7 +308,11 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
+              <div
+                key={index}
+                className="text-center"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}>
                 <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#236434] mb-1 sm:mb-2">
                   {stat.value}
                 </div>
@@ -296,10 +329,15 @@ const Index = () => {
       <section className="py-8 sm:py-10 md:py-12">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div className="text-center mb-6 sm:mb-8 md:mb-12">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4">
+            <h2
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4"
+              data-aos="fade-up">
               Featured Products
             </h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600">
+            <p
+              className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600"
+              data-aos="fade-up"
+              data-aos-delay="100">
               Our most popular and innovative solutions
             </p>
           </div>
@@ -308,7 +346,9 @@ const Index = () => {
             {featuredProducts.map((product, index) => (
               <Card
                 key={index}
-                className="hover:shadow-lg transition-shadow overflow-hidden">
+                className="hover:shadow-lg transition-shadow overflow-hidden"
+                data-aos="fade-up"
+                data-aos-delay={index * 150}>
                 <div
                   className="h-32 sm:h-40 md:h-48 bg-cover bg-center"
                   style={{ backgroundImage: `url(${product.image})` }}></div>
@@ -362,10 +402,15 @@ const Index = () => {
       <section className="py-6 sm:py-8 md:py-10 lg:py-12">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div className="text-center mb-6 sm:mb-8 md:mb-12">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4">
+            <h2
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4"
+              data-aos="fade-up">
               Our Services
             </h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600">
+            <p
+              className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600"
+              data-aos="fade-up"
+              data-aos-delay="100">
               Expert solutions tailored to your business needs
             </p>
           </div>
@@ -374,9 +419,14 @@ const Index = () => {
             {services.map((service, index) => (
               <Card
                 key={index}
-                className="text-center hover:shadow-lg transition-shadow">
+                className="text-center hover:shadow-lg transition-shadow"
+                data-aos="fade-up"
+                data-aos-delay={index * 150}>
                 <CardHeader className="p-3 sm:p-4 md:p-6">
-                  <div className="mx-auto mb-3 sm:mb-4 p-2 sm:p-3 bg-green-100 rounded-full w-fit">
+                  <div
+                    className="mx-auto mb-3 sm:mb-4 p-2 sm:p-3 bg-green-100 rounded-full w-fit"
+                    data-aos="zoom-in"
+                    data-aos-delay={index * 150 + 200}>
                     <service.icon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-[#236434]" />
                   </div>
                   <CardTitle className="text-sm sm:text-base md:text-lg lg:text-xl mb-2">
@@ -404,14 +454,20 @@ const Index = () => {
       <section className="py-8 sm:py-10 md:py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div className="text-center mb-6 sm:mb-8 md:mb-12">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4">
+            <h2
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4"
+              data-aos="fade-up">
               What Our Clients Say
             </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-            {[1, 2, 3].map((item) => (
-              <Card key={item} className="bg-green-50">
+            {[1, 2, 3].map((item, index) => (
+              <Card
+                key={item}
+                className="bg-green-50"
+                data-aos="fade-up"
+                data-aos-delay={index * 150}>
                 <CardContent className="p-3 sm:p-4 md:p-6">
                   <div className="mb-3 sm:mb-4">
                     <div className="flex text-yellow-400 mb-2 text-sm sm:text-base">
@@ -442,14 +498,27 @@ const Index = () => {
       <section className="py-4 sm:py-6 bg-gray-100">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 md:mb-8">
+            <h2
+              className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 md:mb-8"
+              data-aos="fade-up">
               Trusted by Industry Leaders
             </h2>
-            <div className="flex justify-center items-center space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-12 opacity-60">
-              <Award className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12" />
-              <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12" />
-              <Shield className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12" />
-              <Users className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12" />
+            <div
+              className="flex justify-center items-center space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-12 opacity-60"
+              data-aos="fade-up"
+              data-aos-delay="200">
+              <div data-aos="zoom-in" data-aos-delay="300">
+                <Award className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12" />
+              </div>
+              <div data-aos="zoom-in" data-aos-delay="400">
+                <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12" />
+              </div>
+              <div data-aos="zoom-in" data-aos-delay="500">
+                <Shield className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12" />
+              </div>
+              <div data-aos="zoom-in" data-aos-delay="600">
+                <Users className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12" />
+              </div>
             </div>
           </div>
         </div>
@@ -458,14 +527,22 @@ const Index = () => {
       {/* CTA Section */}
       <section className="py-6 sm:py-8 md:py-10 lg:py-12 bg-[#236434] text-white">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 text-center">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 leading-tight">
+          <h2
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 leading-tight"
+            data-aos="fade-up">
             Ready to Get Started?
           </h2>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl mx-auto leading-relaxed">
+          <p
+            className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl mx-auto leading-relaxed"
+            data-aos="fade-up"
+            data-aos-delay="200">
             Contact us today to discuss your requirements and discover how our
             solutions can benefit your business
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+          <div
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center"
+            data-aos="fade-up"
+            data-aos-delay="400">
             <Button
               className="text-white bg-green-900 border-white hover:bg-white hover:text-[#236434] w-34 sm:w-auto px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base"
               size="lg"
