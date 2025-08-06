@@ -58,8 +58,7 @@ const Index = () => {
     {
       name: "CS30 Android POS",
       category: "Hardware",
-      description:
-        "Versatile Android-based point-of-sale terminal with printer",
+      description: "Versatile Android-based point-of-sale terminal with ",
       // price: "$899",
       features: [
         "Android OS",
@@ -332,7 +331,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div className="text-center mb-6 sm:mb-8 md:mb-12">
             <h2
-              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4"
+              className="text-xl text-[#236434] sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4"
               data-aos="fade-up">
               Featured Products
             </h2>
@@ -356,14 +355,14 @@ const Index = () => {
                   style={{ backgroundImage: `url(${product.image})` }}></div>
                 <CardHeader className="p-3 sm:p-4 md:p-6">
                   <div className="flex flex-col sm:flex-row justify-between items-start mb-2 gap-2">
-                    <CardTitle className="text-sm sm:text-base md:text-lg lg:text-xl">
+                    <CardTitle className="text-sm sm:text-base text-[#236434] md:text-lg lg:text-xl">
                       {product.name}
                     </CardTitle>
                     <span className="bg-green-100 text-[#236434] text-xs px-2 py-1 rounded whitespace-nowrap">
                       {product.category}
                     </span>
                   </div>
-                  <CardDescription className="text-xs sm:text-sm md:text-base">
+                  <CardDescription className="text-xs sm:text-sm md:text-base text-gray-600">
                     {product.description}
                   </CardDescription>
                 </CardHeader>

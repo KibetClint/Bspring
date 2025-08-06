@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import 'aos/dist/aos.css';
+@import "aos/dist/aos.css";
 
 :root {
   font-family: Helvetica, Arial, sans-serif;

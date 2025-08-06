@@ -55,7 +55,7 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50">
       {/* Top bar */}
-      <div className="flex items-center justify-between py-2 text-xs text-muted-foreground border-b border-border/50">
+      <div className="flex items-center justify-between py-2 text-xs text-muted-foreground text-[#236434] border-b border-border/50">
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-1">
             <Phone className="w-3 h-3" />
