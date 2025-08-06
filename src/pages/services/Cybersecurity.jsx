@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Layout from "../../components/Layout";
 import {
   Card,
@@ -15,8 +16,20 @@ import {
   AlertTriangle,
   CheckCircle,
 } from "lucide-react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Cybersecurity = () => {
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: false,
+      offset: 100,
+    });
+  }, []);
+
   const services = [
     {
       icon: Search,
@@ -115,23 +128,34 @@ const Cybersecurity = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-800 to-green-800 text-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex justify-center mb-6">
+          <div
+            className="flex justify-center mb-6"
+            data-aos="zoom-in"
+            data-aos-delay="200">
             <Shield className="h-16 w-16" />
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1
+            className="text-4xl md:text-6xl font-bold mb-6"
+            data-aos="fade-up"
+            data-aos-delay="300">
             Cybersecurity & Penetration Testing
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+          <p
+            className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="400">
             Protect your business with comprehensive security assessments and
             penetration testing services
           </p>
-          <Button
-            className="bg-green-900"
-            size="lg"
-            variant="secondary"
-            asChild>
-            <Link to="/contact">Schedule Security Assessment</Link>
-          </Button>
+          <div data-aos="fade-up" data-aos-delay="500">
+            <Button
+              className="bg-green-900"
+              size="lg"
+              variant="secondary"
+              asChild>
+              <Link to="/contact">Schedule Security Assessment</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -139,10 +163,15 @@ const Cybersecurity = () => {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2
+              className="text-3xl md:text-4xl font-bold mb-4"
+              data-aos="fade-up">
               Our Security Services
             </h2>
-            <p className="text-xl text-gray-600">
+            <p
+              className="text-xl text-gray-600"
+              data-aos="fade-up"
+              data-aos-delay="100">
               Comprehensive cybersecurity solutions to protect your digital
               assets
             </p>
@@ -150,10 +179,16 @@ const Cybersecurity = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+              <Card
+                key={index}
+                className="hover:shadow-lg transition-shadow"
+                data-aos="fade-up"
+                data-aos-delay={index * 150 + 200}>
                 <CardHeader>
                   <div className="flex items-center mb-4">
-                    <service.icon className="h-8 w-8 text-red-600 mr-4" />
+                    <div data-aos="zoom-in" data-aos-delay={index * 150 + 300}>
+                      <service.icon className="h-8 w-8 text-red-600 mr-4" />
+                    </div>
                     <div>
                       <CardTitle className="text-xl">{service.title}</CardTitle>
                       <CardDescription>{service.description}</CardDescription>
@@ -163,7 +198,11 @@ const Cybersecurity = () => {
                 <CardContent>
                   <ul className="space-y-2">
                     {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center">
+                      <li
+                        key={idx}
+                        className="flex items-center"
+                        data-aos="fade-right"
+                        data-aos-delay={index * 150 + 400 + idx * 50}>
                         <CheckCircle className="h-4 w-4 text-green-800 mr-2" />
                         <span className="text-sm">{feature}</span>
                       </li>
@@ -180,19 +219,31 @@ const Cybersecurity = () => {
       <section className="py-16 bg-gray-50 text-start">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2
+              className="text-3xl md:text-4xl font-bold mb-4"
+              data-aos="fade-up">
               Our Testing Process
             </h2>
-            <p className="text-xl text-gray-600">
+            <p
+              className="text-xl text-gray-600"
+              data-aos="fade-up"
+              data-aos-delay="100">
               A systematic approach to identifying and addressing security
               vulnerabilities
             </p>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-2 space-y-8 ">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {process.map((step, index) => (
-              <div key={index} className="flex items-start">
-                <div className="flex-shrink-0 w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-base mr-2">
+              <div
+                key={index}
+                className="flex items-start"
+                data-aos="fade-up"
+                data-aos-delay={index * 150 + 200}>
+                <div
+                  className="flex-shrink-0 w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-base mr-4"
+                  data-aos="zoom-in"
+                  data-aos-delay={index * 150 + 300}>
                   {step.step}
                 </div>
                 <div>
@@ -209,19 +260,26 @@ const Cybersecurity = () => {
       <section className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2
+              className="text-3xl md:text-4xl font-bold mb-4"
+              data-aos="fade-up">
               Compliance Standards
             </h2>
-            <p className="text-xl text-gray-600">
+            <p
+              className="text-xl text-gray-600"
+              data-aos="fade-up"
+              data-aos-delay="100">
               We help you meet industry compliance requirements
             </p>
           </div>
 
-          <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-3 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
             {complianceStandards.map((standard, index) => (
               <div
                 key={index}
-                className="p-4 border rounded-lg hover:shadow-md transition-shadow">
+                className="p-4 border rounded-lg hover:shadow-md transition-shadow"
+                data-aos="fade-up"
+                data-aos-delay={index * 100 + 200}>
                 <div className="font-semibold text-gray-800">{standard}</div>
               </div>
             ))}
@@ -232,14 +290,19 @@ const Cybersecurity = () => {
       {/* CTA Section */}
       <section className="py-10 bg-gray-400 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2
+            className="text-3xl md:text-4xl font-bold mb-4"
+            data-aos="fade-up">
             Secure Your Business Today
           </h2>
-          <p className="text-xl mb-8">
+          <p className="text-xl mb-8" data-aos="fade-up" data-aos-delay="200">
             Don't wait for a security breach. Get a comprehensive security
             assessment now.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            data-aos="fade-up"
+            data-aos-delay="400">
             <Button
               className="bg-green-900 w-40"
               size="lg"

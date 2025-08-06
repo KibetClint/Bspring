@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Layout from "../components/Layout";
 import {
   Card,
@@ -18,24 +19,38 @@ import {
 } from "lucide-react";
 
 const About = () => {
+  useEffect(() => {
+    // Initialize AOS
+    if (typeof window !== "undefined") {
+      import("aos").then((AOS) => {
+        AOS.init({
+          duration: 800,
+          once: false,
+          offset: 100,
+          easing: "ease-out-cubic",
+        });
+      });
+    }
+  }, []);
+
   const teamMembers = [
     {
-      name: "Sarah Johnson",
+      name: "Enoch Koech",
       position: "CEO & Founder",
       bio: "15+ years experience in industrial technology solutions",
-      image: "/placeholder.svg",
+      image: "/b-spring.png",
     },
     {
-      name: "Michael Chen",
+      name: "Japhet Kibet",
       position: "CTO",
       bio: "Expert in software development and system integration",
-      image: "/placeholder.svg",
+      image: "/b-spring.png",
     },
     {
-      name: "Emily Rodriguez",
-      position: "Head of Sales",
+      name: "Seraphine Korir",
+      position: "People and culture",
       bio: "Specialized in weighing equipment and industrial solutions",
-      image: "/placeholder.svg",
+      image: "/b-spring.png",
     },
   ];
 
@@ -79,26 +94,56 @@ const About = () => {
     },
   ];
 
+  const locations = [
+    {
+      city: "Nairobi",
+      country: "Kenya",
+      address: "123 Business Ave, NY 10001",
+    },
+    {
+      city: "Litein",
+      country: "Kenya",
+      address: "456 Tech Street",
+    },
+    {
+      city: "Kericho",
+      country: "Kenya",
+      address: "789 Innovation Blvd",
+    },
+  ];
+
+  const certifications = [
+    "ISO 9001:2015",
+    "ISO 27001",
+    "CE Certified",
+    "Industry Excellence Award",
+  ];
+
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-gray-800 to-gray-900 text-white py-20">
+      <section className="bg-gradient-to-r from-green-800 to-green-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1
+            className="text-4xl md:text-6xl font-bold mb-6"
+            data-aos="fade-up"
+            data-aos-delay="200">
             About Brickspring
           </h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto">
+          <p
+            className="text-xl md:text-2xl max-w-3xl mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="400">
             Pioneering innovative solutions in industrial technology for over 15
             years
           </p>
         </div>
       </section>
-
       {/* Company Story */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div data-aos="fade-right" data-aos-delay="200">
               <h2 className="text-3xl font-bold mb-6">Our Story</h2>
               <p className="text-lg text-gray-600 mb-6">
                 Founded in 2009, Brickspring began with a simple mission: to
@@ -115,33 +160,47 @@ const About = () => {
                 worldwide.
               </p>
               <div className="flex space-x-4">
-                <Badge className="text-base px-4 py-2">
-                  15+ Years Experience
+                <Badge
+                  className="text-base px-4 py-2"
+                  data-aos="zoom-in"
+                  data-aos-delay="600">
+                  5+ Years Experience
                 </Badge>
-                <Badge className="text-base px-4 py-2">
+                <Badge
+                  className="text-base px-4 py-2"
+                  data-aos="zoom-in"
+                  data-aos-delay="700">
                   500+ Happy Clients
                 </Badge>
               </div>
             </div>
-            <div className="bg-gray-200 h-96 rounded-lg"></div>
+            <div
+              className="bg-gray-800 h-96 rounded-lg flex items-center justify-center overflow-hidden"
+              data-aos="fade-left"
+              data-aos-delay="400">
+              <img
+                src="/b-spring.png"
+                alt="Brickspring team at work"
+                className="object-cover w-full h-full"
+              />
+            </div>
           </div>
         </div>
       </section>
-
       {/* Mission, Vision, Values */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Our Mission & Vision
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <Card>
+            <Card data-aos="flip-right" data-aos-delay="200">
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Target className="h-6 w-6 mr-2 text-blue-600" />
+                  <Target className="h-6 w-6 mr-2 text-green-600" />
                   Our Mission
                 </CardTitle>
               </CardHeader>
@@ -154,10 +213,10 @@ const About = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card data-aos="flip-left" data-aos-delay="400">
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Award className="h-6 w-6 mr-2 text-blue-600" />
+                  <Award className="h-6 w-6 mr-2 text-green-600" />
                   Our Vision
                 </CardTitle>
               </CardHeader>
@@ -173,10 +232,14 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="text-center">
+              <Card
+                key={index}
+                className="text-center"
+                data-aos="zoom-in"
+                data-aos-delay={200 + index * 150}>
                 <CardHeader>
                   <div className="mx-auto mb-4 p-3 bg-blue-100 rounded-full w-fit">
-                    <value.icon className="h-8 w-8 text-blue-600" />
+                    <value.icon className="h-8 w-8 text-green-600" />
                   </div>
                   <CardTitle>{value.title}</CardTitle>
                 </CardHeader>
@@ -188,11 +251,10 @@ const About = () => {
           </div>
         </div>
       </section>
-
       {/* Leadership Team */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Leadership Team
             </h2>
@@ -203,9 +265,19 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
-              <Card key={index} className="text-center">
+              <Card
+                key={index}
+                className="text-center"
+                data-aos="fade-up"
+                data-aos-delay={index * 200}>
                 <CardHeader>
-                  <div className="w-32 h-32 mx-auto bg-gray-200 rounded-full mb-4"></div>
+                  <div className="w-32 h-32 mx-auto bg-gray-200 rounded-full mb-4 overflow-hidden flex items-center justify-center">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
                   <CardTitle>{member.name}</CardTitle>
                   <CardDescription className="font-semibold text-blue-600">
                     {member.position}
@@ -219,11 +291,10 @@ const About = () => {
           </div>
         </div>
       </section>
-
       {/* Company Milestones */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Journey</h2>
             <p className="text-xl text-gray-600">
               Key milestones in our growth story
@@ -232,23 +303,28 @@ const About = () => {
 
           <div className="space-y-8">
             {milestones.map((milestone, index) => (
-              <div key={index} className="flex items-center">
-                <div className="flex-shrink-0 w-20 h-20 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
+              <div
+                key={index}
+                className="flex items-center"
+                data-aos="fade-right"
+                data-aos-delay={index * 100}>
+                <div className="flex-shrink-0 w-15 h-15 bg-green-800 text-white rounded-full flex items-center justify-center font-bold">
                   {milestone.year}
                 </div>
                 <div className="ml-6 flex-1">
-                  <p className="text-lg text-gray-700">{milestone.event}</p>
+                  <p className="text-lg text-gray-700 text-start">
+                    {milestone.event}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
-
       {/* Office Locations */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Our Locations
             </h2>
@@ -256,40 +332,29 @@ const About = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                city: "New York",
-                country: "USA",
-                address: "123 Business Ave, NY 10001",
-              },
-              {
-                city: "London",
-                country: "UK",
-                address: "456 Tech Street, London SW1A 1AA",
-              },
-              {
-                city: "Singapore",
-                country: "Singapore",
-                address: "789 Innovation Blvd, Singapore 018956",
-              },
-            ].map((location, index) => (
-              <Card key={index}>
+            {locations.map((location, index) => (
+              <Card
+                key={index}
+                data-aos="slide-up"
+                data-aos-delay={index * 150}>
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <MapPin className="h-5 w-5 mr-2 text-blue-600" />
+                    <MapPin className="h-5 w-5 mr-2 text-green-800" />
                     {location.city}, {location.country}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 mb-4">{location.address}</p>
+                  <p className="text-gray-600 text-start mb-4">
+                    {location.address}
+                  </p>
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center">
-                      <Phone className="h-4 w-4 mr-2 text-gray-400" />
-                      <span>+1 (555) 123-4567</span>
+                      <Phone className="h-4 w-4 mr-2 text-green-800" />
+                      <span>+254725903309</span>
                     </div>
                     <div className="flex items-center">
                       <Mail className="h-4 w-4 mr-2 text-gray-400" />
-                      <span>info@brickspring.com</span>
+                      <span>info@brickspring.co.ke</span>
                     </div>
                   </div>
                 </CardContent>
@@ -298,21 +363,21 @@ const About = () => {
           </div>
         </div>
       </section>
-
       {/* Certifications */}
-      <section className="py-16 bg-blue-600 text-white">
+      <section className="py-10 bg-green-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">
+          <h2
+            className="text-3xl md:text-4xl font-bold mb-8"
+            data-aos="fade-up">
             Certifications & Awards
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              "ISO 9001:2015",
-              "ISO 27001",
-              "CE Certified",
-              "Industry Excellence Award",
-            ].map((cert, index) => (
-              <div key={index} className="p-6 bg-white/10 rounded-lg">
+            {certifications.map((cert, index) => (
+              <div
+                key={index}
+                className="p-6 bg-white/10 rounded-lg"
+                data-aos="zoom-in"
+                data-aos-delay={index * 100}>
                 <Building className="h-12 w-12 mx-auto mb-4" />
                 <p className="font-semibold">{cert}</p>
               </div>

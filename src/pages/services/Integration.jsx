@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Layout from "../../components/Layout";
 import {
   Card,
@@ -11,6 +12,20 @@ import { Link } from "react-router-dom";
 import { Zap, Link2, Database, Workflow, Cloud, Settings } from "lucide-react";
 
 const Integration = () => {
+  useEffect(() => {
+    // Initialize AOS
+    if (typeof window !== "undefined") {
+      import("aos").then((AOS) => {
+        AOS.init({
+          duration: 800,
+          once: false,
+          offset: 100,
+          easing: "ease-out-cubic",
+        });
+      });
+    }
+  }, []);
+
   const services = [
     {
       icon: Link2,
@@ -93,15 +108,15 @@ const Integration = () => {
     },
     {
       category: "CRM Platforms",
-      systems: ["Salesforce", "HubSpot", "Microsoft CRM", "Zoho", "Pipedrive"],
+      systems: ["Salesforce", "HubSpot", "Microsoft CRM", "Zoho"],
     },
     {
       category: "E-commerce",
-      systems: ["Shopify", "WooCommerce", "Magento", "BigCommerce", "Amazon"],
+      systems: ["Shopify", "WooCommerce", "BigCommerce", "Amazon"],
     },
     {
       category: "Accounting",
-      systems: ["QuickBooks", "Xero", "FreshBooks", "Wave", "Sage Accounting"],
+      systems: ["QuickBooks", "FreshBooks", "Wave", "Sage Accounting"],
     },
     {
       category: "Cloud Services",
@@ -157,35 +172,66 @@ const Integration = () => {
     },
   ];
 
+  const benefits = [
+    {
+      title: "Improved Efficiency",
+      description: "Eliminate manual data entry and reduce processing time",
+    },
+    {
+      title: "Better Data Quality",
+      description: "Ensure data consistency and accuracy across systems",
+    },
+    {
+      title: "Cost Reduction",
+      description:
+        "Lower operational costs through automation and optimization",
+    },
+    {
+      title: "Enhanced Visibility",
+      description: "Get real-time insights and better business intelligence",
+    },
+  ];
+
   return (
     <Layout>
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-600 to-teal-700 text-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex justify-center mb-6">
+          <div
+            className="flex justify-center mb-6"
+            data-aos="zoom-in"
+            data-aos-delay="200">
             <Link2 className="h-16 w-16" />
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1
+            className="text-4xl md:text-6xl font-bold mb-6"
+            data-aos="fade-up"
+            data-aos-delay="400">
             Integration Services
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+          <p
+            className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="600">
             Connect your systems, streamline workflows, and unlock the full
             potential of your data
           </p>
-          <Button
-            className="bg-green-800"
-            size="lg"
-            variant="secondary"
-            asChild>
-            <Link to="/contact">Start Integration Project</Link>
-          </Button>
+          <div data-aos="fade-up" data-aos-delay="800">
+            <Button
+              className="bg-green-800"
+              size="lg"
+              variant="secondary"
+              asChild>
+              <Link to="/contact">Start Integration Project</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
       {/* Services Grid */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Integration Solutions
             </h2>
@@ -197,7 +243,11 @@ const Integration = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-start">
             {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+              <Card
+                key={index}
+                className="hover:shadow-lg transition-shadow"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}>
                 <CardHeader>
                   <service.icon className="h-10 w-10 text-green-600 mb-4" />
                   <CardTitle>{service.title}</CardTitle>
@@ -222,7 +272,7 @@ const Integration = () => {
       {/* Supported Platforms */}
       <section className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Supported Platforms
             </h2>
@@ -233,7 +283,10 @@ const Integration = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {platforms.map((platform, index) => (
-              <Card key={index}>
+              <Card
+                key={index}
+                data-aos="slide-up"
+                data-aos-delay={index * 150}>
                 <CardHeader>
                   <CardTitle className="text-lg text-green-900">
                     {platform.category}
@@ -259,7 +312,7 @@ const Integration = () => {
       {/* Process Timeline */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Integration Process
             </h2>
@@ -270,7 +323,11 @@ const Integration = () => {
 
           <div className="space-y-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 text-start">
             {process.map((step, index) => (
-              <div key={index} className="flex items-start">
+              <div
+                key={index}
+                className="flex items-start"
+                data-aos="fade-right"
+                data-aos-delay={index * 100}>
                 <div className="flex-shrink-0 w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-lg mr-6">
                   {index + 1}
                 </div>
@@ -292,7 +349,7 @@ const Integration = () => {
       {/* Benefits Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Integration Benefits
             </h2>
@@ -303,32 +360,13 @@ const Integration = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            {[
-              {
-                title: "Improved Efficiency",
-                description:
-                  "Eliminate manual data entry and reduce processing time",
-              },
-              {
-                title: "Better Data Quality",
-                description:
-                  "Ensure data consistency and accuracy across systems",
-              },
-              {
-                title: "Cost Reduction",
-                description:
-                  "Lower operational costs through automation and optimization",
-              },
-              {
-                title: "Enhanced Visibility",
-                description:
-                  "Get real-time insights and better business intelligence",
-              },
-            ].map((benefit, index) => (
+            {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="p-4 rounded-lg shadow hover:shadow-lg transition-shadow">
-                <div className="w-10 h-10  bg-green-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                className="p-4 rounded-lg shadow hover:shadow-lg transition-shadow"
+                data-aos="flip-up"
+                data-aos-delay={index * 150}>
+                <div className="w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                   {index + 1}
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
@@ -342,13 +380,18 @@ const Integration = () => {
       {/* CTA Section */}
       <section className="py-10 bg-green-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2
+            className="text-3xl md:text-4xl font-bold mb-4"
+            data-aos="fade-up">
             Ready to Connect Your Systems?
           </h2>
-          <p className="text-xl mb-8">
+          <p className="text-xl mb-8" data-aos="fade-up" data-aos-delay="200">
             Let's discuss your integration needs and create a seamless solution
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            data-aos="fade-up"
+            data-aos-delay="400">
             <Button
               className="bg-green-800 w-40"
               size="lg"

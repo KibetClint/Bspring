@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Layout from "../../components/Layout";
 import {
   Card,
@@ -11,6 +12,19 @@ import { Link } from "react-router-dom";
 import { Code, Smartphone, Database, Palette, Zap, Globe } from "lucide-react";
 
 const WebDevelopment = () => {
+  useEffect(() => {
+    // Initialize AOS
+    if (typeof window !== "undefined") {
+      import("aos").then((AOS) => {
+        AOS.init({
+          duration: 800,
+          once: false,
+          offset: 100,
+        });
+      });
+    }
+  }, []);
+
   const services = [
     {
       icon: Globe,
@@ -122,35 +136,61 @@ const WebDevelopment = () => {
     },
   ];
 
+  const technologies = [
+    "React",
+    "Vue.js",
+    "Angular",
+    "Node.js",
+    "Python",
+    "PHP",
+    "PostgreSQL",
+    "MongoDB",
+    "AWS",
+    "Docker",
+    "Kubernetes",
+    "Git",
+  ];
+
   return (
     <Layout>
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-900 to-green-700 text-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex justify-center mb-6">
+          <div
+            className="flex justify-center mb-6"
+            data-aos="zoom-in"
+            data-aos-delay="200">
             <Code className="h-16 w-16" />
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1
+            className="text-4xl md:text-6xl font-bold mb-6"
+            data-aos="fade-up"
+            data-aos-delay="400">
             Web & App Development
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+          <p
+            className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="600">
             Custom software solutions that drive your business forward with
             cutting-edge technology
           </p>
-          <Button
-            className="bg-green-900"
-            size="lg"
-            variant="secondary"
-            asChild>
-            <Link to="/contact">Start Your Project</Link>
-          </Button>
+          <div data-aos="fade-up" data-aos-delay="800">
+            <Button
+              className="bg-green-900"
+              size="lg"
+              variant="secondary"
+              asChild>
+              <Link to="/contact">Start Your Project</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
       {/* Services Grid */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Our Development Services
             </h2>
@@ -161,7 +201,11 @@ const WebDevelopment = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+              <Card
+                key={index}
+                className="hover:shadow-lg transition-shadow"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}>
                 <CardHeader>
                   <service.icon className="h-8 w-8 text-green-900 mb-4" />
                   <CardTitle>{service.title}</CardTitle>
@@ -172,7 +216,7 @@ const WebDevelopment = () => {
                     {service.technologies.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="px-2 py-1  bg-green-700 text-green-950 text-xs rounded-full">
+                        className="px-2 py-1 bg-green-700 text-green-950 text-xs rounded-full">
                         {tech}
                       </span>
                     ))}
@@ -187,7 +231,7 @@ const WebDevelopment = () => {
       {/* Portfolio Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Recent Projects
             </h2>
@@ -200,7 +244,9 @@ const WebDevelopment = () => {
             {portfolio.map((project, index) => (
               <Card
                 key={index}
-                className="overflow-hidden hover:shadow-lg transition-shadow">
+                className="overflow-hidden hover:shadow-lg transition-shadow"
+                data-aos="flip-left"
+                data-aos-delay={index * 150}>
                 <div className="h-48 bg-gray-200 flex items-center justify-center">
                   <span className="text-gray-500">Project Screenshot</span>
                 </div>
@@ -228,7 +274,7 @@ const WebDevelopment = () => {
       {/* Process Section */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Our Development Process
             </h2>
@@ -239,7 +285,11 @@ const WebDevelopment = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {process.map((step, index) => (
-              <div key={index} className="text-center">
+              <div
+                key={index}
+                className="text-center"
+                data-aos="zoom-in"
+                data-aos-delay={index * 100}>
                 <div className="w-16 h-16 bg-gradient-to-r from-green-600 to-green-900 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
                   {index + 1}
                 </div>
@@ -254,7 +304,7 @@ const WebDevelopment = () => {
       {/* Technology Stack */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Technology Stack
             </h2>
@@ -264,23 +314,12 @@ const WebDevelopment = () => {
           </div>
 
           <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 text-center">
-            {[
-              "React",
-              "Vue.js",
-              "Angular",
-              "Node.js",
-              "Python",
-              "PHP",
-              "PostgreSQL",
-              "MongoDB",
-              "AWS",
-              "Docker",
-              "Kubernetes",
-              "Git",
-            ].map((tech, index) => (
+            {technologies.map((tech, index) => (
               <div
                 key={index}
-                className="p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                className="p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+                data-aos="fade-up"
+                data-aos-delay={index * 50}>
                 <div className="font-semibold text-gray-800">{tech}</div>
               </div>
             ))}
@@ -291,23 +330,28 @@ const WebDevelopment = () => {
       {/* CTA Section */}
       <section className="py-8 bg-gradient-to-r from-green-600 to-green-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2
+            className="text-3xl md:text-4xl font-bold mb-4"
+            data-aos="fade-up">
             Ready to Build Your Next Project?
           </h2>
-          <p className="text-xl mb-8">
+          <p className="text-xl mb-8" data-aos="fade-up" data-aos-delay="200">
             Let's discuss your requirements and create something amazing
             together
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 items-center">
+          <div
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            data-aos="fade-up"
+            data-aos-delay="400">
             <Button
-              className="bg-green-950 w-44 "
+              className="bg-green-950 w-44"
               size="lg"
               variant="secondary"
               asChild>
               <Link to="/contact">Discuss Your Project</Link>
             </Button>
             <Button
-              className="bg-green-950 w-44 "
+              className="bg-green-950 w-44"
               size="lg"
               variant="outline"
               asChild>

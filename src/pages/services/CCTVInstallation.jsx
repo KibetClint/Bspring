@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Layout from "../../components/Layout";
 import {
   Card,
@@ -11,7 +14,12 @@ import { Link } from "react-router-dom";
 import { Camera, Shield, Monitor, Wifi, HardDrive, Eye } from "lucide-react";
 
 const CCTVInstallation = () => {
+  useEffect(() => {
+    AOS.init({ once: false, duration: 800, offset: 80 });
+  }, []);
+
   const services = [
+
     {
       icon: Camera,
       title: "Security Camera Installation",
@@ -87,6 +95,7 @@ const CCTVInstallation = () => {
   ];
 
   const cameraTypes = [
+    // ... (same as before)
     {
       type: "Dome Cameras",
       description:
@@ -173,7 +182,9 @@ const CCTVInstallation = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-green-800 to-green-900 text-white py-10">
+      <section
+        className="bg-gradient-to-r from-green-800 to-green-900 text-white py-10"
+        data-aos="fade-down">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-6">
             <Camera className="h-16 w-16" />
@@ -196,7 +207,7 @@ const CCTVInstallation = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-16">
+      <section className="py-16" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -209,7 +220,11 @@ const CCTVInstallation = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+              <Card
+                key={index}
+                className="hover:shadow-lg transition-shadow"
+                data-aos="zoom-in"
+                data-aos-delay={index * 100}>
                 <CardHeader>
                   <service.icon className="h-12 w-12 text-gray-700 mb-4" />
                   <CardTitle>{service.title}</CardTitle>
@@ -232,7 +247,7 @@ const CCTVInstallation = () => {
       </section>
 
       {/* Camera Types */}
-      <section className="py-4">
+      <section className="py-4" data-aos="fade-right">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -245,7 +260,7 @@ const CCTVInstallation = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {cameraTypes.map((camera, index) => (
-              <Card key={index}>
+              <Card key={index} data-aos="fade-up" data-aos-delay={index * 100}>
                 <CardHeader>
                   <CardTitle className="text-xl text-gray-800">
                     {camera.type}
@@ -273,7 +288,7 @@ const CCTVInstallation = () => {
       </section>
 
       {/* Industries Served */}
-      <section className="py-4">
+      <section className="py-4" data-aos="fade-left">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -286,7 +301,11 @@ const CCTVInstallation = () => {
 
           <div className="grid grid-cols-3 md:grid-cols-4 gap-8 text-center">
             {industries.map((industry, index) => (
-              <div key={index} className="p-4">
+              <div
+                key={index}
+                className="p-4"
+                data-aos="zoom-in"
+                data-aos-delay={index * 80}>
                 <div className="text-4xl mb-2">{industry.icon}</div>
                 <div className="font-semibold text-gray-800">
                   {industry.name}
@@ -298,7 +317,7 @@ const CCTVInstallation = () => {
       </section>
 
       {/* Installation Process */}
-      <section className="py-4">
+      <section className="py-4" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -311,7 +330,11 @@ const CCTVInstallation = () => {
 
           <div className="space-y-8 text-start">
             {process.map((step, index) => (
-              <div key={index} className="flex items-start">
+              <div
+                key={index}
+                className="flex items-start"
+                data-aos="fade-right"
+                data-aos-delay={index * 120}>
                 <div className="flex-shrink-0 w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center font-bold text-lg mr-6">
                   {index + 1}
                 </div>
@@ -331,7 +354,7 @@ const CCTVInstallation = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-8">
+      <section className="py-8" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -362,7 +385,11 @@ const CCTVInstallation = () => {
                 description: "Compatible with existing security systems",
               },
             ].map((feature, index) => (
-              <div key={index} className="p-6">
+              <div
+                key={index}
+                className="p-6"
+                data-aos="zoom-in"
+                data-aos-delay={index * 100}>
                 <div className="w-16 h-16 bg-gray-800 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                   <Eye className="h-8 w-8" />
                 </div>
@@ -375,7 +402,7 @@ const CCTVInstallation = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-8 bg-gray-400 text-white">
+      <section className="py-8 bg-gray-400 text-white" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Secure Your Property Today

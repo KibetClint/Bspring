@@ -45,23 +45,23 @@ const Contact = () => {
   const offices = [
     {
       name: "Headquarters",
-      address: "123 Business Plaza, Suite 400\nTech City, TC 12345",
-      phone: "+1 (555) 123-4567",
-      email: "info@brickspring.com",
+      address: "373, Litein",
+      phone: "+254725903309",
+      email: "info@brickspring.co.ke",
       hours: "Mon-Fri: 8:00 AM - 6:00 PM",
     },
     {
-      name: "Regional Office - West",
+      name: "Kericho Branch",
       address: "456 Innovation Drive\nWest Valley, WV 67890",
-      phone: "+1 (555) 234-5678",
-      email: "west@brickspring.com",
+      phone: "+254725903309",
+      email: "west@brickspring.co.ke",
       hours: "Mon-Fri: 9:00 AM - 5:00 PM",
     },
     {
-      name: "Regional Office - East",
-      address: "789 Commerce Street\nEast Point, EP 13579",
-      phone: "+1 (555) 345-6789",
-      email: "east@brickspring.com",
+      name: "Regional Office ",
+      address: "123, Nairobi",
+      phone: "+254725903309",
+      email: "east@brickspring.co.ke",
       hours: "Mon-Fri: 8:30 AM - 5:30 PM",
     },
   ];
@@ -69,7 +69,7 @@ const Contact = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-gray-800 to-gray-900 text-white py-20">
+      <section className="bg-gradient-to-r from-green-800 to-green-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Contact Us</h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto">
@@ -80,7 +80,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-16">
+      <section className="py-16 text-start">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -158,7 +158,7 @@ const Contact = () => {
                           type="tel"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          placeholder="+1 (555) 123-4567"
+                          placeholder="+254712-345678"
                         />
                       </div>
                     </div>
@@ -225,21 +225,23 @@ const Contact = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-center space-x-3">
-                    <Phone className="w-5 h-5 text-blue-600" />
+                    <Phone className="w-5 h-5 text-green-800" />
                     <div>
                       <div className="font-semibold">Phone</div>
-                      <div className="text-gray-600">+1 (555) 123-4567</div>
+                      <div className="text-gray-600">+254725903309</div>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Mail className="w-5 h-5 text-blue-600" />
+                    <Mail className="w-5 h-5 text-green-800" />
                     <div>
                       <div className="font-semibold">Email</div>
-                      <div className="text-gray-600">info@brickspring.com</div>
+                      <div className="text-gray-600">
+                        info@brickspring.co.ke
+                      </div>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Clock className="w-5 h-5 text-blue-600" />
+                    <Clock className="w-5 h-5 text-green-800" />
                     <div>
                       <div className="font-semibold">Business Hours</div>
                       <div className="text-gray-600">
@@ -260,9 +262,7 @@ const Contact = () => {
                   </p>
                   <div className="space-y-2">
                     <div className="font-semibold">Emergency Hotline</div>
-                    <div className="text-lg text-red-600">
-                      +1 (555) 911-HELP
-                    </div>
+                    <div className="text-lg text-red-600">+254 712 071300</div>
                     <div className="text-sm text-gray-500">
                       Available 24/7 for existing clients
                     </div>
@@ -275,7 +275,7 @@ const Contact = () => {
       </section>
 
       {/* Office Locations */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 text-start">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -291,7 +291,7 @@ const Contact = () => {
               <Card key={index}>
                 <CardHeader>
                   <CardTitle className="text-xl flex items-center">
-                    <MapPin className="w-5 h-5 mr-2 text-blue-600" />
+                    <MapPin className="w-5 h-5 mr-2 text-green-800" />
                     {office.name}
                   </CardTitle>
                 </CardHeader>

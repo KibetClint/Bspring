@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import {
   Card,
@@ -10,10 +11,24 @@ import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
-import { useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+// Local image import
+import cctvWeighspring from "../assets/images/software/cctv-weighspring.png";
 
 const Products = () => {
   const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: "ease-in-out",
+      once: true,
+      offset: 100,
+    });
+    AOS.refresh();
+  }, []);
 
   const productCategories = [
     {
@@ -30,8 +45,7 @@ const Products = () => {
         "Safetyspring",
         "Parkspring",
       ],
-      // icon: "💻",
-      image: "/src/assets/images/software/cctv-weighspring.png",
+      image: cctvWeighspring,
     },
     {
       title: "Weighing Equipment",
@@ -43,8 +57,7 @@ const Products = () => {
         "SS Indicator with Bluetooth",
         "SCS Pallet Truck Scale",
       ],
-      // icon: "⚖️",
-      image: "/public/images/Weighing.jpg",
+      image: "images/software/Weighing.jpg",
     },
     {
       title: "Hardware & Accessories",
@@ -56,25 +69,40 @@ const Products = () => {
         "CS30 Android POS",
         "Laptops and Desktops",
       ],
-      // icon: "🔧",
-      image:
-        "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&h=200&fit=crop",
+      image: "images/hardware/Computing.jpg",
     },
   ];
+
+  const filteredCategories = productCategories.filter(
+    (category) =>
+      category.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      category.products.some((product) =>
+        product.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+  );
 
   return (
     <Layout>
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-[#236434] to-green-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Our Products</h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Discover our comprehensive range of software solutions, weighing
-            equipment, and hardware accessories
-          </p>
+          <div data-aos="fade-down">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Our Products
+            </h1>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="200">
+            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+              Discover our comprehensive range of software solutions, weighing
+              equipment, and hardware accessories
+            </p>
+          </div>
 
           {/* Search Bar */}
-          <div className="max-w-2xl mx-auto relative">
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="400"
+            className="max-w-2xl mx-auto relative">
             <Input
               type="text"
               placeholder="Search products..."
@@ -94,47 +122,65 @@ const Products = () => {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Product Categories
-            </h2>
-            <p className="text-xl text-gray-600">
-              Explore our diverse range of solutions
-            </p>
+            <div data-aos="fade-up">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Product Categories
+              </h2>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="100">
+              <p className="text-xl text-gray-600">
+                Explore our diverse range of solutions
+              </p>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {productCategories.map((category, index) => (
-              <Card
-                key={index}
-                className="hover:shadow-lg transition-shadow overflow-hidden">
+            {filteredCategories.length > 0 ? (
+              filteredCategories.map((category, index) => (
                 <div
-                  className="h-48 bg-cover bg-center"
-                  style={{ backgroundImage: `url(${category.image})` }}></div>
-                <CardHeader className="text-center">
-                  <div className="text-4xl mb-4">{category.icon}</div>
-                  <CardTitle className="text-2xl">{category.title}</CardTitle>
-                  <CardDescription>{category.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="mb-4 text-start">
-                    <p className="text-sm text-gray-500 mb-2">
-                      {category.productCount} products available
-                    </p>
-                    <ul className="text-sm text-gray-600 space-y-1">
-                      {category.products.slice(0, 3).map((product, idx) => (
-                        <li key={idx}>• {product}</li>
-                      ))}
-                      {category.products.length > 3 && (
-                        <li className="text-[#236434]">...and more</li>
-                      )}
-                    </ul>
-                  </div>
-                  <Button asChild className="w-full bg-green-800">
-                    <Link to={category.href}>Explore Category</Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+                  key={index}
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}>
+                  <Card className="hover:shadow-lg transition-all duration-300 overflow-hidden hover:scale-105 h-full">
+                    <img
+                      src={category.image}
+                      alt={category.title}
+                      className="h-48 w-full object-cover rounded-t-lg"
+                    />
+                    <CardHeader className="text-center">
+                      <CardTitle className="text-2xl">
+                        {category.title}
+                      </CardTitle>
+                      <CardDescription>{category.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="mb-4 text-start">
+                        <p className="text-sm text-gray-500 mb-2">
+                          {category.productCount} products available
+                        </p>
+                        <ul className="text-sm text-gray-600 space-y-1">
+                          {category.products.slice(0, 3).map((product, idx) => (
+                            <li key={idx}>• {product}</li>
+                          ))}
+                          {category.products.length > 3 && (
+                            <li className="text-[#236434]">...and more</li>
+                          )}
+                        </ul>
+                      </div>
+                      <Button
+                        asChild
+                        className="w-full bg-green-800 hover:bg-green-900 transition-colors">
+                        <Link to={category.href}>Explore Category</Link>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))
+            ) : (
+              <p className="text-center col-span-full text-gray-500">
+                No products match your search.
+              </p>
+            )}
           </div>
         </div>
       </section>
@@ -142,18 +188,23 @@ const Products = () => {
       {/* Product Comparison Tool */}
       <section className="py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-green-50 rounded-lg p-8 text-center">
+          <div
+            data-aos="slide-up"
+            data-aos-duration="1000"
+            className="bg-green-50 rounded-lg p-8 text-center">
             <h2 className="text-2xl font-bold mb-4">Need Help Choosing?</h2>
             <p className="text-gray-600 mb-6">
               Use our product comparison tool to find the perfect solution for
               your needs
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-green-800" size="lg">
+              <Button
+                className="bg-green-800 hover:bg-green-900 transition-colors"
+                size="lg">
                 Compare Products
               </Button>
               <Button
-                className="bg-green-800"
+                className="bg-green-800 hover:bg-green-900 transition-colors"
                 size="lg"
                 variant="outline"
                 asChild>
@@ -167,15 +218,23 @@ const Products = () => {
       {/* Download Catalog CTA */}
       <section className="py-6 bg-green-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Download Our Complete Catalog
-          </h2>
-          <p className="text-xl mb-8">
-            Get detailed specifications and pricing for all our products
-          </p>
-          <Button className="bg-green-800" size="lg" variant="secondary">
-            Download Catalog (PDF)
-          </Button>
+          <div data-aos="fade-in" data-aos-duration="1200">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Download Our Complete Catalog
+            </h2>
+            <p className="text-xl mb-8">
+              Get detailed specifications and pricing for all our products
+            </p>
+            <Button
+              className="bg-green-800 hover:bg-green-700 transition-colors"
+              size="lg"
+              variant="secondary"
+              asChild>
+              <a href="/public/Bspring Catalogue.pdf" download>
+                Download Catalog (PDF)
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
     </Layout>

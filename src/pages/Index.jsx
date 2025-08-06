@@ -29,8 +29,8 @@ const Index = () => {
     {
       name: "Weighspring Pro",
       category: "Software",
-      description: "Advanced weighbridge management with real-time monitoring",
-      price: "Contact for pricing",
+      description: "Advanced weighbridge management with real-time analytics",
+      // price: "Contact for pricing",
       features: [
         "Real-time monitoring",
         "Report generation",
@@ -43,7 +43,8 @@ const Index = () => {
     {
       name: "OCS 10A Hanging Scale",
       category: "Hardware",
-      description: "High-precision industrial hanging scale",
+      description:
+        "High-precision industrial hanging scale with Bluetooth connections",
       // price: "$1,299",
       features: [
         "1000kg capacity",
@@ -57,7 +58,8 @@ const Index = () => {
     {
       name: "CS30 Android POS",
       category: "Hardware",
-      description: "Versatile Android-based point-of-sale terminal",
+      description:
+        "Versatile Android-based point-of-sale terminal with printer",
       // price: "$899",
       features: [
         "Android OS",
@@ -135,7 +137,7 @@ const Index = () => {
     AOS.init({
       duration: 1000, // Animation duration in milliseconds
       easing: "ease-in-out", // Easing function
-      once: true, // Animation happens only once
+      once: false, // Animation happens only once
       offset: 100, // Offset from the original trigger point
     });
   }, []);
@@ -342,7 +344,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 text-start">
             {featuredProducts.map((product, index) => (
               <Card
                 key={index}
