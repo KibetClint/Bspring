@@ -167,7 +167,7 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section with Full-Width Auto-Moving Carousel */}
-      <section className="relative h-[30vh] sm:h-[40vh] md:h-[50vh] lg:h-[80vh] overflow-hidden">
+      <section className="relative h-[30vh] sm:h-[40vh] md:h-[50vh] lg:h-[80vh] overflow-hidden text-green-950">
         {/* Carousel Container - Full Width and Height */}
         <div className="relative w-full h-full">
           <div
