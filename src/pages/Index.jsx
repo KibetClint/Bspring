@@ -186,7 +186,7 @@ const Index = () => {
                     <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-r from-[#236837]/100 to-transparent z-10">
                       <div className="text-center text-white max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-5xl px-4 sm:px-6 md:px-8 lg:px-12">
                         <h1
-                          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-4 sm:mb-6 md:mb-8 leading-tight"
+                          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-4 sm:mb-6 md:mb-8 leading-tight text-white"
                           data-aos="fade-up"
                           data-aos-delay="200">
                           {slide.title}
@@ -284,7 +284,7 @@ const Index = () => {
           Innovative Solutions for Modern Business
         </h1>
         <p
-          className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-6 sm:mb-8 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed text-black"
+          className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-6 sm:mb-8 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed text-gray-700"
           data-aos="fade-up"
           data-aos-delay="200">
           Leading provider of software solutions, weighing equipment, and
@@ -305,7 +305,7 @@ const Index = () => {
       </div>
 
       {/* Stats Section */}
-      <section className="py-6 sm:py-8 md:py-10 bg-gray-50">
+      <section className="py-6 sm:py-8 md:py-10 bg-gray-50 text-gray-900">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
             {stats.map((stat, index) => (
@@ -327,7 +327,7 @@ const Index = () => {
       </section>
 
       {/* Featured Products */}
-      <section className="py-8 sm:py-10 md:py-12">
+      <section className="py-8 sm:py-10 md:py-12  text-gray-900">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div className="text-center mb-6 sm:mb-8 md:mb-12">
             <h2
@@ -347,7 +347,7 @@ const Index = () => {
             {featuredProducts.map((product, index) => (
               <Card
                 key={index}
-                className="hover:shadow-lg transition-shadow overflow-hidden"
+                className="hover:shadow-lg transition-shadow overflow-hidden bg-white text-gray-900"
                 data-aos="fade-up"
                 data-aos-delay={index * 150}>
                 <div
@@ -400,11 +400,11 @@ const Index = () => {
       </section>
 
       {/* Services Highlights */}
-      <section className="py-6 sm:py-8 md:py-10 lg:py-12">
+      <section className="py-6 sm:py-8 md:py-10 lg:py-12 text-gray-900">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div className="text-center mb-6 sm:mb-8 md:mb-12">
             <h2
-              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-900"
               data-aos="fade-up">
               Our Services
             </h2>
@@ -420,7 +420,7 @@ const Index = () => {
             {services.map((service, index) => (
               <Card
                 key={index}
-                className="text-center hover:shadow-lg transition-shadow"
+                className="text-center hover:shadow-lg transition-shadow bg-white text-gray-900"
                 data-aos="fade-up"
                 data-aos-delay={index * 150}>
                 <CardHeader className="p-3 sm:p-4 md:p-6">
@@ -430,10 +430,10 @@ const Index = () => {
                     data-aos-delay={index * 150 + 200}>
                     <service.icon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-[#236434]" />
                   </div>
-                  <CardTitle className="text-sm sm:text-base md:text-lg lg:text-xl mb-2">
+                  <CardTitle className="text-sm sm:text-base md:text-lg lg:text-xl mb-2 text-gray-900">
                     {service.title}
                   </CardTitle>
-                  <CardDescription className="text-xs sm:text-sm md:text-base">
+                  <CardDescription className="text-xs sm:text-sm md:text-base text-gray-700">
                     {service.description}
                   </CardDescription>
                 </CardHeader>
@@ -452,11 +452,11 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-8 sm:py-10 md:py-12 lg:py-16">
+      <section className="py-8 sm:py-10 md:py-12 lg:py-10 text-gray-900">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div className="text-center mb-6 sm:mb-8 md:mb-12">
             <h2
-              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-900"
               data-aos="fade-up">
               What Our Clients Say
             </h2>
@@ -466,7 +466,7 @@ const Index = () => {
             {[1, 2, 3].map((item, index) => (
               <Card
                 key={item}
-                className="bg-green-50"
+                className="bg-green-50 text-gray-900"
                 data-aos="fade-up"
                 data-aos-delay={index * 150}>
                 <CardContent className="p-3 sm:p-4 md:p-6">
@@ -481,7 +481,7 @@ const Index = () => {
                     </p>
                   </div>
                   <div className="border-t pt-3 sm:pt-4">
-                    <div className="font-semibold text-sm sm:text-base">
+                    <div className="font-semibold text-sm sm:text-base text-gray-900">
                       Browns
                     </div>
                     <div className="text-xs sm:text-sm text-gray-600">
@@ -496,11 +496,11 @@ const Index = () => {
       </section>
 
       {/* Trust Indicators */}
-      <section className="py-4 sm:py-6 bg-gray-100">
+      <section className="py-4 sm:py-6 bg-green-900 text-gray-900">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div className="text-center">
             <h2
-              className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 md:mb-8"
+              className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 md:mb-8 text-gray-900"
               data-aos="fade-up">
               Trusted by Industry Leaders
             </h2>
@@ -509,16 +509,16 @@ const Index = () => {
               data-aos="fade-up"
               data-aos-delay="200">
               <div data-aos="zoom-in" data-aos-delay="300">
-                <Award className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12" />
+                <Award className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-gray-700" />
               </div>
               <div data-aos="zoom-in" data-aos-delay="400">
-                <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12" />
+                <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-gray-700" />
               </div>
               <div data-aos="zoom-in" data-aos-delay="500">
-                <Shield className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12" />
+                <Shield className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-gray-700" />
               </div>
               <div data-aos="zoom-in" data-aos-delay="600">
-                <Users className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12" />
+                <Users className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-gray-700" />
               </div>
             </div>
           </div>
@@ -529,12 +529,12 @@ const Index = () => {
       <section className="py-6 sm:py-8 md:py-10 lg:py-12 bg-[#236434] text-white">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 text-center">
           <h2
-            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 leading-tight"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 leading-tight text-white"
             data-aos="fade-up">
             Ready to Get Started?
           </h2>
           <p
-            className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl mx-auto leading-relaxed"
+            className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl mx-auto leading-relaxed text-white"
             data-aos="fade-up"
             data-aos-delay="200">
             Contact us today to discuss your requirements and discover how our
