@@ -42,3 +42,16 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Custom Typography Colors */
+h1 {
+  @apply text-green-900;
+}
+
+h2 {
+  @apply text-[#236434];
+}
+
+p {
+  @apply text-gray-600;
+}

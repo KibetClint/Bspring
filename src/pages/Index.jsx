@@ -112,8 +112,8 @@ const Index = () => {
       url: "/images/hardware/Checker-Plate-Platform-Floor-Weight-Scale.png",
       title: "Industrial Equipment",
       description: "Precision weighing and measurement solutions",
-      link: "/services",
-      pageName: "Services",
+      link: "/products/hardware",
+      pageName: "Hardware & Accessories",
     },
     {
       url: "/images/hero-section/consultation.jpg",
@@ -216,7 +216,7 @@ const Index = () => {
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
-          className="absolute left-2 sm:left-4 md:left-6 lg:left-8 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 sm:p-3 md:p-4 rounded-full transition-all duration-300 hover:scale-110 z-10">
+          className="absolute left-2 sm:left-4 md:left-6 lg:left-8 top-1/2 transform -translate-y-1/2 bg-green-900 bg-opacity-50 hover:bg-opacity-75 text-white p-2 sm:p-3 md:p-4 rounded-full transition-all duration-300 hover:scale-110 z-10">
           <svg
             className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8"
             fill="none"
@@ -232,7 +232,7 @@ const Index = () => {
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-2 sm:right-4 md:right-6 lg:right-8 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 sm:p-3 md:p-4 rounded-full transition-all duration-300 hover:scale-110 z-10">
+          className="absolute right-2 sm:right-4 md:right-6 lg:right-8 top-1/2 transform -translate-y-1/2 bg-green-900 bg-opacity-50 hover:bg-opacity-75 text-white p-2 sm:p-3 md:p-4 rounded-full transition-all duration-300 hover:scale-110 z-10">
           <svg
             className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8"
             fill="none"
@@ -276,7 +276,7 @@ const Index = () => {
       </section>
 
       {/* Main Headline and CTA Buttons */}
-      <div className="text-center px-2 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
+      <div className="text-center px-2 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12 ">
         <h1
           className="text-green-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight"
           data-aos="fade-up"
@@ -327,7 +327,7 @@ const Index = () => {
       </section>
 
       {/* Featured Products */}
-      <section className="py-8 sm:py-10 md:py-12  text-gray-900">
+      <section className="py-8 sm:py-10 md:py-12 text-gray-900">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div className="text-center mb-6 sm:mb-8 md:mb-12">
             <h2
@@ -366,11 +366,11 @@ const Index = () => {
                     {product.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="p-3 sm:p-4 md:p-6 pt-0">
-                  <div className="mb-4 sm:mb-5 md:mb-6 text-start">
-                    <div className="text-lg sm:text-xl md:text-2xl font-bold text-[#236434] mb-2">
+                <CardContent className="p-3 sm:p-4 md:p-4 pt-0">
+                  <div className="mb-4 sm:mb-5 md:mb-4 text-start">
+                    {/* <div className="text-lg sm:text-xl md:text-2xl font-bold text-[#236434] mb-2">
                       {product.price}
-                    </div>
+                    </div> */}
                     <ul className="text-xs sm:text-sm md:text-base text-gray-600 space-y-1">
                       {product.features.map((feature, idx) => (
                         <li key={idx}>✓ {feature}</li>
@@ -400,7 +400,7 @@ const Index = () => {
       </section>
 
       {/* Services Highlights */}
-      <section className="py-6 sm:py-8 md:py-10 lg:py-12 text-gray-900">
+      <section className="py-6 sm:py-8 md:py-10 lg:py-8  text-gray-900">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div className="text-center mb-6 sm:mb-8 md:mb-12">
             <h2
@@ -420,7 +420,7 @@ const Index = () => {
             {services.map((service, index) => (
               <Card
                 key={index}
-                className="text-center hover:shadow-lg transition-shadow bg-white text-gray-900"
+                className="text-center hover:shadow-lg transition-shadow bg-white text-gray-900 hover:bg-green-50"
                 data-aos="fade-up"
                 data-aos-delay={index * 150}>
                 <CardHeader className="p-3 sm:p-4 md:p-6">
@@ -452,7 +452,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-8 sm:py-10 md:py-12 lg:py-10 text-gray-900">
+      <section className="py-8 sm:py-10 md:py-12 lg:py-8 text-gray-900">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div className="text-center mb-6 sm:mb-8 md:mb-12">
             <h2
@@ -467,7 +467,7 @@ const Index = () => {
               <Card
                 key={item}
                 className="bg-green-50 text-gray-900"
-                data-aos="fade-up"
+                data-aos="fade-in"
                 data-aos-delay={index * 150}>
                 <CardContent className="p-3 sm:p-4 md:p-6">
                   <div className="mb-3 sm:mb-4">
@@ -496,17 +496,17 @@ const Index = () => {
       </section>
 
       {/* Trust Indicators */}
-      <section className="py-4 sm:py-6 bg-green-900 text-gray-900">
+      <section className="py-4 sm:py-6 bg-gray-100 text-gray-900">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div className="text-center">
             <h2
               className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 md:mb-8 text-gray-900"
-              data-aos="fade-up">
+              data-aos="fade-in">
               Trusted by Industry Leaders
             </h2>
             <div
               className="flex justify-center items-center space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-12 opacity-60"
-              data-aos="fade-up"
+              data-aos="zoom-in"
               data-aos-delay="200">
               <div data-aos="zoom-in" data-aos-delay="300">
                 <Award className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-gray-700" />
