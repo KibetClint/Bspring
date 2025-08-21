@@ -14,8 +14,6 @@ import { Search } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// Local image import
-import cctvWeighspring from "../assets/images/software/cctv-weighspring.png";
 
 const Products = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -45,7 +43,7 @@ const Products = () => {
         "Safetyspring",
         "Parkspring",
       ],
-      image: cctvWeighspring,
+      image: "images/software/cctv-weighspring.png",
     },
     {
       title: "Weighing Equipment",

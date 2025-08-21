@@ -37,7 +37,7 @@ const ProductCategory = ({ category }) => {
           name: "Timespring",
           description:
             "Time-released messaging platform for automated communications",
-          image: "/src/assets/images/software/TimeSpringMockup.jpg",
+          image: "/images/software/TimeSpringMockup.jpg",
           features: [
             "Scheduled messaging",
             "Multi-channel delivery",
@@ -51,7 +51,7 @@ const ProductCategory = ({ category }) => {
         {
           name: "Payrollspring",
           description: "Complete payroll processing solution for businesses",
-          image: "/src/assets/images/software/payrollspring.png",
+          image: "/images/software/payrollspring.png",
           features: [
             "Automated calculations",
             "Tax compliance",
@@ -65,7 +65,7 @@ const ProductCategory = ({ category }) => {
         {
           name: "Secuspring",
           description: "Comprehensive security management module",
-          image: "/src/assets/images/software/secuspring.jpg",
+          image: "/public/images/software/secuspring.jpeg",
           features: [
             "Access control",
             "Surveillance integration",
@@ -79,7 +79,7 @@ const ProductCategory = ({ category }) => {
         {
           name: "Safetyspring",
           description: "Safety management system for workplace compliance",
-          image: "/src/assets/images/software/safestyspring.png",
+          image: "/images/software/safestyspring.png",
           features: [
             "Incident tracking",
             "Safety protocols",
@@ -93,7 +93,7 @@ const ProductCategory = ({ category }) => {
         {
           name: "Parkspring",
           description: "Park management system for recreational facilities",
-          image: "/src/assets/images/software/parking-system.jpeg",
+          image: "/images/software/parking-system.jpeg",
           features: [
             "Booking management",
             "Facility scheduling",
@@ -116,7 +116,7 @@ const ProductCategory = ({ category }) => {
           name: "OCS SB1 Hanging Scale",
           description:
             "High-precision industrial hanging scale with LED display",
-          image: "/src/assets/images/hardware/OCS SB1.png",
+          image: "/public/images/weighing/SB1.png",
           features: [
             "1000kg capacity",
             "LED display",
@@ -130,7 +130,7 @@ const ProductCategory = ({ category }) => {
         {
           name: "SS Indicator with Bluetooth",
           description: "Smart weighing indicator with wireless connectivity",
-          image: "/src/assets/images/hardware/SS indicators with Bluetooth.png",
+          image: "/images/hardware/SS indicators with Bluetooth.png",
           features: [
             "Bluetooth connectivity",
             "Multiple unit display",
@@ -144,7 +144,7 @@ const ProductCategory = ({ category }) => {
         {
           name: "SCS Pallet Truck Scale",
           description: "Mobile weighing solution for warehouse operations",
-          image: "/src/assets/images/hardware/SCS Pallet Truck Scale .webp",
+          image: "/images/weighing/SCS Pallet Truck Scale .webp",
           features: [
             "2000kg capacity",
             "Built-in printer",
@@ -159,7 +159,7 @@ const ProductCategory = ({ category }) => {
           name: "Checkered Plate Platform Scale",
           description: "Durable platform scale for heavy-duty applications",
           image:
-            "/src/assets/images/hardware/Checker-Plate-Platform-Floor-Weight-Scale.png",
+            "/images/weighing/Checker-Plate-Platform-Floor-Weight-Scale.png",
           features: [
             "5000kg capacity",
             "Anti-slip surface",
@@ -173,7 +173,7 @@ const ProductCategory = ({ category }) => {
         {
           name: "Bench Scale",
           description: "Compact precision scale for laboratory and retail use",
-          image: "/src/assets/images/hardware/bench-scale.webp",
+          image: "/images/weighing/Table Scale.jpg",
           features: [
             "0.1g precision",
             "Stainless steel pan",
@@ -188,7 +188,7 @@ const ProductCategory = ({ category }) => {
           name: "Electronic Platform Scale",
           description:
             "Versatile platform scale for general weighing applications",
-          image: "/src/assets/images/hardware/Electronic Platform Scale.webp",
+          image: "/images/weighing/Electronic Platform Scale.webp",
           features: [
             "500kg capacity",
             "Large LCD display",
@@ -202,7 +202,7 @@ const ProductCategory = ({ category }) => {
         {
           name: "Pallet Weighing Scale",
           description: "Specialized scale designed for pallet weighing",
-          image: "/src/assets/images/hardware/Pallet scale.png",
+          image: "/public/images/weighing/Pallet scale.png",
           features: [
             "3000kg capacity",
             "Low profile design",
@@ -212,6 +212,22 @@ const ProductCategory = ({ category }) => {
           // price: "$1,799",
           status: "In Stock",
           slug: "pallet-weighing-scale",
+        },
+        {
+          name: "OCS 10A Hanging Scale",
+          description:
+            "High-precision industrial hanging scale with Bluetooth connections",
+
+          features: [
+            "1000kg capacity",
+            "LED display",
+            "Bluetooth connectivity",
+            "Battery powered",
+          ],
+          slug: "ocs-10a-hanging-scale",
+          // price: "$1,299",
+          status: "In Stock",
+          image: "/public/images/weighing/10A.png",
         },
       ],
     },
@@ -225,7 +241,7 @@ const ProductCategory = ({ category }) => {
           name: "Mini Bluetooth Thermal Printers",
           description:
             "Compact wireless thermal printers for mobile applications",
-          image: "/src/assets/images/hardware/Bt Printer.jpg",
+          image: "/images/hardware/T12 BT printer.png",
           features: [
             "Bluetooth connectivity",
             "Portable design",
@@ -239,7 +255,7 @@ const ProductCategory = ({ category }) => {
         {
           name: "CS30 Multipurpose Android POS",
           description: "Versatile Android-based point-of-sale terminal",
-          image: "/src/assets/images/hardware/POS.jpeg",
+          image: "/images/hardware/POS.jpeg",
           features: [
             "Android OS",
             '15" touch screen',
@@ -250,10 +266,11 @@ const ProductCategory = ({ category }) => {
           status: "In Stock",
           slug: "cs30-android-pos",
         },
+
         {
           name: "Laptops and Desktops",
           description: "Business-grade computers for professional use",
-          image: "/src/assets/images/hardware/laptops.webp",
+          image: "/images/hardware/laptops.webp",
           features: [
             "Intel processors",
             "SSD storage",
@@ -267,7 +284,7 @@ const ProductCategory = ({ category }) => {
         {
           name: "Smartphones",
           description: "Business smartphones with enterprise features",
-          image: "/src/assets/images/hardware/smartphones.jpg",
+          image: "/public/images/hardware/smartphones.jpg",
           features: [
             "Enterprise security",
             "Long battery life",
@@ -281,7 +298,7 @@ const ProductCategory = ({ category }) => {
         {
           name: "Accessories",
           description: "Various accessories and peripheral devices",
-          image: "/src/assets/images/hardware/Accessories.jpg",
+          image: "/public/images/hardware/Accessories.jpg",
           features: [
             "Cables and adapters",
             "Protective cases",
@@ -355,7 +372,7 @@ const ProductCategory = ({ category }) => {
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
                   />
                 </div>
 

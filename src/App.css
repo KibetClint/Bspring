@@ -45,7 +45,7 @@
 
 /* Custom Typography Colors */
 h1 {
-  @apply text-green-900;
+  @apply text-green-950;
 }
 
 h2 {
@@ -53,5 +53,5 @@ h2 {
 }
 
 p {
-  @apply text-gray-600;
+  @apply text-gray-900;
 }

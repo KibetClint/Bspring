@@ -27,7 +27,7 @@ const Index = () => {
 
   const featuredProducts = [
     {
-      name: "Weighspring Pro",
+      name: "Weighspring",
       category: "Software",
       description: "Advanced weighbridge management with real-time analytics",
       // price: "Contact for pricing",
@@ -38,7 +38,7 @@ const Index = () => {
         "Cloud sync",
       ],
       slug: "weighspring",
-      image: "/images/software/cctv-weighspring.png",
+      image: "images/software/cctv-weighspring.png",
     },
     {
       name: "OCS 10A Hanging Scale",
@@ -53,7 +53,7 @@ const Index = () => {
         "Battery powered",
       ],
       slug: "ocs-10a-hanging-scale",
-      image: "/src/assets/images/hardware/SB1.png",
+      image: "/images/weighing/10A.png",
     },
     {
       name: "CS30 Android POS",
@@ -67,7 +67,7 @@ const Index = () => {
         "Multiple connectivity",
       ],
       slug: "cs30-android-pos",
-      image: "/src/assets/images/hardware/POS.jpeg",
+      image: "/images/hardware/POS.jpeg",
     },
   ];
 
