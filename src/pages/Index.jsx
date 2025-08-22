@@ -109,7 +109,7 @@ const Index = () => {
       pageName: "Consultation",
     },
     {
-      url: "/images/hardware/Checker-Plate-Platform-Floor-Weight-Scale.png",
+      url: "/public/images/weighing/Electronic Platform Scale.webp",
       title: "Industrial Equipment",
       description: "Precision weighing and measurement solutions",
       link: "/products/hardware",
