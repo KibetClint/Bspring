@@ -109,7 +109,7 @@ const Index = () => {
       pageName: "Consultation",
     },
     {
-      url: "/public/images/weighing/Electronic Platform Scale.webp",
+      url: "/public/images/weighing/10A.png",
       title: "Industrial Equipment",
       description: "Precision weighing and measurement solutions",
       link: "/products/hardware",
@@ -177,7 +177,7 @@ const Index = () => {
               <div key={index} className="w-full flex-shrink-0 h-full">
                 <div className="relative w-full h-full">
                   <div
-                    className="w-full h-full bg-cover bg-center bg-no-repeat"
+                    className="w-full h-full bg-cover bg-center bg-no-repeat "
                     style={{ backgroundImage: `url(${slide.url})` }}>
                     {/* Overlay for better text readability */}
                     <div className="absolute inset-0  bg-opacity-40"></div>

@@ -6,291 +6,190 @@ import {
   CardHeader,
   CardTitle,
 } from "../components/ui/card";
+import { Button } from "../components/ui/button";
 import { Badge } from "../components/ui/badge";
-import {
-  Users,
-  Target,
-  Award,
-  Building,
-  MapPin,
-  Phone,
-  Mail,
-} from "lucide-react";
+import { Link } from "react-router-dom";
 
-const About = () => {
-  const teamMembers = [
+const Blog = () => {
+  const featuredPost = {
+    title:
+      "The Future of Industrial Weighing: IoT Integration and Smart Analytics",
+    excerpt:
+      "Discover how Internet of Things (IoT) technology is revolutionizing industrial weighing systems, enabling real-time monitoring, predictive maintenance, and advanced analytics for improved operational efficiency.",
+    category: "Technology Trends",
+    date: "March 15, 2024",
+    readTime: "8 min read",
+    author: "Dr. Sarah Mitchell",
+  };
+
+  const blogPosts = [
     {
-      name: "Sarah Johnson",
-      position: "CEO & Founder",
-      bio: "15+ years experience in industrial technology solutions",
-      image: "/placeholder.svg",
+      title: "Cybersecurity Best Practices for Industrial Systems",
+      excerpt:
+        "Essential security measures to protect your industrial systems from cyber threats and ensure business continuity.",
+      category: "Security",
+      date: "March 10, 2024",
+      readTime: "6 min read",
+      author: "Michael Chen",
     },
     {
-      name: "Michael Chen",
-      position: "CTO",
-      bio: "Expert in software development and system integration",
-      image: "/placeholder.svg",
+      title: "Choosing the Right Weighing Solution for Your Business",
+      excerpt:
+        "A comprehensive guide to selecting the perfect weighing equipment based on your industry requirements and operational needs.",
+      category: "Buyer's Guide",
+      date: "March 5, 2024",
+      readTime: "10 min read",
+      author: "Emily Rodriguez",
     },
     {
-      name: "Emily Rodriguez",
-      position: "Head of Sales",
-      bio: "Specialized in weighing equipment and industrial solutions",
-      image: "/placeholder.svg",
+      title:
+        "Case Study: Streamlining Warehouse Operations with Integrated Solutions",
+      excerpt:
+        "How XYZ Logistics improved efficiency by 40% using our integrated weighing and management systems.",
+      category: "Case Study",
+      date: "February 28, 2024",
+      readTime: "7 min read",
+      author: "John Anderson",
+    },
+    {
+      title: "The Evolution of Point-of-Sale Technology",
+      excerpt:
+        "From traditional cash registers to modern Android-based POS systems: a journey through retail technology evolution.",
+      category: "Technology Trends",
+      date: "February 20, 2024",
+      readTime: "5 min read",
+      author: "Sarah Mitchell",
+    },
+    {
+      title: "Compliance Standards in Industrial Weighing",
+      excerpt:
+        "Understanding the regulatory landscape and ensuring your weighing systems meet all necessary compliance requirements.",
+      category: "Compliance",
+      date: "February 15, 2024",
+      readTime: "12 min read",
+      author: "Michael Chen",
+    },
+    {
+      title: "Mobile Integration in Modern Business Systems",
+      excerpt:
+        "How mobile technology is transforming business operations and what it means for your organization.",
+      category: "Technology Trends",
+      date: "February 10, 2024",
+      readTime: "8 min read",
+      author: "Emily Rodriguez",
     },
   ];
 
-  const milestones = [
-    {
-      year: "2009",
-      event:
-        "Brickspring founded with a vision to revolutionize industrial solutions",
-    },
-    {
-      year: "2012",
-      event: "Launched first weighbridge management software - Weighspring",
-    },
-    {
-      year: "2015",
-      event: "Expanded into cybersecurity and penetration testing services",
-    },
-    { year: "2018", event: "Reached 1000+ successful installations worldwide" },
-    { year: "2020", event: "Launched comprehensive Android POS solutions" },
-    { year: "2024", event: "Serving 500+ clients across 25+ countries" },
-  ];
-
-  const values = [
-    {
-      title: "Innovation",
-      description:
-        "Continuously developing cutting-edge solutions for modern business challenges",
-      icon: Target,
-    },
-    {
-      title: "Quality",
-      description:
-        "Delivering reliable, precise, and durable products that exceed expectations",
-      icon: Award,
-    },
-    {
-      title: "Partnership",
-      description:
-        "Building long-term relationships with our clients based on trust and mutual success",
-      icon: Users,
-    },
+  const categories = [
+    "All Posts",
+    "Technology Trends",
+    "Security",
+    "Case Studies",
+    "Buyer's Guides",
+    "Compliance",
+    "Industry Insights",
   ];
 
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-gray-800 to-gray-900 text-white py-20">
+      <section className="bg-gradient-to-r from-green-600 to-green-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            About Brickspring
+            Blog & Insights
           </h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto">
-            Pioneering innovative solutions in industrial technology for over 15
-            years
+            Stay updated with the latest industry trends, technology insights,
+            and expert advice
           </p>
         </div>
       </section>
 
-      {/* Company Story */}
+      {/* Featured Post */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Our Story</h2>
-              <p className="text-lg text-gray-600 mb-6">
-                Founded in 2009, Brickspring began with a simple mission: to
-                provide innovative, reliable solutions for industrial weighing
-                and business management challenges. What started as a small team
-                of engineers has grown into a leading provider of comprehensive
-                technology solutions.
-              </p>
-              <p className="text-lg text-gray-600 mb-6">
-                Today, we serve over 500 clients across 25+ countries,
-                delivering everything from precision weighing equipment to
-                advanced cybersecurity services. Our commitment to innovation
-                and quality has made us a trusted partner for businesses
-                worldwide.
-              </p>
-              <div className="flex space-x-4">
-                <Badge className="text-base px-4 py-2">
-                  15+ Years Experience
-                </Badge>
-                <Badge className="text-base px-4 py-2">
-                  500+ Happy Clients
-                </Badge>
-              </div>
-            </div>
-            <div className="bg-gray-200 h-96 rounded-lg"></div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mission, Vision, Values */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our Mission & Vision
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Target className="h-6 w-6 mr-2 text-blue-600" />
-                  Our Mission
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  To empower businesses with innovative technology solutions
-                  that enhance efficiency, accuracy, and security while
-                  delivering exceptional value and support.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Award className="h-6 w-6 mr-2 text-blue-600" />
-                  Our Vision
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  To be the global leader in industrial technology solutions,
-                  recognized for our innovation, quality, and commitment to
-                  customer success.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {values.map((value, index) => (
-              <Card key={index} className="text-center">
-                <CardHeader>
-                  <div className="mx-auto mb-4 p-3 bg-blue-100 rounded-full w-fit">
-                    <value.icon className="h-8 w-8 text-blue-600" />
-                  </div>
-                  <CardTitle>{value.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">{value.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership Team */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Leadership Team
-            </h2>
-            <p className="text-xl text-gray-600">
-              Meet the experts driving our innovation
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <Card key={index} className="text-center">
-                <CardHeader>
-                  <div className="w-32 h-32 mx-auto bg-gray-200 rounded-full mb-4"></div>
-                  <CardTitle>{member.name}</CardTitle>
-                  <CardDescription className="font-semibold text-blue-600">
-                    {member.position}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">{member.bio}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Company Milestones */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Journey</h2>
-            <p className="text-xl text-gray-600">
-              Key milestones in our growth story
-            </p>
-          </div>
-
-          <div className="space-y-8">
-            {milestones.map((milestone, index) => (
-              <div key={index} className="flex items-center">
-                <div className="flex-shrink-0 w-20 h-20 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
-                  {milestone.year}
-                </div>
-                <div className="ml-6 flex-1">
-                  <p className="text-lg text-gray-700">{milestone.event}</p>
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold mb-8">Featured Article</h2>
+            <Card className="overflow-hidden">
+              <div className="md:flex">
+                <div className="md:w-1/3 bg-gray-200 min-h-64"></div>
+                <div className="md:w-2/3">
+                  <CardHeader>
+                    <div className="flex items-center space-x-2 mb-2">
+                      <Badge>{featuredPost.category}</Badge>
+                      <span className="text-sm text-gray-500">
+                        {featuredPost.date}
+                      </span>
+                      <span className="text-sm text-gray-500">•</span>
+                      <span className="text-sm text-gray-500">
+                        {featuredPost.readTime}
+                      </span>
+                    </div>
+                    <CardTitle className="text-2xl">
+                      {featuredPost.title}
+                    </CardTitle>
+                    <CardDescription className="text-base">
+                      {featuredPost.excerpt}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex items-center justify-between">
+                      <div className="text-sm text-gray-600">
+                        By {featuredPost.author}
+                      </div>
+                      <Button>Read More</Button>
+                    </div>
+                  </CardContent>
                 </div>
               </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Categories Filter */}
+      <section className="py-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap gap-2 justify-center">
+            {categories.map((category, index) => (
+              <Button
+                key={index}
+                variant={index === 0 ? "default" : "outline"}
+                size="sm"
+                className="mb-2">
+                {category}
+              </Button>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Office Locations */}
+      {/* Blog Posts Grid */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our Locations
-            </h2>
-            <p className="text-xl text-gray-600">Find us around the globe</p>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                city: "New York",
-                country: "USA",
-                address: "123 Business Ave, NY 10001",
-              },
-              {
-                city: "London",
-                country: "UK",
-                address: "456 Tech Street, London SW1A 1AA",
-              },
-              {
-                city: "Singapore",
-                country: "Singapore",
-                address: "789 Innovation Blvd, Singapore 018956",
-              },
-            ].map((location, index) => (
-              <Card key={index}>
+            {blogPosts.map((post, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow">
+                <div className="h-48 bg-gray-200"></div>
                 <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <MapPin className="h-5 w-5 mr-2 text-blue-600" />
-                    {location.city}, {location.country}
-                  </CardTitle>
+                  <div className="flex items-center space-x-2 mb-2">
+                    <Badge variant="secondary">{post.category}</Badge>
+                    <span className="text-sm text-gray-500">
+                      {post.readTime}
+                    </span>
+                  </div>
+                  <CardTitle className="text-lg">{post.title}</CardTitle>
+                  <CardDescription>{post.excerpt}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 mb-4">{location.address}</p>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex items-center">
-                      <Phone className="h-4 w-4 mr-2 text-gray-400" />
-                      <span>+1 (555) 123-4567</span>
+                  <div className="flex items-center justify-between">
+                    <div className="text-sm text-gray-600">
+                      <div>By {post.author}</div>
+                      <div>{post.date}</div>
                     </div>
-                    <div className="flex items-center">
-                      <Mail className="h-4 w-4 mr-2 text-gray-400" />
-                      <span>info@brickspring.com</span>
-                    </div>
+                    <Button variant="outline" size="sm">
+                      Read More
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -299,24 +198,20 @@ const About = () => {
         </div>
       </section>
 
-      {/* Certifications */}
+      {/* Newsletter Signup */}
       <section className="py-16 bg-blue-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">
-            Certifications & Awards
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              "ISO 9001:2015",
-              "ISO 27001",
-              "CE Certified",
-              "Industry Excellence Award",
-            ].map((cert, index) => (
-              <div key={index} className="p-6 bg-white/10 rounded-lg">
-                <Building className="h-12 w-12 mx-auto mb-4" />
-                <p className="font-semibold">{cert}</p>
-              </div>
-            ))}
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Stay Informed</h2>
+          <p className="text-xl mb-8">
+            Subscribe to our newsletter for the latest insights and updates
+          </p>
+          <div className="max-w-md mx-auto flex gap-4">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="flex-1 px-4 py-2 rounded-md text-gray-900"
+            />
+            <Button variant="secondary">Subscribe</Button>
           </div>
         </div>
       </section>
@@ -324,4 +219,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Blog;

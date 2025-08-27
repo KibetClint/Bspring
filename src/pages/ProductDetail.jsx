@@ -825,12 +825,12 @@ const ProductDetail = () => {
           title: "Front View",
         },
         {
-          src: "/images/hardware/pos-side.jpg",
+          src: "/images/hardware/cs30-0.jpg",
           alt: "CS30 Side Profile",
           title: "Side Profile",
         },
         {
-          src: "/images/hardware/pos-interface.jpg",
+          src: "/images/hardware/cs30 ui.jpeg",
           alt: "POS Interface Screenshot",
           title: "UI Display",
         },
@@ -1189,7 +1189,7 @@ const ProductDetail = () => {
                   <CardTitle>Product Overview</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-700 mb-6">
+                  <p className="text-gray-700 mb-6 ">
                     {product.longDescription}
                   </p>
 
@@ -1219,7 +1219,7 @@ const ProductDetail = () => {
                         <div
                           key={key}
                           className=" py-2 border-b border-gray-400 bold">
-                          <span className="font-medium text-gray-700">
+                          <span className="font-extrabold text-gray-700 mr-2">
                             {key}:
                           </span>
                           <span className="text-gray-600">{value}</span>

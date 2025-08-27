@@ -133,7 +133,7 @@ const Footer = () => {
             <h2 className="text-start text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 md:mb-4">
               Follow Us
             </h2>
-            <div className="flex gap-2 text-start">
+            <div className="flex  gap-2 text-start">
               <a
                 href="https://www.facebook.com/profile.php?id=61577392503207"
                 target="_blank"

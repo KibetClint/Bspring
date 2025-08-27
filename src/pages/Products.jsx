@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Layout from "../components/Layout";
 import {
   Card,
@@ -14,9 +14,8 @@ import { Search } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-
 const Products = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+  // const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     AOS.init({
@@ -71,13 +70,7 @@ const Products = () => {
     },
   ];
 
-  const filteredCategories = productCategories.filter(
-    (category) =>
-      category.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      category.products.some((product) =>
-        product.toLowerCase().includes(searchTerm.toLowerCase())
-      )
-  );
+  const filteredCategories = productCategories;
 
   return (
     <Layout>
@@ -97,7 +90,7 @@ const Products = () => {
           </div>
 
           {/* Search Bar */}
-          <div
+          {/* <div
             data-aos="zoom-in"
             data-aos-delay="400"
             className="max-w-2xl mx-auto relative">
@@ -112,7 +105,7 @@ const Products = () => {
               className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"
               size={20}
             />
-          </div>
+          </div> */}
         </div>
       </section>
 
