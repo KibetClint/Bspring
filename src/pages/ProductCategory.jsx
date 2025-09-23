@@ -391,7 +391,9 @@ const ProductCategory = ({ category }) => {
                       {product.status}
                     </Badge>
                   </div>
-                  <CardDescription>{product.description}</CardDescription>
+                  <CardDescription className="text-gray-700">
+                    {product.description}
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="mb-4 text-start">
