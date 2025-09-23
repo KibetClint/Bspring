@@ -1045,11 +1045,11 @@ const ProductDetail = () => {
       <section className="py-4 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-2 text-sm text-gray-600">
-            <Link to="/" className="hover:text-blue-600">
+            <Link to="/" className="hover:text-green-900">
               Home
             </Link>
             <span>›</span>
-            <Link to="/products" className="hover:text-blue-600">
+            <Link to="/products" className="hover:text-green-900">
               Products
             </Link>
             <span>›</span>
@@ -1061,7 +1061,7 @@ const ProductDetail = () => {
       {/* Product Header */}
       <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Button variant="outline" asChild className="mb-6">
+          <Button variant="outline" asChild className="mb-6 hover:bg-green-900">
             <Link to="/products">
               <ArrowLeft className="mr-2" size={16} />
               Back to Products
@@ -1100,7 +1100,7 @@ const ProductDetail = () => {
                     onClick={() => setSelectedImageIndex(index)}
                     className={`aspect-square rounded cursor-pointer transition-all ${
                       selectedImageIndex === index
-                        ? "ring-2 ring-blue-500"
+                        ? "ring-2 ring-green-900"
                         : "hover:ring-2 hover:ring-gray-300"
                     }`}>
                     <img
@@ -1115,7 +1115,7 @@ const ProductDetail = () => {
 
               {/* Image Info */}
               <div className="mt-2 text-center">
-                <span className="text-sm text-gray-500">
+                <span className="text-sm text-green-900">
                   {product.images[selectedImageIndex]?.title || "Product Image"}
                 </span>
               </div>
@@ -1136,23 +1136,27 @@ const ProductDetail = () => {
                 </Badge>
               </div>
 
-              <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
+              <h1 className="text-3xl text-green-900 font-bold mb-4">
+                {product.name}
+              </h1>
               <p className="text-gray-600 text-lg mb-6">
                 {product.description}
               </p>
 
-              <div className="text-3xl font-bold text-blue-600 mb-6">
+              <div className="text-3xl font-bold text-green-800 mb-6">
                 {product.price}
               </div>
 
-              <div className="space-y-3 mb-8">
-                <Button size="lg" className="w-full bg-green-800" asChild>
+              <div className="space-y-3 mb-6 flex flex-col sm:flex-row sm:space-y-0 sm:space-x-4 items-center">
+                <Button
+                  size="lg"
+                  className="w-34 bg-green-800 text-black"
+                  asChild>
                   <Link to="/quote">Get Quote</Link>
                 </Button>
                 <Button
                   size="lg"
-                  variant="outline"
-                  className="w-full bg-green-800"
+                  className="w-34 bg-green-800 py-3 text-black"
                   asChild>
                   <Link to="/contact">Contact Sales</Link>
                 </Button>
@@ -1161,16 +1165,16 @@ const ProductDetail = () => {
               {/* Trust Indicators */}
               <div className="grid grid-cols-3 gap-4 text-center py-4 border-t border-b">
                 <div className="flex flex-col items-center">
-                  <Shield className="h-6 w-6 text-green-600 mb-1" />
+                  <Shield className="h-6 w-6 text-green-800 mb-1" />
                   <span className="text-sm text-gray-600">Warranty</span>
                 </div>
                 <div className="flex flex-col items-center">
                   <Truck className="h-6 w-6 text-blue-600 mb-1" />
-                  <span className="text-sm text-gray-600">Free Shipping</span>
+                  <span className="text-sm text-white">Free Shipping</span>
                 </div>
                 <div className="flex flex-col items-center">
                   <Phone className="h-6 w-6 text-purple-600 mb-1" />
-                  <span className="text-sm text-gray-600">24/7 Support</span>
+                  <span className="text-sm text-white">24/7 Support</span>
                 </div>
               </div>
             </div>
@@ -1185,7 +1189,7 @@ const ProductDetail = () => {
             {/* Description & Features */}
             <div>
               <Card>
-                <CardHeader>
+                <CardHeader className="text-green-900">
                   <CardTitle>Product Overview</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -1193,7 +1197,9 @@ const ProductDetail = () => {
                     {product.longDescription}
                   </p>
 
-                  <h4 className="font-semibold mb-3">Key Features:</h4>
+                  <h4 className="font-semibold text-green-900 mb-3">
+                    Key Features:
+                  </h4>
                   <ul className="space-y-2">
                     {product.features.map((feature, index) => (
                       <li key={index} className="flex items-start">
@@ -1209,7 +1215,7 @@ const ProductDetail = () => {
             {/* Specifications */}
             <div>
               <Card>
-                <CardHeader>
+                <CardHeader className="text-green-900">
                   <CardTitle>Specifications</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -1235,9 +1241,9 @@ const ProductDetail = () => {
       </section>
 
       {/* Benefits */}
-      <section className="py-16">
+      <section className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-3xl font-bold text-center mb-12 text-green-900">
             Why Choose {product.name}?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -1245,7 +1251,7 @@ const ProductDetail = () => {
               <Card key={index}>
                 <CardContent className="p-6">
                   <div className="flex items-start">
-                    <Star className="h-6 w-6 text-yellow-500 mr-3 mt-1 flex-shrink-0" />
+                    <Star className="h-6 w-6 text-green-900 mr-3 mt-1 flex-shrink-0" />
                     <p className="text-gray-700">{benefit}</p>
                   </div>
                 </CardContent>
@@ -1256,7 +1262,7 @@ const ProductDetail = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-green-600 text-white">
+      <section className="py-8 bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
           <p className="text-xl mb-8">

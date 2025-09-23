@@ -18,10 +18,7 @@ const Footer = () => {
             Brickspring is leading provider of innovative software solutions,
             weighing equipment, and technology services with specialized
             software suites, and tailored services from installation to
-            integration and security. Whether you're scaling operations,
-            digitizing safety practices, securing data, or building custom apps,
-            Brickspring is your trusted partner for a seamless, end-to-end
-            solution.
+            integration and security.
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 py-4 sm:py-6 md:py-8 lg:py-10">
@@ -133,7 +130,7 @@ const Footer = () => {
             <h2 className="text-start text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 md:mb-4">
               Follow Us
             </h2>
-            <div className="flex  gap-2 text-start">
+            <div className="flex flex-col  gap-2 text-start jus">
               <a
                 href="https://www.facebook.com/profile.php?id=61577392503207"
                 target="_blank"

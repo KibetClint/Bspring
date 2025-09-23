@@ -16,7 +16,7 @@ const ProductCategory = ({ category }) => {
       title: "Software Solutions",
       description:
         "Comprehensive software applications designed to streamline business operations",
-      heroImage: "/src/assets/images/hero-section/products.jpg",
+      heroImage: "/public/images/hero-section/software-hero.jpg",
       products: [
         {
           name: "Weighspring",
@@ -110,7 +110,7 @@ const ProductCategory = ({ category }) => {
       title: "Weighing Equipment",
       description:
         "Precision weighing solutions for industrial and commercial applications",
-      heroImage: "/images/categories/weighing-hero.jpg",
+      heroImage: "/public/images/weighing/Pallet scale.png",
       products: [
         {
           name: "OCS SB1 Hanging Scale",
@@ -235,7 +235,7 @@ const ProductCategory = ({ category }) => {
       title: "Hardware & Accessories",
       description:
         "Computing hardware and peripheral devices for business operations",
-      heroImage: "/src/assets/images/hardware/smartphones.jpg",
+      heroImage: "/public/images/hero-section/products.jpg",
       products: [
         {
           name: "Mini Bluetooth Thermal Printers",
@@ -318,7 +318,7 @@ const ProductCategory = ({ category }) => {
   return (
     <Layout>
       {/* Hero Section with Background Image */}
-      <section className="relative bg-gradient-to-r from-green-800 to-green-900 text-white py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-r from-green-800 to-green-200 text-white py-20 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
@@ -326,7 +326,7 @@ const ProductCategory = ({ category }) => {
             alt={currentCategory.title}
             className="w-full h-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-green-800/80 to-green-900/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-green-800/80 to-green-400/80"></div>
         </div>
 
         {/* Content */}
@@ -378,7 +378,9 @@ const ProductCategory = ({ category }) => {
 
                 <CardHeader>
                   <div className="flex justify-between items-start mb-2">
-                    <CardTitle className="text-xl">{product.name}</CardTitle>
+                    <CardTitle className="text-xl text-green-800">
+                      {product.name}
+                    </CardTitle>
                     <Badge
                       variant={
                         product.status === "Available" ||
@@ -396,20 +398,22 @@ const ProductCategory = ({ category }) => {
                     {/* <div className="text-2xl font-bold text-blue-600 mb-3">
                       {product.price}
                     </div> */}
-                    <h4 className="font-semibold mb-2">Key Features:</h4>
-                    <ul className="text-sm text-gray-600 space-y-1">
+                    <h4 className="font-semibold mb-2 text-green-800">
+                      Key Features:
+                    </h4>
+                    <ul className="text-sm text-gray-700 space-y-1">
                       {product.features.map((feature, idx) => (
                         <li key={idx}>✓ {feature}</li>
                       ))}
                     </ul>
                   </div>
-                  <div className="space-y-2">
-                    <Button className="w-full bg-green-800" asChild>
+                  <div className="space-y-2 flex flex-col sm:flex-row sm:space-y-0 sm:space-x-4 items-center">
+                    <Button className="w-34 bg-green-800" asChild>
                       <Link to={`/product/${product.slug}`}>View Details</Link>
                     </Button>
                     <Button
                       variant="outline"
-                      className="w-full bg-green-800"
+                      className="w-34 bg-green-800"
                       asChild>
                       <Link to="/quote">Request Quote</Link>
                     </Button>

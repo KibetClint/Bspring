@@ -167,7 +167,7 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section with Full-Width Auto-Moving Carousel */}
-      <section className="relative h-[30vh] sm:h-[40vh] md:h-[50vh] lg:h-[80vh] overflow-hidden text-green-950">
+      <section className="relative h-[30vh] sm:h-[40vh] md:h-[50vh] lg:h-[80vh] overflow-hidden">
         {/* Carousel Container - Full Width and Height */}
         <div className="relative w-full h-full">
           <div
@@ -305,7 +305,7 @@ const Index = () => {
       </div>
 
       {/* Stats Section */}
-      <section className="py-6 sm:py-8 md:py-10 bg-gray-50 text-gray-900">
+      <section className="py-6 sm:py-8 md:py-10 bg-gray-200 text-gray-900">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
             {stats.map((stat, index) => (
@@ -327,7 +327,7 @@ const Index = () => {
       </section>
 
       {/* Featured Products */}
-      <section className="py-8 sm:py-10 md:py-12 text-gray-900">
+      <section className="py-8 sm:py-10 md:py-12 text-green-900">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div className="text-center mb-6 sm:mb-8 md:mb-12">
             <h2
@@ -336,7 +336,7 @@ const Index = () => {
               Featured Products
             </h2>
             <p
-              className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600"
+              className="text-sm sm:text-base md:text-lg lg:text-xl text-black"
               data-aos="fade-up"
               data-aos-delay="100">
               Our most popular and innovative solutions
@@ -362,7 +362,7 @@ const Index = () => {
                       {product.category}
                     </span>
                   </div>
-                  <CardDescription className="text-xs sm:text-sm md:text-base text-gray-600">
+                  <CardDescription className="text-xs sm:text-sm md:text-base text-gray-700">
                     {product.description}
                   </CardDescription>
                 </CardHeader>
@@ -377,7 +377,7 @@ const Index = () => {
                       ))}
                     </ul>
                   </div>
-                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5 items-center">
+                  <div className="flex flex-col justify-center sm:flex-row gap-3 sm:gap-4 md:gap-5 items-center">
                     <Button
                       className="text-white bg-green-900 hover:bg-white hover:text-[#236434] flex-1c w-24 sm:flex-initial sm:min-w-[120px] text-xs sm:text-sm px-4 py-2 "
                       size="sm"
@@ -404,12 +404,12 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div className="text-center mb-6 sm:mb-8 md:mb-12">
             <h2
-              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-900"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4 text-green-900"
               data-aos="fade-up">
               Our Services
             </h2>
             <p
-              className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600"
+              className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700"
               data-aos="fade-up"
               data-aos-delay="100">
               Expert solutions tailored to your business needs
@@ -420,7 +420,7 @@ const Index = () => {
             {services.map((service, index) => (
               <Card
                 key={index}
-                className="text-center hover:shadow-lg transition-shadow bg-white text-gray-900 hover:bg-green-50"
+                className="text-center hover:shadow-lg transition-shadow bg-white hover:bg-green-50"
                 data-aos="fade-up"
                 data-aos-delay={index * 150}>
                 <CardHeader className="p-3 sm:p-4 md:p-6">
@@ -430,7 +430,7 @@ const Index = () => {
                     data-aos-delay={index * 150 + 200}>
                     <service.icon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-[#236434]" />
                   </div>
-                  <CardTitle className="text-sm sm:text-base md:text-lg lg:text-xl mb-2 text-gray-900">
+                  <CardTitle className="text-sm sm:text-base md:text-lg lg:text-xl mb-2 text-green-900">
                     {service.title}
                   </CardTitle>
                   <CardDescription className="text-xs sm:text-sm md:text-base text-gray-700">
@@ -452,11 +452,11 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-8 sm:py-10 md:py-12 lg:py-8 text-gray-900">
+      <section className="py-8 sm:py-10 md:py-12 lg:py-8">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div className="text-center mb-6 sm:mb-8 md:mb-12">
             <h2
-              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4 text-gray-900"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4 text-green-900"
               data-aos="fade-up">
               What Our Clients Say
             </h2>
@@ -496,11 +496,11 @@ const Index = () => {
       </section>
 
       {/* Trust Indicators */}
-      <section className="py-4 sm:py-6 bg-gray-100 text-gray-900">
+      <section className="py-4 sm:py-6 bg-gray-200 ">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <div className="text-center">
             <h2
-              className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 md:mb-8 text-gray-900"
+              className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 md:mb-8 text-green-900"
               data-aos="fade-in">
               Trusted by Industry Leaders
             </h2>
@@ -526,7 +526,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-6 sm:py-8 md:py-10 lg:py-12 bg-[#236434] text-white">
+      <section className="py-6 sm:py-8 md:py-10 lg:py-12 bg-[#236434]">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 text-center">
           <h2
             className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 leading-tight text-white"

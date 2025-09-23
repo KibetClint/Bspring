@@ -114,12 +114,12 @@ const Products = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div data-aos="fade-up">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-green-800">
                 Product Categories
               </h2>
             </div>
             <div data-aos="fade-up" data-aos-delay="100">
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-700">
                 Explore our diverse range of solutions
               </p>
             </div>
@@ -138,7 +138,7 @@ const Products = () => {
                       alt={category.title}
                       className="h-48 w-full object-cover rounded-t-lg"
                     />
-                    <CardHeader className="text-center">
+                    <CardHeader className="text-center text-green-900">
                       <CardTitle className="text-2xl">
                         {category.title}
                       </CardTitle>
