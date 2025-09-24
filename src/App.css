@@ -42,3 +42,24 @@
 .read-the-docs {
   color: #888;
 }
+h2,
+h3 {
+  font-weight: 700;
+  color: var(--color-green-900);
+}
+.Layout p {
+  color: var(--color-gray-700);
+}
+ul {
+  font-weight: 500;
+  color: var(--color-gray-700);
+  margin-bottom: 1em;
+}
+label {
+  text-align: start;
+}
+input,
+textarea,
+select {
+  background-color: white;
+}
