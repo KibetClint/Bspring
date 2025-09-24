@@ -104,7 +104,7 @@ const Consultation = () => {
                   <CardDescription>{type.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2 mb-6">
+                  <ul className="space-y-2 mb-6 ">
                     {type.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center text-sm">
                         <CheckCircle className="h-4 w-4 text-green-500 mr-2" />

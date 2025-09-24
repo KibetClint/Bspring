@@ -254,7 +254,7 @@ const Cybersecurity = () => {
                   <h3 className="text-xl font-semibold mb-2 text-green-900">
                     {step.title}
                   </h3>
-                  <p className="text-gray-00">{step.description}</p>
+                  <p className="text-gray-700">{step.description}</p>
                 </div>
               </div>
             ))}
