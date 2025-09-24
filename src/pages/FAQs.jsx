@@ -172,7 +172,7 @@ const FAQs = () => {
       </section>
 
       {/* FAQ Accordion */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 ">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Common Questions</h2>
@@ -183,15 +183,20 @@ const FAQs = () => {
             )}
           </div>
 
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion
+            type="single"
+            collapsible
+            className="space-y-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4">
             {filteredFAQs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
                 className="bg-white rounded-lg border">
-                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline bg-gray-200">
                   <div className="flex items-start gap-3">
-                    <Badge variant="outline" className="mt-1 flex-shrink-0">
+                    <Badge
+                      variant="outline"
+                      className="mt-1 flex-shrink-0 bg-gray-300">
                       {faq.category}
                     </Badge>
                     <span className="font-medium">{faq.question}</span>
@@ -238,7 +243,7 @@ const FAQs = () => {
                   <p className="text-sm text-gray-600 mb-4">
                     Get instant help from our support team
                   </p>
-                  <Button size="sm" className="w-full">
+                  <Button size="sm" className="w-full bg-green-800">
                     Start Chat
                   </Button>
                 </CardContent>
@@ -254,7 +259,7 @@ const FAQs = () => {
                   <Button
                     size="sm"
                     variant="outline"
-                    className="w-full"
+                    className="w-full bg-green-800"
                     asChild>
                     <Link to="/contact">Call Now</Link>
                   </Button>
@@ -271,7 +276,7 @@ const FAQs = () => {
                   <Button
                     size="sm"
                     variant="outline"
-                    className="w-full"
+                    className="w-full bg-green-800"
                     asChild>
                     <Link to="/support">Submit Ticket</Link>
                   </Button>

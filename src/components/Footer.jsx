@@ -13,7 +13,7 @@ const Footer = () => {
     <footer className="bg-green-800 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
         <div className="md:col-span-2 ">
-          <h3 className="text-xl font-bold mb-4">Brickspring</h3>
+          <h4 className="text-xl text-white font-bold mb-4">Brickspring</h4>
           <p className="text-gray-300 mb-4 text-base">
             Brickspring is leading provider of innovative software solutions,
             weighing equipment, and technology services with specialized
@@ -21,7 +21,7 @@ const Footer = () => {
             integration and security.
           </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 py-4 sm:py-6 md:py-8 lg:py-10">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 py-2 sm:py-6 md:py-4 lg:py-0">
           <div>
             <h4 className="text-lg font-semibold mb-4 text-start">Products</h4>
             <ul className="space-y-2 text-start">
@@ -127,9 +127,9 @@ const Footer = () => {
             </ul>
           </div>
           <div className="py-2 ">
-            <h2 className="text-start text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 md:mb-4">
+            <h4 className="text-start text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 md:mb-4">
               Follow Us
-            </h2>
+            </h4>
             <div className="flex flex-col  gap-2 text-start jus">
               <a
                 href="https://www.facebook.com/profile.php?id=61577392503207"

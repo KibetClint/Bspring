@@ -19,7 +19,6 @@ const CCTVInstallation = () => {
   }, []);
 
   const services = [
-
     {
       icon: Camera,
       title: "Security Camera Installation",
@@ -205,7 +204,6 @@ const CCTVInstallation = () => {
           </Button>
         </div>
       </section>
-
       {/* Services Grid */}
       <section className="py-16" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -213,47 +211,62 @@ const CCTVInstallation = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Our CCTV Services
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-700">
               Complete surveillance solutions from planning to maintenance
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card
-                key={index}
-                className="hover:shadow-lg transition-shadow"
-                data-aos="zoom-in"
-                data-aos-delay={index * 100}>
-                <CardHeader>
-                  <service.icon className="h-12 w-12 text-gray-700 mb-4" />
-                  <CardTitle>{service.title}</CardTitle>
-                  <CardDescription>{service.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-sm">
-                        <div className="w-2 h-2 bg-gray-700 rounded-full mr-2"></div>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
+            {services.map((service, index) => {
+              // Define a color for each icon based on index or service
+              const iconColors = [
+                "text-green-950",
+                "text-blue-700",
+                "text-yellow-600",
+                "text-purple-700",
+                "text-red-700",
+                "text-teal-700",
+              ];
+              const Icon = service.icon;
+              return (
+                <Card
+                  key={index}
+                  className="hover:shadow-lg transition-shadow"
+                  data-aos="zoom-in"
+                  data-aos-delay={index * 100}>
+                  <CardHeader>
+                    <Icon
+                      className={`h-12 w-12 mb-4 ${
+                        iconColors[index % iconColors.length]
+                      }`}
+                    />
+                    <CardTitle>{service.title}</CardTitle>
+                    <CardDescription>{service.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center text-sm">
+                          <div className="w-2 h-2 bg-green-900 rounded-full mr-2"></div>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Camera Types */}
       <section className="py-4" data-aos="fade-right">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Camera Types & Applications
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-700">
               Choosing the right camera for your specific security needs
             </p>
           </div>
@@ -262,13 +275,11 @@ const CCTVInstallation = () => {
             {cameraTypes.map((camera, index) => (
               <Card key={index} data-aos="fade-up" data-aos-delay={index * 100}>
                 <CardHeader>
-                  <CardTitle className="text-xl text-gray-800">
-                    {camera.type}
-                  </CardTitle>
+                  <CardTitle className="text-xl">{camera.type}</CardTitle>
                   <CardDescription>{camera.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <h4 className="font-semibold mb-2 text-gray-700">
+                  <h4 className="font-semibold mb-2 text-green-900">
                     Best For:
                   </h4>
                   <div className="flex flex-wrap gap-2">
@@ -286,7 +297,6 @@ const CCTVInstallation = () => {
           </div>
         </div>
       </section>
-
       {/* Industries Served */}
       <section className="py-4" data-aos="fade-left">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -307,7 +317,7 @@ const CCTVInstallation = () => {
                 data-aos="zoom-in"
                 data-aos-delay={index * 80}>
                 <div className="text-4xl mb-2">{industry.icon}</div>
-                <div className="font-semibold text-gray-800">
+                <div className="font-semibold text-gray-600">
                   {industry.name}
                 </div>
               </div>
@@ -315,7 +325,6 @@ const CCTVInstallation = () => {
           </div>
         </div>
       </section>
-
       {/* Installation Process */}
       <section className="py-4" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -323,7 +332,7 @@ const CCTVInstallation = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Installation Process
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-700">
               Our systematic approach ensures optimal security coverage
             </p>
           </div>
@@ -335,13 +344,13 @@ const CCTVInstallation = () => {
                 className="flex items-start"
                 data-aos="fade-right"
                 data-aos-delay={index * 120}>
-                <div className="flex-shrink-0 w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center font-bold text-lg mr-6">
+                <div className="flex-shrink-0 w-12 h-12 bg-green-800 text-white rounded-full flex items-center justify-center font-bold text-lg mr-6">
                   {index + 1}
                 </div>
                 <div className="flex-grow">
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="text-xl font-semibold">{step.step}</h3>
-                    <span className="text-sm text-gray-500 bg-gray-200 px-2 py-1 rounded">
+                    <span className="text-sm text-gray-700 bg-gray-200 px-2 py-1 rounded">
                       {step.duration}
                     </span>
                   </div>
@@ -352,15 +361,14 @@ const CCTVInstallation = () => {
           </div>
         </div>
       </section>
-
       {/* Features Section */}
-      <section className="py-8" data-aos="fade-up">
+      <section className="py-12" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Advanced Features
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-700">
               Modern surveillance technology for enhanced security
             </p>
           </div>
@@ -390,19 +398,18 @@ const CCTVInstallation = () => {
                 className="p-6"
                 data-aos="zoom-in"
                 data-aos-delay={index * 100}>
-                <div className="w-16 h-16 bg-gray-800 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                <div className="w-16 h-16 bg-green-800 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                   <Eye className="h-8 w-8" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <p className="text-gray-700">{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
-
       {/* CTA Section */}
-      <section className="py-8 bg-gray-400 text-white" data-aos="fade-up">
+      <section className="py-8 bg-gray-400" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Secure Your Property Today

@@ -83,24 +83,22 @@ const WebDevelopment = () => {
 
   const portfolio = [
     {
-      title: "E-commerce Platform",
-      description:
-        "Full-featured online store with payment integration and inventory management",
-      image: "/images/software/parking-system.jpeg",
+      title: "Travel And Tours Website",
+      description: "Travel and Tours website Booking Platform",
+      image: "/public/images/services/Tours.png",
       technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
     },
     {
-      title: "Healthcare Management System",
-      description:
-        "Patient management system with appointment scheduling and medical records",
-      image: "/src/assets/images/software/cctv.jpg",
+      title: "Farm Website",
+      description: "Farm Website with e-commerce capabilities",
+      image: "/public/images/services/Farm.png",
       technologies: ["Vue.js", "Python", "MongoDB", "WebSocket"],
     },
     {
-      title: "Manufacturing Dashboard",
+      title: "Event Management System",
       description:
         "Real-time monitoring dashboard for production line management",
-      image: "/placeholder.svg",
+      image: "/public/images/services/Pool.png",
       technologies: ["Angular", "C#", "SQL Server", "SignalR"],
     },
   ];
@@ -186,15 +184,14 @@ const WebDevelopment = () => {
           </div>
         </div>
       </section>
-
       {/* Services Grid */}
-      <section className="py-16">
+      <section className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12" data-aos="fade-up">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl text-green-900 md:text-4xl font-bold mb-4">
               Our Development Services
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-700">
               End-to-end development solutions using modern technologies
             </p>
           </div>
@@ -208,7 +205,9 @@ const WebDevelopment = () => {
                 data-aos-delay={index * 100}>
                 <CardHeader>
                   <service.icon className="h-8 w-8 text-green-900 mb-4" />
-                  <CardTitle>{service.title}</CardTitle>
+                  <CardTitle className="text-xl text-green-900">
+                    {service.title}
+                  </CardTitle>
                   <CardDescription>{service.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -216,7 +215,7 @@ const WebDevelopment = () => {
                     {service.technologies.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="px-2 py-1 bg-green-700 text-green-950 text-xs rounded-full">
+                        className="px-2 py-1 bg-green-700 text-gray-700 text-xs rounded-full">
                         {tech}
                       </span>
                     ))}
@@ -229,13 +228,13 @@ const WebDevelopment = () => {
       </section>
 
       {/* Portfolio Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12" data-aos="fade-up">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl text-green-900 md:text-4xl font-bold mb-4">
               Recent Projects
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-700">
               Examples of our successful development projects
             </p>
           </div>
@@ -247,8 +246,16 @@ const WebDevelopment = () => {
                 className="overflow-hidden hover:shadow-lg transition-shadow"
                 data-aos="flip-left"
                 data-aos-delay={index * 150}>
-                <div className="h-48 bg-gray-200 flex items-center justify-center">
-                  <span className="text-gray-500">Project Screenshot</span>
+                <div className="h-48 bg-gray-200 flex items-center justify-center overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="object-cover w-full h-full"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = "/placeholder.svg";
+                    }}
+                  />
                 </div>
                 <CardHeader>
                   <CardTitle className="text-xl">{project.title}</CardTitle>
@@ -271,14 +278,13 @@ const WebDevelopment = () => {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-16">
+      <section className="py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12" data-aos="fade-up">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl text-green-900 md:text-4xl font-bold mb-4">
               Our Development Process
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-700">
               A proven methodology for successful project delivery
             </p>
           </div>
@@ -294,21 +300,20 @@ const WebDevelopment = () => {
                   {index + 1}
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{step.phase}</h3>
-                <p className="text-gray-600">{step.description}</p>
+                <p className="text-gray-700">{step.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
-
       {/* Technology Stack */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-green-700-5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12" data-aos="fade-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Technology Stack
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-700">
               We work with the latest and most reliable technologies
             </p>
           </div>
@@ -326,7 +331,6 @@ const WebDevelopment = () => {
           </div>
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="py-8 bg-gradient-to-r from-green-600 to-green-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

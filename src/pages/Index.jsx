@@ -109,7 +109,7 @@ const Index = () => {
       pageName: "Consultation",
     },
     {
-      url: "/public/images/weighing/10A.png",
+      url: "/images/weighing/10A.png",
       title: "Industrial Equipment",
       description: "Precision weighing and measurement solutions",
       link: "/products/hardware",
@@ -528,11 +528,11 @@ const Index = () => {
       {/* CTA Section */}
       <section className="py-6 sm:py-8 md:py-10 lg:py-12 bg-[#236434]">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 text-center">
-          <h2
+          <h4
             className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 leading-tight text-white"
             data-aos="fade-up">
             Ready to Get Started?
-          </h2>
+          </h4>
           <p
             className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl mx-auto leading-relaxed text-white"
             data-aos="fade-up"

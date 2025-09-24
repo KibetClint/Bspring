@@ -17,7 +17,7 @@ const Blog = () => {
     excerpt:
       "Discover how Internet of Things (IoT) technology is revolutionizing industrial weighing systems, enabling real-time monitoring, predictive maintenance, and advanced analytics for improved operational efficiency.",
     category: "Technology Trends",
-    date: "March 15, 2024",
+    date: "March 15, 2025",
     readTime: "8 min read",
     author: "Dr. Sarah Mitchell",
   };
@@ -28,7 +28,7 @@ const Blog = () => {
       excerpt:
         "Essential security measures to protect your industrial systems from cyber threats and ensure business continuity.",
       category: "Security",
-      date: "March 10, 2024",
+      date: "March 10, 2025",
       readTime: "6 min read",
       author: "Michael Chen",
     },
@@ -47,7 +47,7 @@ const Blog = () => {
       excerpt:
         "How XYZ Logistics improved efficiency by 40% using our integrated weighing and management systems.",
       category: "Case Study",
-      date: "February 28, 2024",
+      date: "February 28, 2025",
       readTime: "7 min read",
       author: "John Anderson",
     },
@@ -56,7 +56,7 @@ const Blog = () => {
       excerpt:
         "From traditional cash registers to modern Android-based POS systems: a journey through retail technology evolution.",
       category: "Technology Trends",
-      date: "February 20, 2024",
+      date: "February 20, 2025",
       readTime: "5 min read",
       author: "Sarah Mitchell",
     },
@@ -65,7 +65,7 @@ const Blog = () => {
       excerpt:
         "Understanding the regulatory landscape and ensuring your weighing systems meet all necessary compliance requirements.",
       category: "Compliance",
-      date: "February 15, 2024",
+      date: "February 15, 2025",
       readTime: "12 min read",
       author: "Michael Chen",
     },
@@ -74,7 +74,7 @@ const Blog = () => {
       excerpt:
         "How mobile technology is transforming business operations and what it means for your organization.",
       category: "Technology Trends",
-      date: "February 10, 2024",
+      date: "February 10, 2025",
       readTime: "8 min read",
       author: "Emily Rodriguez",
     },
@@ -137,7 +137,7 @@ const Blog = () => {
                       <div className="text-sm text-gray-600">
                         By {featuredPost.author}
                       </div>
-                      <Button>Read More</Button>
+                      <Button className="bg-green-800">Read More</Button>
                     </div>
                   </CardContent>
                 </div>
@@ -187,7 +187,7 @@ const Blog = () => {
                       <div>By {post.author}</div>
                       <div>{post.date}</div>
                     </div>
-                    <Button variant="outline" size="sm">
+                    <Button className="bg-green-700" size="sm">
                       Read More
                     </Button>
                   </div>
@@ -199,9 +199,9 @@ const Blog = () => {
       </section>
 
       {/* Newsletter Signup */}
-      <section className="py-16 bg-blue-600 text-white">
+      <section className="py-16 bg-gray-400 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Stay Informed</h2>
+          <h4 className="text-3xl md:text-4xl font-bold mb-4">Stay Informed</h4>
           <p className="text-xl mb-8">
             Subscribe to our newsletter for the latest insights and updates
           </p>
@@ -209,9 +209,9 @@ const Blog = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-2 rounded-md text-gray-900"
+              className="flex-1 px-4 py-2 rounded-md  text-gray-900 bg-white"
             />
-            <Button variant="secondary">Subscribe</Button>
+            <Button className="bg-gray-600">Subscribe</Button>
           </div>
         </div>
       </section>

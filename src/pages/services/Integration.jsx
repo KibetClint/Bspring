@@ -195,7 +195,7 @@ const Integration = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-green-600 to-teal-700 text-white py-10">
+      <section className="bg-[#236837] text-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div
             className="flex justify-center mb-6"
@@ -232,10 +232,10 @@ const Integration = () => {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12" data-aos="fade-up">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl text-green-900 md:text-4xl font-bold mb-4">
               Integration Solutions
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-700">
               Comprehensive integration services to connect your business
               systems
             </p>
@@ -250,14 +250,20 @@ const Integration = () => {
                 data-aos-delay={index * 100}>
                 <CardHeader>
                   <service.icon className="h-10 w-10 text-green-600 mb-4" />
-                  <CardTitle>{service.title}</CardTitle>
-                  <CardDescription>{service.description}</CardDescription>
+                  <CardTitle className=" text-green-800">
+                    {service.title}
+                  </CardTitle>
+                  <CardDescription className=" text-gray-800">
+                    {service.description}
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
                     {service.benefits.map((benefit, idx) => (
-                      <li key={idx} className="flex items-center text-sm">
-                        <div className="w-2 h-2 bg-green-600 rounded-full mr-2"></div>
+                      <li
+                        key={idx}
+                        className="flex items-center text-gray-700 text-sm">
+                        <div className="w-2 h-2 bg-green-800 rounded-full mr-2"></div>
                         {benefit}
                       </li>
                     ))}
@@ -270,13 +276,13 @@ const Integration = () => {
       </section>
 
       {/* Supported Platforms */}
-      <section className="py-10 bg-gray-50">
+      <section className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12" data-aos="fade-up">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl text-green-900 md:text-4xl font-bold mb-4">
               Supported Platforms
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-700">
               We integrate with a wide range of business systems and platforms
             </p>
           </div>
@@ -310,13 +316,13 @@ const Integration = () => {
       </section>
 
       {/* Process Timeline */}
-      <section className="py-16">
+      <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12" data-aos="fade-up">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl text-green-900 md:text-4xl font-bold mb-4">
               Integration Process
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-700">
               Our systematic approach ensures successful integration projects
             </p>
           </div>
@@ -328,13 +334,15 @@ const Integration = () => {
                 className="flex items-start"
                 data-aos="fade-right"
                 data-aos-delay={index * 100}>
-                <div className="flex-shrink-0 w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-lg mr-6">
+                <div className="flex-shrink-0 w-12 h-12 bg-green-800 text-white rounded-full flex items-center justify-center font-bold text-lg mr-6">
                   {index + 1}
                 </div>
                 <div className="flex-grow">
                   <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-xl font-semibold">{step.step}</h3>
-                    <span className="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded">
+                    <h3 className="text-xl text-green-900 font-semibold">
+                      {step.step}
+                    </h3>
+                    <span className="text-sm text-gray-700 bg-gray-100 px-2 py-1 rounded">
                       {step.duration}
                     </span>
                   </div>
@@ -347,13 +355,13 @@ const Integration = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12" data-aos="fade-up">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl text-green-900 md:text-4xl font-bold mb-4">
               Integration Benefits
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-700">
               Transform your business operations with seamless system
               integration
             </p>

@@ -97,7 +97,7 @@ const Industries = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-green-600 to-green-800 text-white py-20">
+      <section className="bg-[#236837] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Industry Solutions
@@ -135,7 +135,9 @@ const Industries = () => {
                 <CardContent>
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-semibold mb-2">Key Products:</h4>
+                      <h2 className="font-semibold text-start mb-2">
+                        Key Products:
+                      </h2>
                       <div className="flex flex-wrap gap-2">
                         {industry.products.map((product, idx) => (
                           <Badge key={idx} variant="outline">
@@ -146,8 +148,10 @@ const Industries = () => {
                     </div>
 
                     <div>
-                      <h4 className="font-semibold mb-2">Benefits:</h4>
-                      <ul className="text-sm text-gray-600 space-y-1">
+                      <h2 className="text-start font-semibold mb-2">
+                        Benefits:
+                      </h2>
+                      <ul className="text-sm text-start  text-gray-600 space-y-1">
                         {industry.benefits.map((benefit, idx) => (
                           <li key={idx}>• {benefit}</li>
                         ))}
@@ -155,12 +159,9 @@ const Industries = () => {
                     </div>
 
                     <div className="pt-4 border-t">
-                      <p className="text-sm text-gray-500 mb-3">
+                      <p className="text-sm text-start text-gray-700 mb-3 ">
                         Case Study: {industry.caseStudy}
                       </p>
-                      <Button className="w-full" size="sm">
-                        Learn More
-                      </Button>
                     </div>
                   </div>
                 </CardContent>
@@ -171,7 +172,7 @@ const Industries = () => {
       </section>
 
       {/* Success Stories */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -198,7 +199,7 @@ const Industries = () => {
                   </p>
                   <div className="grid grid-cols-3 gap-4 text-center">
                     <div>
-                      <div className="text-2xl font-bold text-green-600">
+                      <div className="text-2xl font-bold text-green-800">
                         40%
                       </div>
                       <div className="text-sm text-gray-500">
@@ -269,23 +270,27 @@ const Industries = () => {
       </section>
 
       {/* Industry Expertise CTA */}
-      <section className="py-16 bg-green-600 text-white">
+      <section className="py-16 bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h4 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Transform Your Industry?
-          </h2>
+          </h4>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Let our industry experts help you find the perfect solution for your
             specific needs
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" asChild>
+            <Button
+              className="text-white border-white hover:bg-white hover:text-green-600 bg-green-800"
+              size="lg"
+              variant="secondary"
+              asChild>
               <Link to="/contact">Speak with Expert</Link>
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="text-white border-white hover:bg-white hover:text-green-600"
+              className="text-white border-white hover:bg-white hover:text-green-600 bg-green-800"
               asChild>
               <Link to="/quote">Get Custom Quote</Link>
             </Button>

@@ -428,21 +428,25 @@ const ProductCategory = ({ category }) => {
       </section>
 
       {/* Support Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-green-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-lg p-8 text-center shadow-md">
-            <h2 className="text-2xl font-bold mb-4">
+          <div className="bg-[#fff9e6] rounded-lg p-8 text-center shadow-md">
+            <h2 className="text-2xl font-bold mb-4 text-green-800">
               Need Help Choosing the Right Product?
             </h2>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-700 mb-6">
               Our experts are here to help you find the perfect solution for
               your specific requirements.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center ">
+              <Button className="bg-green-800" size="lg" asChild>
                 <Link to="/contact">Contact Expert</Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button
+                className="bg-green-800"
+                size="lg"
+                variant="outline"
+                asChild>
                 <Link to="/support">Technical Support</Link>
               </Button>
             </div>

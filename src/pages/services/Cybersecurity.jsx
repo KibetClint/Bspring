@@ -126,7 +126,7 @@ const Cybersecurity = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-green-800 to-green-800 text-white py-10">
+      <section className="bg-[#236837] text-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div
             className="flex justify-center mb-6"
@@ -149,7 +149,7 @@ const Cybersecurity = () => {
           </p>
           <div data-aos="fade-up" data-aos-delay="500">
             <Button
-              className="bg-green-900"
+              className="bg-green-900 text-white"
               size="lg"
               variant="secondary"
               asChild>
@@ -164,12 +164,12 @@ const Cybersecurity = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2
-              className="text-3xl md:text-4xl font-bold mb-4"
+              className="text-3xl md:text-4xl font-bold mb-4 text-green-900"
               data-aos="fade-up">
               Our Security Services
             </h2>
             <p
-              className="text-xl text-gray-600"
+              className="text-xl text-gray-700"
               data-aos="fade-up"
               data-aos-delay="100">
               Comprehensive cybersecurity solutions to protect your digital
@@ -190,13 +190,17 @@ const Cybersecurity = () => {
                       <service.icon className="h-8 w-8 text-red-600 mr-4" />
                     </div>
                     <div>
-                      <CardTitle className="text-xl">{service.title}</CardTitle>
-                      <CardDescription>{service.description}</CardDescription>
+                      <CardTitle className="text-xl text-green-900">
+                        {service.title}
+                      </CardTitle>
+                      <CardDescription className="text-xl text-gray-700">
+                        {service.description}
+                      </CardDescription>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 text-gray-700">
                     {service.features.map((feature, idx) => (
                       <li
                         key={idx}
@@ -216,16 +220,16 @@ const Cybersecurity = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-16 bg-gray-50 text-start">
+      <section className="py-16 text-start">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2
-              className="text-3xl md:text-4xl font-bold mb-4"
+              className="text-3xl md:text-4xl font-bold mb-4 text-green-900"
               data-aos="fade-up">
               Our Testing Process
             </h2>
             <p
-              className="text-xl text-gray-600"
+              className="text-xl text-gray-700"
               data-aos="fade-up"
               data-aos-delay="100">
               A systematic approach to identifying and addressing security
@@ -241,14 +245,16 @@ const Cybersecurity = () => {
                 data-aos="fade-up"
                 data-aos-delay={index * 150 + 200}>
                 <div
-                  className="flex-shrink-0 w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-base mr-4"
+                  className="flex-shrink-0 w-10 h-10 bg-green-800 text-white rounded-full flex items-center justify-center font-bold text-base mr-4"
                   data-aos="zoom-in"
                   data-aos-delay={index * 150 + 300}>
                   {step.step}
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                  <p className="text-gray-600">{step.description}</p>
+                  <h3 className="text-xl font-semibold mb-2 text-green-900">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-00">{step.description}</p>
                 </div>
               </div>
             ))}
@@ -261,12 +267,12 @@ const Cybersecurity = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2
-              className="text-3xl md:text-4xl font-bold mb-4"
+              className="text-3xl md:text-4xl font-bold mb-4 text-green-900"
               data-aos="fade-up">
               Compliance Standards
             </h2>
             <p
-              className="text-xl text-gray-600"
+              className="text-xl text-gray-700"
               data-aos="fade-up"
               data-aos-delay="100">
               We help you meet industry compliance requirements
@@ -277,7 +283,7 @@ const Cybersecurity = () => {
             {complianceStandards.map((standard, index) => (
               <div
                 key={index}
-                className="p-4 border rounded-lg hover:shadow-md transition-shadow"
+                className="p-4 border bg-green-800 rounded-lg hover:shadow-md transition-shadow"
                 data-aos="fade-up"
                 data-aos-delay={index * 100 + 200}>
                 <div className="font-semibold text-gray-800">{standard}</div>
@@ -288,7 +294,7 @@ const Cybersecurity = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-10 bg-gray-400 text-white">
+      <section className="py-10 bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2
             className="text-3xl md:text-4xl font-bold mb-4"
@@ -311,7 +317,7 @@ const Cybersecurity = () => {
               <Link to="/contact">Schedule Assessment</Link>
             </Button>
             <Button className="bg-green-900 w-40" size="lg" asChild>
-              <Link to="/quote">Get Security Quote</Link>
+              <Link to="/quote">Get Quote</Link>
             </Button>
           </div>
         </div>

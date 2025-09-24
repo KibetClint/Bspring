@@ -1183,7 +1183,7 @@ const ProductDetail = () => {
       </section>
 
       {/* Product Details */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Description & Features */}
@@ -1202,7 +1202,7 @@ const ProductDetail = () => {
                   </h4>
                   <ul className="space-y-2">
                     {product.features.map((feature, index) => (
-                      <li key={index} className="flex items-start">
+                      <li key={index} className="flex items-start text-start">
                         <span className="text-green-500 mr-2">✓</span>
                         <span className="text-gray-700">{feature}</span>
                       </li>
@@ -1264,7 +1264,7 @@ const ProductDetail = () => {
       {/* CTA Section */}
       <section className="py-8 bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+          <h4 className="text-3xl font-bold mb-4">Ready to Get Started?</h4>
           <p className="text-xl mb-8">
             Contact our experts to learn more about {product.name}
           </p>

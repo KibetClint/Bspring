@@ -295,20 +295,17 @@ const CaseStudies = () => {
       {/* CTA Section */}
       <section className="py-6 bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h4 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Be Our Next Success Story?
-          </h2>
+          </h4>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Let us help you achieve similar results with our proven solutions
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary">
+            <Button className="bg-green-900" size="lg" variant="secondary">
               Start Your Project
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-white border-white hover:bg-white hover:text-orange-600">
+            <Button size="lg" className="text-white border-white bg-green-900 ">
               Download All Case Studies
             </Button>
           </div>

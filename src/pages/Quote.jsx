@@ -253,22 +253,42 @@ const Quote = () => {
                         className="block text-sm font-medium text-gray-700 mb-1 text-start">
                         Industry *
                       </label>
-                      <Select className="bg-white" name="industry" required>
-                        <SelectTrigger>
+                      <Select name="industry" required>
+                        <SelectTrigger className="bg-white">
                           <SelectValue placeholder="Select your industry" />
                         </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="manufacturing">
+                        <SelectContent className="bg-white hover:bg-green-800">
+                          <SelectItem
+                            className="hover:bg-white"
+                            value="manufacturing">
                             Manufacturing
                           </SelectItem>
-                          <SelectItem value="logistics">
+                          <SelectItem
+                            className="hover:bg-white"
+                            value="logistics">
                             Logistics & Warehousing
                           </SelectItem>
-                          <SelectItem value="healthcare">Healthcare</SelectItem>
-                          <SelectItem value="retail">Retail</SelectItem>
-                          <SelectItem value="government">Government</SelectItem>
-                          <SelectItem value="education">Education</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
+                          <SelectItem
+                            className="hover:bg-white"
+                            value="healthcare">
+                            Healthcare
+                          </SelectItem>
+                          <SelectItem className="hover:bg-white" value="retail">
+                            Retail
+                          </SelectItem>
+                          <SelectItem
+                            className="hover:bg-white"
+                            value="government">
+                            Government
+                          </SelectItem>
+                          <SelectItem
+                            className="hover:bg-white"
+                            value="education">
+                            Education
+                          </SelectItem>
+                          <SelectItem className="hover:bg-white" value="other">
+                            Other
+                          </SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -278,34 +298,47 @@ const Quote = () => {
                 {/* Step 2: Project Details */}
                 {step === 2 && (
                   <div className="space-y-4">
-                    <h3 className="text-lg font-semibold mb-4">
+                    <h3 className="text-lg font-semibold mb-4 text-start">
                       Project Details
                     </h3>
 
                     <div>
                       <label
                         htmlFor="projectType"
-                        className="block text-sm font-medium text-gray-700 mb-1">
+                        className="block text-start text-sm font-medium text-gray-700 mb-1">
                         Project Type *
                       </label>
                       <Select name="projectType" required>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select project type" />
+                        <SelectTrigger className="bg-white">
+                          <SelectValue
+                            className="bg-white"
+                            placeholder="Select project type"
+                          />
                         </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="new-implementation">
+                        <SelectContent className="bg-green-800">
+                          <SelectItem
+                            className="hover:bg-white"
+                            value="new-implementation">
                             New Implementation
                           </SelectItem>
-                          <SelectItem value="upgrade">
+                          <SelectItem
+                            className="hover:bg-white"
+                            value="upgrade">
                             System Upgrade
                           </SelectItem>
-                          <SelectItem value="integration">
+                          <SelectItem
+                            className="hover:bg-white"
+                            value="integration">
                             System Integration
                           </SelectItem>
-                          <SelectItem value="maintenance">
+                          <SelectItem
+                            className="hover:bg-white"
+                            value="maintenance">
                             Maintenance & Support
                           </SelectItem>
-                          <SelectItem value="consultation">
+                          <SelectItem
+                            className="hover:bg-white"
+                            value="consultation">
                             Consultation
                           </SelectItem>
                         </SelectContent>
@@ -316,24 +349,35 @@ const Quote = () => {
                       <div>
                         <label
                           htmlFor="urgency"
-                          className="block text-sm font-medium text-gray-700 mb-1">
+                          className="block text-sm font-medium text-gray-700 mb-1 text-start">
                           Urgency *
                         </label>
                         <Select name="urgency" required>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select urgency" />
+                          <SelectTrigger className="bg-white">
+                            <SelectValue
+                              className="bg-white"
+                              placeholder="Select urgency"
+                            />
                           </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="immediate">
+                          <SelectContent className="bg-green-800">
+                            <SelectItem
+                              className="hover:bg-white "
+                              value="immediate">
                               Immediate (1-2 weeks)
                             </SelectItem>
-                            <SelectItem value="urgent">
+                            <SelectItem
+                              className="hover:bg-white "
+                              value="urgent">
                               Urgent (1 month)
                             </SelectItem>
-                            <SelectItem value="normal">
+                            <SelectItem
+                              className="hover:bg-white "
+                              value="normal">
                               Normal (2-3 months)
                             </SelectItem>
-                            <SelectItem value="flexible">
+                            <SelectItem
+                              className="hover:bg-white "
+                              value="flexible">
                               Flexible timeline
                             </SelectItem>
                           </SelectContent>
@@ -342,27 +386,37 @@ const Quote = () => {
                       <div>
                         <label
                           htmlFor="budget"
-                          className="block text-sm font-medium text-gray-700 mb-1">
+                          className="block text-sm font-medium text-gray-700 mb-1 text-start">
                           Budget Range
                         </label>
                         <Select name="budget">
-                          <SelectTrigger>
+                          <SelectTrigger className="hover:bg-white bg-white">
                             <SelectValue placeholder="Select budget range" />
                           </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="under-10k">
+                          <SelectContent className=" bg-green-800">
+                            <SelectItem
+                              className="hover:bg-white"
+                              value="under-10k">
                               Under $10,000
                             </SelectItem>
-                            <SelectItem value="10k-25k">
+                            <SelectItem
+                              className="hover:bg-white"
+                              value="10k-25k">
                               $10,000 - $25,000
                             </SelectItem>
-                            <SelectItem value="25k-50k">
+                            <SelectItem
+                              className="hover:bg-white"
+                              value="25k-50k">
                               $25,000 - $50,000
                             </SelectItem>
-                            <SelectItem value="50k-100k">
+                            <SelectItem
+                              className="hover:bg-white"
+                              value="50k-100k">
                               $50,000 - $100,000
                             </SelectItem>
-                            <SelectItem value="over-100k">
+                            <SelectItem
+                              className="hover:bg-white"
+                              value="over-100k">
                               Over $100,000
                             </SelectItem>
                           </SelectContent>
@@ -373,10 +427,11 @@ const Quote = () => {
                     <div>
                       <label
                         htmlFor="description"
-                        className="block text-sm font-medium text-gray-700 mb-1">
+                        className="block text-sm font-medium text-gray-700 mb-1 text-start">
                         Project Description *
                       </label>
                       <Textarea
+                        className="bg-white"
                         id="description"
                         name="description"
                         required
@@ -392,12 +447,14 @@ const Quote = () => {
                 {/* Step 3: Product/Service Selection */}
                 {step === 3 && (
                   <div className="space-y-6">
-                    <h3 className="text-lg font-semibold mb-4">
+                    <h3 className="text-lg  font-semibold mb-4">
                       Product & Service Selection
                     </h3>
 
                     <div>
-                      <h4 className="font-medium mb-3">Products of Interest</h4>
+                      <h4 className="font-medium text-start mb-3">
+                        Products of Interest
+                      </h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                         {products.map((product) => (
                           <div
@@ -425,7 +482,9 @@ const Quote = () => {
                     </div>
 
                     <div>
-                      <h4 className="font-medium mb-3">Services of Interest</h4>
+                      <h4 className="font-medium  text-start mb-3">
+                        Services of Interest
+                      </h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                         {services.map((service) => (
                           <div
@@ -551,7 +610,11 @@ const Quote = () => {
                       Next
                     </Button>
                   ) : (
-                    <Button type="submit">Submit Quote Request</Button>
+                    <Button
+                      className="bg-green-800 hover:bg-gray-500"
+                      type="submit">
+                      Submit Quote Request
+                    </Button>
                   )}
                 </div>
               </form>

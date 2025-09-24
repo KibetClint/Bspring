@@ -24,8 +24,7 @@ const Consultation = () => {
     {
       title: "Technical Assessment",
       duration: "60 minutes",
-      description:
-        "Comprehensive evaluation of your current systems and technology needs",
+      description: "Evaluation of your systems and technology needs",
       features: [
         "System analysis",
         "Performance review",
@@ -113,7 +112,7 @@ const Consultation = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full">Book Now</Button>
+                  <Button className="w-full bg-green-800">Book Now</Button>
                 </CardContent>
               </Card>
             ))}
@@ -122,7 +121,7 @@ const Consultation = () => {
       </section>
 
       {/* Benefits */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -138,7 +137,7 @@ const Consultation = () => {
                 ))}
               </ul>
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-lg">
+            <div className="bg-gray-400 p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-bold mb-6">
                 Schedule Your Consultation
               </h3>
@@ -151,22 +150,26 @@ const Consultation = () => {
                 <Input placeholder="Phone Number" type="tel" />
                 <Input placeholder="Company Name" />
                 <Select>
-                  <SelectTrigger>
+                  <SelectTrigger className="bg-white">
                     <SelectValue placeholder="Consultation Type" />
                   </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="technical">
+                  <SelectContent className="bg-green-800">
+                    <SelectItem className="hover:bg-white" value="technical">
                       Technical Assessment
                     </SelectItem>
-                    <SelectItem value="solution">Solution Design</SelectItem>
-                    <SelectItem value="advisory">Expert Advisory</SelectItem>
+                    <SelectItem className="hover:bg-white" value="solution">
+                      Solution Design
+                    </SelectItem>
+                    <SelectItem className="hover:bg-white" value="advisory">
+                      Expert Advisory
+                    </SelectItem>
                   </SelectContent>
                 </Select>
                 <Textarea
                   placeholder="Tell us about your project or requirements"
                   rows={4}
                 />
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-full bg-green-800">
                   Request Consultation
                 </Button>
               </form>
@@ -228,7 +231,7 @@ const Consultation = () => {
       <section className="py-16 bg-[#236434] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+            <h4 className="text-3xl font-bold mb-4">Ready to Get Started?</h4>
             <p className="text-xl mb-8">
               Choose your preferred way to connect with our experts
             </p>
@@ -237,32 +240,38 @@ const Consultation = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="bg-white/10 border-white/20 text-white">
               <CardContent className="p-6 text-center">
-                <Phone className="h-12 w-12 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">
+                <Phone className="h-12 w-12 mx-auto mb-4 text-black" />
+                <h4 className="text-xl font-semibold mb-2">
                   Phone Consultation
-                </h3>
+                </h4>
                 <p className="mb-4">Speak directly with our experts</p>
-                <Button variant="secondary">Call Now</Button>
+                <Button className="bg-green-900" variant="secondary">
+                  Call Now
+                </Button>
               </CardContent>
             </Card>
 
             <Card className="bg-white/10 border-white/20 text-white">
               <CardContent className="p-6 text-center">
-                <MessageSquare className="h-12 w-12 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Video Call</h3>
+                <MessageSquare className="h-12 w-12 mx-auto mb-4 text-blue-400" />
+                <h4 className="text-xl font-semibold mb-2">Video Call</h4>
                 <p className="mb-4">Face-to-face consultation online</p>
-                <Button variant="secondary">Schedule Video Call</Button>
+                <Button className="bg-green-900" variant="secondary">
+                  Schedule Video Call
+                </Button>
               </CardContent>
             </Card>
 
             <Card className="bg-white/10 border-white/20 text-white">
               <CardContent className="p-6 text-center">
-                <Mail className="h-12 w-12 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">
+                <Mail className="h-12 w-12 mx-auto mb-4 text-red-700" />
+                <h4 className="text-xl font-semibold mb-2">
                   Email Consultation
-                </h3>
+                </h4>
                 <p className="mb-4">Detailed written assessment</p>
-                <Button variant="secondary">Send Email</Button>
+                <Button className="bg-green-900" variant="secondary">
+                  Send Email
+                </Button>
               </CardContent>
             </Card>
           </div>

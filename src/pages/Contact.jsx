@@ -170,24 +170,39 @@ const Contact = () => {
                         Subject *
                       </label>
                       <Select name="subject" required>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select a subject" />
+                        <SelectTrigger className="bg-white">
+                          <SelectValue
+                            className="bg-white"
+                            placeholder="Select a subject"
+                          />
                         </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="general">
+                        <SelectContent className="bg-green-800">
+                          <SelectItem
+                            className="hover:bg-white"
+                            value="general">
                             General Inquiry
                           </SelectItem>
-                          <SelectItem value="sales">
+                          <SelectItem className="hover:bg-white" value="sales">
                             Sales & Products
                           </SelectItem>
-                          <SelectItem value="support">
+                          <SelectItem
+                            className="hover:bg-white"
+                            value="support">
                             Technical Support
                           </SelectItem>
-                          <SelectItem value="services">Services</SelectItem>
-                          <SelectItem value="partnership">
+                          <SelectItem
+                            className="hover:bg-white"
+                            value="services">
+                            Services
+                          </SelectItem>
+                          <SelectItem
+                            className="hover:bg-white"
+                            value="partnership">
                             Partnership
                           </SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
+                          <SelectItem className="hover:bg-white" value="other">
+                            Other
+                          </SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -209,7 +224,10 @@ const Contact = () => {
                       />
                     </div>
 
-                    <Button type="submit" size="lg" className="w-full">
+                    <Button
+                      type="submit"
+                      size="lg"
+                      className="w-full bg-green-800">
                       Send Message
                     </Button>
                   </form>
@@ -275,7 +293,7 @@ const Contact = () => {
       </section>
 
       {/* Office Locations */}
-      <section className="py-16 bg-gray-50 text-start">
+      <section className="py-12 text-start">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">

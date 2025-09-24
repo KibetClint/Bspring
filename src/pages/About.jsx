@@ -279,7 +279,7 @@ const About = () => {
                     />
                   </div>
                   <CardTitle>{member.name}</CardTitle>
-                  <CardDescription className="font-semibold text-blue-600">
+                  <CardDescription className="font-semibold text-gray-700">
                     {member.position}
                   </CardDescription>
                 </CardHeader>
@@ -292,7 +292,7 @@ const About = () => {
         </div>
       </section>
       {/* Company Milestones */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12" data-aos="fade-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Journey</h2>
@@ -301,7 +301,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2 text-start ">
             {milestones.map((milestone, index) => (
               <div
                 key={index}
@@ -364,13 +364,13 @@ const About = () => {
         </div>
       </section>
       {/* Certifications */}
-      <section className="py-10 bg-green-900 text-white">
+      <section className="py-10 bg-gray-400 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2
+          <h4
             className="text-3xl md:text-4xl font-bold mb-8"
             data-aos="fade-up">
             Certifications & Awards
-          </h2>
+          </h4>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {certifications.map((cert, index) => (
               <div

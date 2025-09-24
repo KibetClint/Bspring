@@ -105,7 +105,7 @@ const Support = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+      <section className="bg-[#236837] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Support Center
@@ -163,7 +163,7 @@ const Support = () => {
       </section>
 
       {/* Popular Articles */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
@@ -172,7 +172,7 @@ const Support = () => {
                 {popularArticles.map((article, index) => (
                   <div
                     key={index}
-                    className="flex items-center p-3 bg-white rounded-lg hover:shadow-md transition-shadow cursor-pointer">
+                    className="flex items-center p-3 bg-gray-200 rounded-lg hover:shadow-md transition-shadow cursor-pointer">
                     <FileText className="w-5 h-5 text-blue-600 mr-3" />
                     <span className="text-gray-700 hover:text-blue-600">
                       {article}
@@ -234,7 +234,7 @@ const Support = () => {
       </section>
 
       {/* Downloads Section */}
-      <section className="py-16">
+      <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Downloads</h2>
@@ -271,12 +271,12 @@ const Support = () => {
       </section>
 
       {/* Contact Support */}
-      <section className="py-16 bg-gray-900 text-white">
+      <section className="py-12 bg-gray-400 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h4 className="text-3xl md:text-4xl font-bold mb-4">
               Still Need Help?
-            </h2>
+            </h4>
             <p className="text-xl mb-8">
               Our support team is here to assist you
             </p>
@@ -285,7 +285,7 @@ const Support = () => {
               <div className="text-center">
                 <div className="text-2xl mb-2">📞</div>
                 <h3 className="text-lg font-semibold mb-2">Phone Support</h3>
-                <p className="text-gray-300 mb-2">+1 (555) 123-4567</p>
+                <p className="text-gray-300 mb-2">+254725903309</p>
                 <p className="text-sm text-gray-400">Mon-Fri: 8AM-6PM</p>
               </div>
 
@@ -301,7 +301,7 @@ const Support = () => {
               <div className="text-center">
                 <div className="text-2xl mb-2">🚨</div>
                 <h3 className="text-lg font-semibold mb-2">Emergency</h3>
-                <p className="text-gray-300 mb-2">+1 (555) 911-HELP</p>
+                <p className="text-gray-300 mb-2">+254712071300</p>
                 <p className="text-sm text-gray-400">
                   24/7 for critical issues
                 </p>
